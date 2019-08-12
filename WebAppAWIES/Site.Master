@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebAppAWIES.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="img/fav.png">
+	<!-- Author Meta -->
+	<meta name="author" content="colorlib">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+	<title>AWIES</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+	<!--
+			CSS
+			============================================= -->
+	<link rel="stylesheet" href="css/linearicons.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.11/css/lightgallery.min.css">
+	<link rel="stylesheet" href="css/nice-select.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!--################ Start Header Area ########-->
+	<header id="header" id="home">
+		<div class="header-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7 col-sm-6 col-4 no-padding">
+						<div class="header-top-left">
+							<a href="">
+								<i class="fa fa-phone"></i>
+								012-6532-568-9746
+							</a>
+						</div>
+						<b>A</b>plicacion <b>W</b>eb de <b>I</b>nformacion de <b>E</b>ducacion <b>S</b>uperior
+					</div>
+					<div class="col-lg-5 col-sm-6 col-8 header-top-right no-padding">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+							<li><a href="#"><i class="fa fa-behance"></i></a></li>
+						</ul>
+						<ul>
+							<li>
+								<a href="#">Iniciar Sesión</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="container main-menu">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo">
+					<a href="index.html"><img src="img/logo.png" alt="" width="200px" height="100px" title="" /></a>
+				</div>
+				<nav id="nav-menu-container">
+					<ul class="nav-menu">
+						<li class="menu-active"><a href="index.html">Inicio</a></li>
+						<li><a>Instituciones</a>
+							<ul>
+								<li><a href="blog-home.html">Consultar Instituciones de Educacion Superior</a></li>
+							</ul>
+						</li>
+						<li><a>Programas</a>
+							<ul>
+								<li><a href="blog-home.html">Consultar Programas Academicos</a></li>
+							</ul>
+						</li>
+						<li class="menu-has-children"><a href="">Top 10</a></li>
+						<li class="menu-has-children"><a href="">Test de Conocimiento</a>
+							<ul>
+								<li><a href="portfolio-details.html">Universidad Nacional</a></li>
+								<li><a href="elements.html">otra</a></li>
+							</ul>
+						</li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+				<!--######## #nav-menu-container -->
+			</div>
+		</div>
+	</header>
+	<!--######## End Header Area ########-->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+    </form>
+</body>
+</html>

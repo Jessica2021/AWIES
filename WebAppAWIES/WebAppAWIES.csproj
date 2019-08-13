@@ -79,6 +79,7 @@
     <Content Include="css\main.css" />
     <Content Include="css\nice-select.css" />
     <Content Include="css\owl.carousel.css" />
+    <Content Include="EnvioSolicitud.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\Linearicons-Free.svg" />
     <Content Include="img\b1.jpg" />
@@ -199,10 +200,18 @@
     <Content Include="js\vendor\bootstrap.min.js" />
     <Content Include="js\vendor\jquery.min.js" />
     <Content Include="Institucion.aspx" />
+    <Content Include="Programas.aspx" />
     <Content Include="Top10.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnvioSolicitud.aspx.cs">
+      <DependentUpon>EnvioSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnvioSolicitud.aspx.designer.cs">
+      <DependentUpon>EnvioSolicitud.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -216,6 +225,13 @@
     </Compile>
     <Compile Include="Institucion.aspx.designer.cs">
       <DependentUpon>Institucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Programas.aspx.cs">
+      <DependentUpon>Programas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Programas.aspx.designer.cs">
+      <DependentUpon>Programas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

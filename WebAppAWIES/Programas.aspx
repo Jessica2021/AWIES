@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Institucion.aspx.cs" Inherits="WebAppAWIES.Muro" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Programas.aspx.cs" Inherits="WebAppAWIES.Programas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    
 	<!--######## Start top-category-widget Area ########-->
 	<section class="top-category-widget-area pt-90 pb-90 ">
 		<div class="container">
@@ -71,7 +71,7 @@
 							<div class="single-sidebar-widget newsletter-widget">
 							<h4 class="newsletter-title">Busqueda</h4>
 							<p>
-								Instituciones de Educacion Superior
+								Programas de Instituciones de Educacion Superior
 							</p>
 							<div class="form-group d-flex flex-row">
 								<div class="col-autos">
@@ -86,27 +86,69 @@
 								<a href="#" class="bbtns"><i class="fa fa-search"></i></a>
 							</div>
 							<p class="text-bottom">
-								Escribe Nombre de la Universidad o Institucion
+								Escribe Nombre del Programa
 							</p>
 						</div>
 						<div class="single-sidebar-widget post-category-widget">
-							<h4 class="category-title">Caracter Academico</h4>
+							<h4 class="category-title">Nivel de Formacion</h4>
 							<ul class="cat-list">
 								<li>
 									<a href="#" class="d-flex justify-content-between">
-										<p>Carreras Universitarias</p>
+										<p>Universitaria</p>
 										<p>37</p>
 									</a>
 								</li>
 								<li>
 									<a href="#" class="d-flex justify-content-between">
-										<p>Tecnicos</p>
+										<p>Tecnológica</p>
 										<p>24</p>
 									</a>
 								</li>
 								<li>
 									<a href="#" class="d-flex justify-content-between">
-										<p>Tecnologos</p>
+										<p>Postdoctorado</p>
+										<p>59</p>
+									</a>
+								</li>
+                                <li>
+									<a href="#" class="d-flex justify-content-between">
+										<p>Maestría</p>
+										<p>59</p>
+									</a>
+								</li>
+                                <li>
+									<a href="#" class="d-flex justify-content-between">
+										<p>Formacion Tecnica Profecional</p>
+										<p>59</p>
+									</a>
+								</li>
+                                <li>
+									<a href="#" class="d-flex justify-content-between">
+										<p>Especializacion Universitaria</p>
+										<p>59</p>
+									</a>
+								</li>
+                                <li>
+									<a href="#" class="d-flex justify-content-between">
+										<p>Especializacion Tecnológica</p>
+										<p>59</p>
+									</a>
+								</li>
+                                <li>
+									<a href="#" class="d-flex justify-content-between">
+										<p>Especializacion Técnica Profecional</p>
+										<p>59</p>
+									</a>
+								</li>
+                                <li>
+									<a href="#" class="d-flex justify-content-between">
+										<p>Especializacion Médico Quirúrgica</p>
+										<p>59</p>
+									</a>
+								</li>
+                                <li>
+									<a href="#" class="d-flex justify-content-between">
+										<p>Doctorado</p>
 										<p>59</p>
 									</a>
 								</li>
@@ -296,6 +338,4 @@
 		</div>
 	</section>
 	<!--######## End post-content Area ########-->
-    
-   
 </asp:Content>

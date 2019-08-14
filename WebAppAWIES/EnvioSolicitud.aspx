@@ -35,13 +35,13 @@
 							<a href="#" class="genric-btn success">Enviar Solicitud</a>
 						
 						</form>
-                        </div>
-                        </div>
-                        </div>
-                    <div class="col-md-4">
-                        </div>
                     </div>
+                </div>
+             </div>
+            <div class="col-md-4">
+            </div>
         </div>
+    </div>
     
 
 

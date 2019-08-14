@@ -21,5 +21,16 @@ namespace WebAppAWIES.Datos
         public int IdCaracterAcademico { get; set; }
         public int IdMunicipio { get; set; }
         public int IdPrograma { get; set; }
+
+
+        clConexion objConexion = new clConexion();
+
+        public int mtdRegistroSolicitud()
+        {
+            string consulta = " inser into Universidades (Nit, Correo, Contraseña,NombreInstitucion) values ('"+Nit+ "', '" + Correo + "','" + Contraseña + "','" + NombreInstitucion + "')";
+            int res = objConexion.mtdConectado(consulta);
+            return res;
+        }
+
     }
 }

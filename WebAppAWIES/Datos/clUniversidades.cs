@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 
 namespace WebAppAWIES.Datos
 {
@@ -21,5 +22,18 @@ namespace WebAppAWIES.Datos
         public int IdCaracterAcademico { get; set; }
         public int IdMunicipio { get; set; }
         public int IdPrograma { get; set; }
+        
+
+        clConexion objConexion = new clConexion(); //establece la conexion
+
+        public int mtdRegistrar()
+        {
+            string consulta = "insert into Universidades(Correo,Contraseña,Nit,NombreInstitucion)" +
+                              "values('" + Correo + "','" + Contraseña + "','" + Nit + "','" + NombreInstitucion + "')";
+
+            int res = objConexion.mtdConectado(consulta);
+            return res;
+
+        }
     }
 }

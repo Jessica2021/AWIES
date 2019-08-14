@@ -83,6 +83,7 @@
     <Content Include="css\main.css" />
     <Content Include="css\nice-select.css" />
     <Content Include="css\owl.carousel.css" />
+    <Content Include="EnvioSolicitud.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\Linearicons-Free.svg" />
     <Content Include="img\b1.jpg" />
@@ -208,6 +209,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\clConexion.cs" />
+    <Compile Include="Datos\clUniversidades.cs" />
+    <Compile Include="EnvioSolicitud.aspx.cs">
+      <DependentUpon>EnvioSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnvioSolicitud.aspx.designer.cs">
+      <DependentUpon>EnvioSolicitud.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

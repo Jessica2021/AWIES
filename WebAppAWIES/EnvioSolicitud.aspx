@@ -10,7 +10,7 @@
 						<div class="single-sidebar-widget user-info-widget">
 							
 							<h3 class="mb-30">Envio Solicitud</h3>
-						<form action="#">
+						<form class="form-horizontal form-label-left" method="post" action="EnvioSolicitud.aspx.cs" novalidate>
                             <div class="mt-10">
                                
 								<input type="text" name="correo" placeholder="ejemplo@gmail.com" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ejemplo@gmail.com'"
@@ -27,13 +27,15 @@
 								 required class="single-input-primary">
 							</div>
                             <div class="mt-10">
-								<input type="text" name="nombreInst" placeholder="Nombre Institucion" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Nombre Institucion'"
+								<input type="text" name="nombre" placeholder="Nombre Institucion" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Nombre Institucion'"
 								 required class="single-input-primary">
 							</div>
 
 							<br />
-							<a href="#" class="genric-btn success">Enviar Solicitud</a>
-						
+							
+						    <button  class="genric-btn success" type="submit">
+                            Enviar Solicitud
+                            </button>
 						</form>
                     </div>
                 </div>

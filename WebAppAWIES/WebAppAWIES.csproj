@@ -206,7 +206,9 @@
     <Content Include="Institucion.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Notificaciones.aspx" />
+    <Content Include="Programas.aspx" />
     <Content Include="Registrar.aspx" />
+    <Content Include="RegistrarProgramas.aspx" />
     <Content Include="Top10.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -255,6 +257,13 @@
     <Compile Include="Notificaciones.aspx.designer.cs">
       <DependentUpon>Notificaciones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Programas.aspx.cs">
+      <DependentUpon>Programas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Programas.aspx.designer.cs">
+      <DependentUpon>Programas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registrar.aspx.cs">
       <DependentUpon>Registrar.aspx</DependentUpon>
@@ -262,6 +271,13 @@
     </Compile>
     <Compile Include="Registrar.aspx.designer.cs">
       <DependentUpon>Registrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarProgramas.aspx.cs">
+      <DependentUpon>RegistrarProgramas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarProgramas.aspx.designer.cs">
+      <DependentUpon>RegistrarProgramas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

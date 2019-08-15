@@ -208,7 +208,14 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\clArea.cs" />
+    <Compile Include="Datos\clCaracterAcademico.cs" />
     <Compile Include="Datos\clConexion.cs" />
+    <Compile Include="Datos\clDepartamento.cs" />
+    <Compile Include="Datos\clMetodologia.cs" />
+    <Compile Include="Datos\clMunicipio.cs" />
+    <Compile Include="Datos\clMuro.cs" />
+    <Compile Include="Datos\clNivelFormacion.cs" />
     <Compile Include="Datos\clUniversidades.cs" />
     <Compile Include="EnvioSolicitud.aspx.cs">
       <DependentUpon>EnvioSolicitud.aspx</DependentUpon>

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebAppAWIES
 {
-    public partial class EnvioSolicitudd : System.Web.UI.Page
+    public partial class Registrar1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

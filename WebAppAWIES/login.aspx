@@ -1,12 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnvioSolicitud.aspx.cs" Inherits="WebAppAWIES.EnvioSolicitudd" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="WebAppAWIES.login" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Favicon-->
@@ -56,9 +55,10 @@
             text-align:center;
         }
     </style>
+
 </head>
 <body>
-    <form id="form1" runat="server">
+     <form id="form1" runat="server">
         <div>
              <div class="section-top-border">
                  
@@ -73,7 +73,7 @@
 						
 						<div class="single-sidebar-widget user-info-widget">
 							
-							<h3 class="mb-30">Envio Solicitud</h3>
+							<h3 class="mb-30">Iniciar Sesión</h3>
 						<form class="form-horizontal form-label-left" method="post" action="EnvioSolicitud.aspx.cs" novalidate>
                             <div class="mt-10">
                                
@@ -86,21 +86,12 @@
 								<input type="password" name="contraseña" placeholder="Contraseña" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Contraseña'"
 								 required class="single-input-primary">
 							</div>
-							<div class="mt-10">
-								<input type="text" name="nit" placeholder="Nit" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Nit'"
-								 required class="single-input-primary">
-							</div>
-                            <div class="mt-10">
-								<input type="text" name="nombre" placeholder="Nombre Institucion" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Nombre Institucion'"
-								 required class="single-input-primary">
-							</div>
-
 							<br />
 							
 						    <button  class="genric-btn success" type="submit">
-                            Enviar Solicitud
+                            Iniciar Sesión
                             </button>
-                            <a href="Index.aspx" class="genric-btn info">Volver</a>
+                            <a href="EnvioSolicitud.aspx" class="genric-btn info">Enviar Solicitud</a>
 						</form>
                     </div>
                 </div>

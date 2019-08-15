@@ -204,6 +204,7 @@
     <Content Include="js\vendor\bootstrap.min.js" />
     <Content Include="js\vendor\jquery.min.js" />
     <Content Include="Institucion.aspx" />
+    <Content Include="Notificaciones.aspx" />
     <Content Include="Top10.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -237,6 +238,13 @@
     </Compile>
     <Compile Include="Institucion.aspx.designer.cs">
       <DependentUpon>Institucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notificaciones.aspx.cs">
+      <DependentUpon>Notificaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notificaciones.aspx.designer.cs">
+      <DependentUpon>Notificaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

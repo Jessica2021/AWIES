@@ -26,7 +26,7 @@ namespace WebAppAWIES
                 int result = objUniversidades.mtdRegistrar();
                 if (result == 1)
                 {
-                    Response.Redirect("index.aspx");
+                    Response.Redirect("EnvioSolicitud.aspx");
                 }
             }
             

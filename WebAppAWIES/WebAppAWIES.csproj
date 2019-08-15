@@ -67,8 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\App_Data\bdAwies.mdf" />
-    <Content Include="css\App_Data\bdAwies_log.ldf">
+    <Content Include="App_Data\bdAwies.mdf" />
+    <Content Include="App_Data\bdAwies_log.ldf">
       <DependentUpon>bdAwies.mdf</DependentUpon>
     </Content>
     <Content Include="css\animate.min.css" />
@@ -86,7 +86,6 @@
     <Content Include="EnvioSolicitud.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\Linearicons-Free.svg" />
-    <Content Include="Global.asax" />
     <Content Include="img\b1.jpg" />
     <Content Include="img\b2.jpg" />
     <Content Include="img\b3.jpg" />
@@ -205,9 +204,9 @@
     <Content Include="js\vendor\bootstrap.min.js" />
     <Content Include="js\vendor\jquery.min.js" />
     <Content Include="Institucion.aspx" />
+    <Content Include="login.aspx" />
     <Content Include="Notificaciones.aspx" />
-    <Content Include="Programas.aspx" />
-    <Content Include="Registro.aspx" />
+    <Content Include="Registrar.aspx" />
     <Content Include="Top10.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -228,9 +227,6 @@
     <Compile Include="EnvioSolicitud.aspx.designer.cs">
       <DependentUpon>EnvioSolicitud.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,6 +241,13 @@
     <Compile Include="Institucion.aspx.designer.cs">
       <DependentUpon>Institucion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Notificaciones.aspx.cs">
       <DependentUpon>Notificaciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -252,20 +255,13 @@
     <Compile Include="Notificaciones.aspx.designer.cs">
       <DependentUpon>Notificaciones.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Programas.aspx.cs">
-      <DependentUpon>Programas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Programas.aspx.designer.cs">
-      <DependentUpon>Programas.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registro.aspx.cs">
-      <DependentUpon>Registro.aspx</DependentUpon>
+    <Compile Include="Registrar.aspx.cs">
+      <DependentUpon>Registrar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Registro.aspx.designer.cs">
-      <DependentUpon>Registro.aspx</DependentUpon>
+    <Compile Include="Registrar.aspx.designer.cs">
+      <DependentUpon>Registrar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

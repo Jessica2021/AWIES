@@ -86,13 +86,10 @@
     <Content Include="EnvioSolicitud.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\Linearicons-Free.svg" />
-<<<<<<< HEAD
     <Content Include="DGVInstituciones.aspx" />
     <Content Include="DGVProgramas.aspx" />
     <Content Include="img\fondoinsertar.jpg" />
     <Content Include="IndexInstitucion.aspx" />
-=======
->>>>>>> a15f82a4973b31f708d850731ef40c40becbe689
     <Content Include="Global.asax" />
     <Content Include="img\b1.jpg" />
     <Content Include="img\b2.jpg" />
@@ -238,7 +235,6 @@
     <Compile Include="EnvioSolicitud.aspx.designer.cs">
       <DependentUpon>EnvioSolicitud.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="DGVInstituciones.aspx.cs">
       <DependentUpon>DGVInstituciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -260,8 +256,6 @@
     <Compile Include="IndexInstitucion.aspx.designer.cs">
       <DependentUpon>IndexInstitucion.aspx</DependentUpon>
     </Compile>
-=======
->>>>>>> a15f82a4973b31f708d850731ef40c40becbe689
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -54,11 +54,30 @@
         #imgs{
             text-align:center;
         }
+            .auto-style2 {
+                position: relative;
+                width: 100%;
+                min-height: 1px;
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+                margin-bottom: 0px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .auto-style3 {
+                width: 197px;
+                height: 22px;
+                position: absolute;
+                left: 45px;
+                top: 457px;
+                right: 799px;
+            }
     </style>
 
 </head>
 <body>
-     <form id="form1" runat="server">
+     <form id="form1" runat="server" >
         <div>
              <div class="section-top-border">
                  
@@ -74,29 +93,42 @@
 						<div class="single-sidebar-widget user-info-widget">
 							
 							<h3 class="mb-30">Iniciar Sesión</h3>
-						<form class="form-horizontal form-label-left" method="post" action="EnvioSolicitud.aspx.cs" novalidate>
+						</div>
                             <div class="mt-10">
                                
-								<input type="text" name="correo" placeholder="ejemplo@gmail.com" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ejemplo@gmail.com'"
-								 required class="single-input-primary">
+								<input id="correo" type="text" name="correo" placeholder="ejemplo@gmail.com" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ejemplo@gmail.com'"
+								 required class="single-input-primary"/>
 							</div>
 							<div class="mt-10">
                                 
                                 
-								<input type="password" name="contraseña" placeholder="Contraseña" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Contraseña'"
-								 required class="single-input-primary">
+								<input id="contraseña" type="password" name="contraseña" placeholder="Contraseña" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Contraseña'"
+								 required class="single-input-primary"/>
 							</div>
 							<br />
 							
-						    <button  class="genric-btn success" type="submit">
-                            Iniciar Sesión
-                            </button>
-                            <a href="EnvioSolicitud.aspx" class="genric-btn info">Enviar Solicitud</a>
-						</form>
+						  
+                           
+                                <asp:Button ID="Btn" runat="server" Text="Inicio Sesion"  class="genric-btn success" type="submit"  OnClick="BtnInicio_Click" Height="41px" Width="133px" />
+                           
+							
+                           
+                           <a href="EnvioSolicitud.aspx" class="genric-btn info">Enviar Solicitud</a>
+                        <br />   
+                        <asp:Label ID="LblError" runat="server" BorderColor="Black" CssClass="auto-style3" Font-Size="Medium"></asp:Label>
+                        
+                        
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        
+                        </form>
                     </div>
                 </div>
              </div>
-            <div class="col-md-4">
+            <div class="auto-style2">
             </div>
         </div>
     </div>

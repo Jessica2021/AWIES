@@ -84,7 +84,7 @@
                             <h5>Estado</h5>
                                 <div id="Estado">
 			                        <div class="primary-switch">
-									<input type="checkbox" id="primary-switch" checked>
+									<input  name="Estado" type="checkbox" id="primary-switch" checked aria-live="off">
 									<label for="primary-switch"></label>
 								</div>
 								</div>
@@ -92,56 +92,68 @@
                                 </div>
             <div class="mt-10">
             <h5>Nivel Academico</h5>
-                <div class="default-select" id="default-select">
-			        <select>
-                        <option value="1 ">Posgrado</option>
-				        <option value="1 ">Pregrado</option>
-									
-			        </select>
+                <div class="default-select" id="NivelAcademico" name ="NivelAcademico">
+			        &nbsp;<asp:DropDownList ID="ddlNivelAcademico" runat="server">
+                        <asp:ListItem>Posgrado</asp:ListItem>
+                        <asp:ListItem>Pregrado</asp:ListItem>
+                    </asp:DropDownList>
 		        </div>
             </div>
             <div class="mt-10">
-            <h5>Reconocimiento Ministe3rio</h5>
-                <div class="default-select" id="Sector">
-                    <select>
-	                    <option value="1 ">Registro Alta Calidad</option>
-	                    <option value="1 ">Registro Calificado</option>
-                                <option value="1 ">Registro Simple</option>
-                    </select>
+            <h5>Reconocimiento Ministerio</h5>
+                <div class="default-select" id="Sector"  name ="ReconocimientoMin">
+                    &nbsp;<asp:DropDownList ID="ddlMinisterio" runat="server">
+                        <asp:ListItem>Registro de Alta Calidad</asp:ListItem>
+                        <asp:ListItem>Registro Calificado</asp:ListItem>
+                        <asp:ListItem>Registro Simple</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
             </div>
             <div class="mt-10">
             <h5>Nivel de Formacion</h5>
-                <div class="default-select" id="Acreditada">
-                    <select>
-	                    <option value="1 ">Si</option>
-	                    <option value="1 ">No</option>
-                    </select>
+                <div class="default-select" id="Acreditada"  name ="NivelFormacion">
+                    &nbsp;<asp:DropDownList ID="ddlNivelFormacion" runat="server" DataSourceID="SqlDataSource1" DataTextField="NivelFormacion" DataValueField="IdNivelFormacion">
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [NivelFormacion] WHERE [IdNivelFormacion] = @IdNivelFormacion" InsertCommand="INSERT INTO [NivelFormacion] ([NivelFormacion]) VALUES (@NivelFormacion)" SelectCommand="SELECT * FROM [NivelFormacion]" UpdateCommand="UPDATE [NivelFormacion] SET [NivelFormacion] = @NivelFormacion WHERE [IdNivelFormacion] = @IdNivelFormacion">
+                        <DeleteParameters>
+                            <asp:Parameter Name="IdNivelFormacion" Type="Int32" />
+                        </DeleteParameters>
+                        <InsertParameters>
+                            <asp:Parameter Name="NivelFormacion" Type="String" />
+                        </InsertParameters>
+                        <UpdateParameters>
+                            <asp:Parameter Name="NivelFormacion" Type="String" />
+                            <asp:Parameter Name="IdNivelFormacion" Type="Int32" />
+                        </UpdateParameters>
+                    </asp:SqlDataSource>
                 </div>
             </div>
                 
             <div class="mt-10">
             <h5>Metodologia</h5>
-                <div class="default-select" id="Departamento">
-                    <select>
-	                    <option value="1 ">Boyaca</option>
-	                    <option value="1 ">Antioquia</option>
-	                    <option value="1 ">Arabic</option>
-	                    <option value="1 ">Portuguise</option>
-	                    <option value="1 ">Bengali</option>
-                    </select>
+                <div class="default-select" id="Departamento"  name ="Departamento">
+                    &nbsp;<asp:DropDownList ID="ddlMetodologia" runat="server" DataSourceID="DataMetodologia" DataTextField="Metodologia" DataValueField="IdMetodologia">
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="DataMetodologia" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Metodologia] WHERE [IdMetodologia] = @IdMetodologia" InsertCommand="INSERT INTO [Metodologia] ([Metodologia]) VALUES (@Metodologia)" SelectCommand="SELECT * FROM [Metodologia]" UpdateCommand="UPDATE [Metodologia] SET [Metodologia] = @Metodologia WHERE [IdMetodologia] = @IdMetodologia">
+                        <DeleteParameters>
+                            <asp:Parameter Name="IdMetodologia" Type="Int32" />
+                        </DeleteParameters>
+                        <InsertParameters>
+                            <asp:Parameter Name="Metodologia" Type="String" />
+                        </InsertParameters>
+                        <UpdateParameters>
+                            <asp:Parameter Name="Metodologia" Type="String" />
+                            <asp:Parameter Name="IdMetodologia" Type="Int32" />
+                        </UpdateParameters>
+                    </asp:SqlDataSource>
                 </div>
             </div>
             <div class="mt-10">
             <h5>Area Conocimiento</h5>
-                <div class="default-select" id="Municipio">
-                    <select>
-	                    <option value="1 ">Sogamoso</option>
-	                    <option value="1 ">Duitama</option>
-	                    <option value="1 ">Arabic</option>
-	                    <option value="1 ">Portuguise</option>
-	                    <option value="1 ">Bengali</option>
-                    </select>
+                <div class="default-select" id="Municipio"  name ="Municipio">
+                    &nbsp;<asp:DropDownList ID="ddlArea" runat="server" DataSourceID="DataArea" DataTextField="Area" DataValueField="IdArea">
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="DataArea" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Area]"></asp:SqlDataSource>
                 </div>
             </div>
             
@@ -152,13 +164,16 @@
 		        </div>
                 <div class="mt-10">
                      <h5>Ponderado</h5>
-			        <input type="text" name="ponderado" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
+			        <input type="text" name="Ponderado" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
+				        required class="single-input-primary">
+		        </div>
+                             <div class="mt-10">
+                     <h5>Duracion</h5>
+			        <input type="text" name="Duracion" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
 				        required class="single-input-primary">
 		        </div>
             <br />
-           <button  class="genric-btn success" type="submit">
-                Agregar Programa
-            </button>
+            <asp:Button ID="Button1" runat="server" Text="Registrar" class="genric-btn success" Height="34px" OnClick="Button1_Click"  />
             <a href="Index.aspx" class="genric-btn info">Inicio</a>
 				
             </div>

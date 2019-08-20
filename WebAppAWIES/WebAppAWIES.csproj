@@ -86,6 +86,11 @@
     <Content Include="EnvioSolicitud.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\Linearicons-Free.svg" />
+    <Content Include="DGVInstituciones.aspx" />
+    <Content Include="DGVProgramas.aspx" />
+    <Content Include="img\fondoinsertar.jpg" />
+    <Content Include="IndexInstitucion.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="img\b1.jpg" />
     <Content Include="img\b2.jpg" />
     <Content Include="img\b3.jpg" />
@@ -221,6 +226,7 @@
     <Compile Include="Datos\clMunicipio.cs" />
     <Compile Include="Datos\clMuro.cs" />
     <Compile Include="Datos\clNivelFormacion.cs" />
+    <Compile Include="Datos\clProgramas.cs" />
     <Compile Include="Datos\clUniversidades.cs" />
     <Compile Include="EnvioSolicitud.aspx.cs">
       <DependentUpon>EnvioSolicitud.aspx</DependentUpon>
@@ -228,6 +234,30 @@
     </Compile>
     <Compile Include="EnvioSolicitud.aspx.designer.cs">
       <DependentUpon>EnvioSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DGVInstituciones.aspx.cs">
+      <DependentUpon>DGVInstituciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DGVInstituciones.aspx.designer.cs">
+      <DependentUpon>DGVInstituciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DGVProgramas.aspx.cs">
+      <DependentUpon>DGVProgramas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DGVProgramas.aspx.designer.cs">
+      <DependentUpon>DGVProgramas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IndexInstitucion.aspx.cs">
+      <DependentUpon>IndexInstitucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexInstitucion.aspx.designer.cs">
+      <DependentUpon>IndexInstitucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -285,6 +315,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteInstitucion.Master.cs">
+      <DependentUpon>SiteInstitucion.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteInstitucion.Master.designer.cs">
+      <DependentUpon>SiteInstitucion.Master</DependentUpon>
     </Compile>
     <Compile Include="Top10.aspx.cs">
       <DependentUpon>Top10.aspx</DependentUpon>
@@ -414,6 +451,7 @@
     <Content Include="scss\theme\_reset.scss" />
     <Content Include="scss\theme\_variables.scss" />
     <Content Include="Site.Master" />
+    <Content Include="SiteInstitucion.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

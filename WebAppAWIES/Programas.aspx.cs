@@ -11,7 +11,14 @@ namespace WebAppAWIES
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string programa = txbBuscar.Text;
+            SqlDataSource1.SelectCommand = "select * from Programas where IdProgramas = " + programa + "";
+            GridView1.DataBind();
         }
     }
 }

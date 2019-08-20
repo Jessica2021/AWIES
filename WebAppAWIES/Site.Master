@@ -61,7 +61,7 @@
 						</ul>
 						<ul>
 							<li>
-								<a href="#">Iniciar Sesión</a>
+								<a href="login.aspx">Iniciar Sesión</a>
 							</li>
 						</ul>
 					</div>
@@ -79,15 +79,15 @@
 						<li class="menu-active"><a href="index.html">Inicio</a></li>
 						<li><a>Instituciones</a>
 							<ul>
-								<li><a href="blog-home.html">Consultar Instituciones de Educacion Superior</a></li>
+								<li><a href="Institucion.aspx">Consultar Instituciones de Educacion Superior</a></li>
 							</ul>
 						</li>
 						<li><a>Programas</a>
 							<ul>
-								<li><a href="blog-home.html">Consultar Programas Academicos</a></li>
+								<li><a href="Programas.aspx">Consultar Programas Academicos</a></li>
 							</ul>
 						</li>
-						<li class="menu-has-children"><a href="">Top 10</a></li>
+						<li class="menu-has-children"><a href="Top10.aspx">Top 10</a></li>
 						<li class="menu-has-children"><a href="">Test de Conocimiento</a>
 							<ul>
 								<li><a href="portfolio-details.html">Universidad Nacional</a></li>

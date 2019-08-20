@@ -86,6 +86,7 @@
     <Content Include="EnvioSolicitud.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\Linearicons-Free.svg" />
+    <Content Include="Global.asax" />
     <Content Include="img\b1.jpg" />
     <Content Include="img\b2.jpg" />
     <Content Include="img\b3.jpg" />
@@ -221,6 +222,7 @@
     <Compile Include="Datos\clMunicipio.cs" />
     <Compile Include="Datos\clMuro.cs" />
     <Compile Include="Datos\clNivelFormacion.cs" />
+    <Compile Include="Datos\clProgramas.cs" />
     <Compile Include="Datos\clUniversidades.cs" />
     <Compile Include="EnvioSolicitud.aspx.cs">
       <DependentUpon>EnvioSolicitud.aspx</DependentUpon>
@@ -228,6 +230,9 @@
     </Compile>
     <Compile Include="EnvioSolicitud.aspx.designer.cs">
       <DependentUpon>EnvioSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

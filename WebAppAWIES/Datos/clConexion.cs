@@ -16,7 +16,7 @@ namespace WebAppAWIES.Datos
             try
             {
                 objConexion = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\bdAwies.mdf;Integrated Security=True");
-                
+
             }
             catch (Exception error)
             {
@@ -44,7 +44,7 @@ namespace WebAppAWIES.Datos
                 return 0;
             }
 
-            
+
 
         }
 
@@ -61,5 +61,7 @@ namespace WebAppAWIES.Datos
 
 
         }
+
+           
     }
 }

@@ -1,4 +1,6 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebAppAWIES.Site" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteInstitucion.master.cs" Inherits="WebAppAWIES.SiteInstitucion" %>
+
+
 
 <!DOCTYPE html>
 
@@ -34,6 +36,17 @@
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
+
+    <style>
+       #cont{
+           margin-top:50px;
+           margin-left:30px;
+           margin-bottom:200px;
+       }
+       #conten{
+           position:relative;
+       }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -68,7 +81,7 @@
 				</div>
 			</div>
 		</div>
-		<hr>
+		<hr/>
 		<div class="container main-menu">
 			<div class="row align-items-center justify-content-between d-flex">
 				<div id="logo">
@@ -102,10 +115,55 @@
 		</div>
 	</header>
 	<!--######## End Header Area ########-->
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <hr />
+        
+        <!--######## Start post-content Area ########-->
+	<section class="post-content-area">
+		<div id="cont" class="container">
+			<div class="row">
+                <div class="col-lg-4 sidebar-widgets">
+					<div class="widget-wrap">
+						
+						<div class="single-sidebar-widget post-category-widget">
+							<h4 class="category-title">Menu</h4>
+							<ul class="cat-list">
+
+                                <li>
+									<a href="IndexInstitucion.aspx" class="d-flex justify-content-between">
+										<p>Muro</p>
+									</a>
+								</li>
+								<li>
+                                    
+									<a href="DGVInstituciones.aspx" class="d-flex justify-content-between">
+										<p>Institucion</p>
+                                        <p>5</p>
+									</a>
+								</li>
+								<li>
+									<a href="DGVProgramas.aspx" class="d-flex justify-content-between">
+										<p>Programas</p>
+										<p>38</p>
+									</a>
+								</li>
+								
+							
+							</ul>
+						</div>
+                        
+					</div>
+                    
+				</div>
+                <div class="col-lg-8 posts-list">
+             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    
+					
+                     
             </asp:ContentPlaceHolder>
         </div>
+            </div>
+        </section>
+        
 
 
     </form>
@@ -203,3 +261,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="js/mail-script.js"></script>
 	<script src="js/main.js"></script>
 </html>
+

@@ -6,7 +6,7 @@
     {
     cursor:pointer;
     }
-</style>
+        </style>
 
 	<!--######## Start post-content Area ########-->
 	<section class="post-content-area">
@@ -125,35 +125,38 @@
 				<div class="col-lg-8 posts-list">
 					<div class="single-post row">
 
-                        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSource1" GridLines="Horizontal">
-                            <AlternatingRowStyle BackColor="#F7F7F7" />
-                            <Columns>
-                                <asp:BoundField DataField="NombrePrograma" HeaderText="NombrePrograma" SortExpression="NombrePrograma" />
-                                <asp:BoundField DataField="EstadoPrograma" HeaderText="EstadoPrograma" SortExpression="EstadoPrograma" />
-                                <asp:BoundField DataField="NivelAcademico" HeaderText="NivelAcademico" SortExpression="NivelAcademico" />
-                                <asp:BoundField DataField="ReconocimientoMinisterio" HeaderText="ReconocimientoMinisterio" SortExpression="ReconocimientoMinisterio" />
-                                <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
-                                <asp:BoundField DataField="Ponderado" HeaderText="Ponderado" SortExpression="Ponderado" />
-                                <asp:BoundField DataField="Area" HeaderText="Area" SortExpression="Area" />
-                                <asp:BoundField DataField="Metodologia" HeaderText="Metodologia" SortExpression="Metodologia" />
-                                <asp:BoundField DataField="NivelFormacion" HeaderText="NivelFormacion" SortExpression="NivelFormacion" />
-                            </Columns>
-                            <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
-                            <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
-                            <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
-                            <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
-                            <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
-                            <SortedAscendingCellStyle BackColor="#F4F4FD" />
-                            <SortedAscendingHeaderStyle BackColor="#5A4C9D" />
-                            <SortedDescendingCellStyle BackColor="#D8D8F0" />
-                            <SortedDescendingHeaderStyle BackColor="#3E3277" />
-                        </asp:GridView>
-						
 					    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, Programas.Precio, Programas.Ponderado, Area.Area, Metodologia.Metodologia, NivelFormacion.NivelFormacion FROM Programas INNER JOIN Area ON Programas.IdAreaConocimiento = Area.IdArea INNER JOIN Metodologia ON Programas.IdMetodologia = Metodologia.IdMetodologia INNER JOIN NivelFormacion ON Programas.IdNivelFormacion = NivelFormacion.IdNivelFormacion"></asp:SqlDataSource>
 						
-					</div>
+					    <br />
+                        <br />
+                        <br />
+                        <asp:GridView ID="GridView1" runat="server">
+                        </asp:GridView>
+                        <br />
+                        dd</div>
 					
 				</div>
+				
+			    <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
 				
 			</div>
 		</div>

@@ -12,7 +12,7 @@ namespace WebAppAWIES
 
         protected void Application_Start(object sender, EventArgs e)
         {
-
+            Application["Id"] = "";
         }
 
         protected void Session_Start(object sender, EventArgs e)

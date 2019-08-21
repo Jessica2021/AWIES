@@ -41,13 +41,12 @@ namespace WebAppAWIES.Datos
             return res;
         }
 
-        public DataSet mtdListarCarreras()
+        public DataSet mtdBuscar(string programa)
         {
-            string consulta = "Select * from Programas ";
-            DataSet dsProgramas = new DataSet();
-            dsProgramas = objConexion.mtdDesconectado(consulta);
-            return dsProgramas;
-
+            string query = "SELECT Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, Programas.Precio, Programas.Ponderado, Area.Area, Metodologia.Metodologia, NivelFormacion.NivelFormacion FROM Programas INNER JOIN Area ON Programas.IdAreaConocimiento = Area.IdArea INNER JOIN Metodologia ON Programas.IdMetodologia = Metodologia.IdMetodologia INNER JOIN NivelFormacion ON Programas.IdNivelFormacion = NivelFormacion.IdNivelFormacion where NombrePrograma = '" + programa + "' ";
+            DataSet tblPrograma = new DataSet();
+            tblPrograma = objConexion.mtdDesconectado(query);
+            return tblPrograma;
         }
 
 

@@ -6,7 +6,18 @@
     {
     cursor:pointer;
     }
-</style>
+        .auto-style1 {
+            position: relative;
+            float: right;
+            left: 1px;
+            top: -23px;
+            width: 35px;
+            height: 23px;
+        }
+        .auto-style2 {
+            background-color: #C0C0C0;
+        }
+        </style>
 
 	<!--######## Start post-content Area ########-->
 	<section class="post-content-area">
@@ -41,65 +52,47 @@
 						<div class="single-sidebar-widget post-category-widget">
 							<h4 class="category-title">Nivel de Formacion</h4>
 							<ul class="cat-list">
+                                
 								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Universitaria</p>
-										<p>37</p>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Tecnológica</p>
-										<p>24</p>
-									</a>
+                                    <asp:Button ID="btnBuscUniver" runat="server" Text="Universitaria" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numUniver" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
 								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Postdoctorado</p>
-										<p>59</p>
-									</a>
+                                  <asp:Button ID="btnBuscTecno" runat="server" Text="Tecnologica" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numTecno" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
+								  
+								</li>
+								<li>
+									<asp:Button ID="btnBuscPostd" runat="server" Text="Postdoctorado" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numPostd" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
                                 <li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Maestría</p>
-										<p>59</p>
-									</a>
+									<asp:Button ID="btnBuscMaest" runat="server" Text="Maestria" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numMaest" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
                                 <li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Formacion Tecnica Profecional</p>
-										<p>59</p>
-									</a>
+									<asp:Button ID="btnBuscTecProfe" runat="server" Text="Formacion Tecnica Profecional" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numTecProfe" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
                                 <li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Especializacion Universitaria</p>
-										<p>59</p>
-									</a>
+									<asp:Button ID="btnBuscEspUni" runat="server" Text="Especializacion Univercitaria" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numEspUni" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
                                 <li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Especializacion Tecnológica</p>
-										<p>59</p>
-									</a>
+									<asp:Button ID="btnBuscEspTecno" runat="server" Text="Especializacion Tecnologica" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numEspTecno" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
                                 <li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Especializacion Técnica Profecional</p>
-										<p>59</p>
-									</a>
+									<asp:Button ID="btnBuscEspProfe" runat="server" Text="Especializacion Tecnica Profecional" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numEspProfe" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
                                 <li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Especializacion Médico Quirúrgica</p>
-										<p>59</p>
-									</a>
+									<asp:Button ID="btnBuscEspMedic" runat="server" Text="Especializacion Medico Quirúrgica" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numEspMedic" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
                                 <li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Doctorado</p>
-										<p>59</p>
-									</a>
+									<asp:Button ID="btnBuscEspDocto" runat="server" Text="Doctorado" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numEspDocto" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
 							
 							</ul>
@@ -125,35 +118,38 @@
 				<div class="col-lg-8 posts-list">
 					<div class="single-post row">
 
-                        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSource1" GridLines="Horizontal">
-                            <AlternatingRowStyle BackColor="#F7F7F7" />
-                            <Columns>
-                                <asp:BoundField DataField="NombrePrograma" HeaderText="NombrePrograma" SortExpression="NombrePrograma" />
-                                <asp:BoundField DataField="EstadoPrograma" HeaderText="EstadoPrograma" SortExpression="EstadoPrograma" />
-                                <asp:BoundField DataField="NivelAcademico" HeaderText="NivelAcademico" SortExpression="NivelAcademico" />
-                                <asp:BoundField DataField="ReconocimientoMinisterio" HeaderText="ReconocimientoMinisterio" SortExpression="ReconocimientoMinisterio" />
-                                <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
-                                <asp:BoundField DataField="Ponderado" HeaderText="Ponderado" SortExpression="Ponderado" />
-                                <asp:BoundField DataField="Area" HeaderText="Area" SortExpression="Area" />
-                                <asp:BoundField DataField="Metodologia" HeaderText="Metodologia" SortExpression="Metodologia" />
-                                <asp:BoundField DataField="NivelFormacion" HeaderText="NivelFormacion" SortExpression="NivelFormacion" />
-                            </Columns>
-                            <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
-                            <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
-                            <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
-                            <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
-                            <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
-                            <SortedAscendingCellStyle BackColor="#F4F4FD" />
-                            <SortedAscendingHeaderStyle BackColor="#5A4C9D" />
-                            <SortedDescendingCellStyle BackColor="#D8D8F0" />
-                            <SortedDescendingHeaderStyle BackColor="#3E3277" />
-                        </asp:GridView>
-						
 					    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, Programas.Precio, Programas.Ponderado, Area.Area, Metodologia.Metodologia, NivelFormacion.NivelFormacion FROM Programas INNER JOIN Area ON Programas.IdAreaConocimiento = Area.IdArea INNER JOIN Metodologia ON Programas.IdMetodologia = Metodologia.IdMetodologia INNER JOIN NivelFormacion ON Programas.IdNivelFormacion = NivelFormacion.IdNivelFormacion"></asp:SqlDataSource>
 						
-					</div>
+					    <br />
+                        <br />
+                        <br />
+                        <asp:GridView ID="GridView1" runat="server">
+                        </asp:GridView>
+                        <br />
+                        dd</div>
 					
 				</div>
+				
+			    <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
 				
 			</div>
 		</div>

@@ -82,12 +82,12 @@
 		        </div>
                             <div class="mt-10">
                             <h5>Estado</h5>
-                                <div id="Estado">
-			                        <div class="primary-switch">
-									<input  name="Estado" type="checkbox" id="primary-switch" checked aria-live="off">
-									<label for="primary-switch"></label>
-								</div>
-								</div>
+                                <div class="default-select" id="Estado" name ="Estado">
+			        &nbsp;<asp:DropDownList ID="ddlEstado" runat="server">
+                        <asp:ListItem>Activo</asp:ListItem>
+                        <asp:ListItem>Inactivo</asp:ListItem>
+                    </asp:DropDownList>
+		        </div>
                            
                                 </div>
             <div class="mt-10">

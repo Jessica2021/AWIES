@@ -89,7 +89,7 @@
 				</div>
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
-						<li class="menu-active"><a href="index.html">Inicio</a></li>
+						<li class="menu-active"><a href="Index.aspx">Inicio</a></li>
 						<li><a>Instituciones</a>
 							<ul>
 								<li><a href="Institucion.aspx">Consultar Instituciones de Educacion Superior</a></li>

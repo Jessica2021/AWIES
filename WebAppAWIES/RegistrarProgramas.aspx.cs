@@ -30,7 +30,7 @@ namespace WebAppAWIES
             String Duracion = Request.Form["Duracion"];
 
             objProgramas.NombrePrograma = Nombre;
-            objProgramas.EstadoPrograma = Estado;
+            objProgramas.EstadoPrograma = ddlEstado.SelectedValue;
             objProgramas.NivelAcademico = ddlNivelAcademico.SelectedValue;
             objProgramas.ReconocimientoMinisterio = ddlMinisterio.SelectedValue;
             objProgramas.IdNivelFormacion = int.Parse(ddlNivelFormacion.SelectedValue);

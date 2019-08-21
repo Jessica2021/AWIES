@@ -18,6 +18,7 @@
 							Blog Details</a>
 					</p>
 				</div>
+			    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 			</div>
 		</div>
 	</section>
@@ -30,7 +31,7 @@
 					<div class="single-cat-widget">
 						<div class="content relative">
 							<div class="overlay overlay-bg"></div>
-							<a href="#" target="_blank">
+							<a href="Institucion.aspx">
 								<div class="thumb">
 									<img class="content-image img-fluid d-block mx-auto" src="img/blog/cat-widget1.jpg" alt="">
 								</div>
@@ -47,7 +48,7 @@
 					<div class="single-cat-widget">
 						<div class="content relative">
 							<div class="overlay overlay-bg"></div>
-							<a href="#" target="_blank">
+							<a href="Programas.aspx" >
 								<div class="thumb">
 									<img class="content-image img-fluid d-block mx-auto" src="img/blog/cat-widget2.jpg" alt="">
 								</div>
@@ -64,7 +65,7 @@
 					<div class="single-cat-widget">
 						<div class="content relative">
 							<div class="overlay overlay-bg"></div>
-							<a href="#" target="_blank">
+							<a href="https://www2.icfesinteractivo.gov.co/resultadosSaber/resultadosSaber11/res_individuales.htm" target="_blank">
 								<div class="thumb">
 									<img class="content-image img-fluid d-block mx-auto" src="img/blog/cat-widget3.jpg" alt="">
 								</div>

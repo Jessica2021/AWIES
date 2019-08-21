@@ -12,7 +12,7 @@ namespace WebAppAWIES
 {
     public partial class login : System.Web.UI.Page
     {
-       SqlConnection objConexion = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\bdAwies.mdf;Integrated Security=True");
+       SqlConnection objConexion = new SqlConnection(" Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\bdAwies.mdf;Integrated Security=True");
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,7 +37,7 @@ namespace WebAppAWIES
 
             if (login.Rows.Count == 1)
             { 
-                Response.Redirect("Index.aspx");
+                Response.Redirect("DGVInstituciones.aspx");
 
             }
             else

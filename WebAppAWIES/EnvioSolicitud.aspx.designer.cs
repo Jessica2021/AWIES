@@ -10,7 +10,7 @@
 namespace WebAppAWIES {
     
     
-    public partial class EnvioSolicitudd {
+    public partial class EnvioSolicitud {
         
         /// <summary>
         /// Control form1.

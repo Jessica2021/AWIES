@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnvioSolicitud.aspx.cs" Inherits="WebAppAWIES.EnvioSolicitudd" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnvioSolicitud.aspx.cs" Inherits="WebAppAWIES.EnvioSolicitud" %>
 
 <!DOCTYPE html>
 

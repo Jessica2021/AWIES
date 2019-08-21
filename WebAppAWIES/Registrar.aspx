@@ -77,76 +77,79 @@
             <h3 class="mb-30">Registrar</h3>
                 <div class="mt-10">
                      <h5>Codigo de Institucion</h5>
-			        <input type="text" name="Codigo" placeholder="Codigo" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Codigo'"
-				        required class="single-input-primary">
+                    <asp:TextBox ID="TextBox1" runat="server" type="text" name="Codigo" placeholder="Codigo" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Codigo'"  class="single-input-primary"></asp:TextBox>
 		        </div>
             <div class="mt-10">
             <h5>Principal/Seccional</h5>
                 <div class="default-select" id="default-select">
-			        <select>
-                        <option value="1 ">Principal</option>
-				        <option value="1 ">Seccional</option>
-									
-			        </select>
+			        
+                        <asp:DropDownList ID="DropDownList4" runat="server">
+                            <asp:ListItem>Principal</asp:ListItem>
+                            <asp:ListItem>Seccional</asp:ListItem>
+                        </asp:DropDownList>
+			           
 		        </div>
             </div>
             <div class="mt-10">
             <h5>Sector</h5>
                 <div class="default-select" id="Sector">
-                    <select>
-	                    <option value="1 ">Privada</option>
-	                    <option value="1 ">Publica</option>
-                    </select>
+                    
+                        <asp:DropDownList ID="DropDownList5" runat="server">
+                            <asp:ListItem>Oficial</asp:ListItem>
+                            <asp:ListItem>Privada</asp:ListItem>
+                        </asp:DropDownList>
+                    
                 </div>
             </div>
             <div class="mt-10">
             <h5>¿Acreditada de alta Calidad?</h5>
                 <div class="default-select" id="Acreditada">
-                    <select>
-	                    <option value="1 ">Si</option>
-	                    <option value="1 ">No</option>
-                    </select>
+                    
+                        <asp:DropDownList ID="DropDownList6" runat="server">
+                            <asp:ListItem>Si</asp:ListItem>
+                            <asp:ListItem>No</asp:ListItem>
+                        </asp:DropDownList>
+                    
                 </div>
             </div>
                 
             <div class="mt-10">
             <h5>Departamento</h5>
                 <div class="default-select" id="Departamento">
-                    <select>
-	                    <option value="1 ">Boyaca</option>
-	                    <option value="1 ">Antioquia</option>
-	                    <option value="1 ">Arabic</option>
-	                    <option value="1 ">Portuguise</option>
-	                    <option value="1 ">Bengali</option>
-                    </select>
+                    
+                        <asp:DropDownList ID="DropDownList3" runat="server" DataMember="DefaultView" DataSourceID="SqlDataSource1" DataTextField="Departamento" DataValueField="IdDepartamento" AutoPostBack="True" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Departamento]"></asp:SqlDataSource>
+                  
                 </div>
             </div>
             <div class="mt-10">
             <h5>Municipio</h5>
                 <div class="default-select" id="Municipio">
-                    <select>
-	                    <option value="1 ">Sogamoso</option>
-	                    <option value="1 ">Duitama</option>
-	                    <option value="1 ">Arabic</option>
-	                    <option value="1 ">Portuguise</option>
-	                    <option value="1 ">Bengali</option>
-                    </select>
+                    
+                        
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Municipio" DataValueField="IdMunicipio" DataMember="DefaultView" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [IdMunicipio], [Municipio] FROM [Municipio] WHERE ([IdDepartamento] = @IdDepartamento)">
+                        
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="DropDownList3" DefaultValue="1" Name="IdDepartamento" PropertyName="SelectedValue" />
+                        </SelectParameters>
+                        
+                    </asp:SqlDataSource>
+                        
                 </div>
             </div>
             <div class="mt-10">
             <h5>Caracter Academico</h5>
                 <div class="default-select" id="CaracterAcademico">
-                    <select>
-	                    <option value="1 ">Universidad</option>
-	                    <option value="1 ">Institucion Tecnica Profecional</option>
-	                    <option value="1 ">Institucion Tecnologica</option>
-                    </select>
+                   
+                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="CaracterAcademico" DataValueField="IdCaracterAcademico" DataMember="DefaultView"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT CaracterAcademico, IdCaracterAcademico FROM CaracterAcademico" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>"></asp:SqlDataSource>
+                    
                 </div>
             </div>
             <br />
-           <button  class="genric-btn success" type="submit">
-                Enviar Solicitud
-            </button>
+               <asp:Button ID="Button1" runat="server"  class="genric-btn success" Text="Registrar" Height="29px" OnClick="Button1_Click1" />
+                
 				
             </div>
             <div class="col-md-4">
@@ -154,7 +157,6 @@
             
 					</div>
 					</form>
-					</div>
 
 		
 	<!-- End Align Area -->

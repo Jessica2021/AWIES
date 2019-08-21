@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -38,6 +39,15 @@ namespace WebAppAWIES.Datos
             string consulta = "update Programas set NombrePrograma = '" + NombrePrograma + "',EstadoPrograma = '" + EstadoPrograma + "' ,NivelAcademico = '" + NivelAcademico + "' ,ReconocimientoMinisterio = '" + ReconocimientoMinisterio + "' ,IdNivelFormacion  =  '" + IdNivelFormacion + "',IdMetodologia = '" + IdMetodologia + "',IdAreaConocimiento = '" + IdAreaConocimiento + "',Precio = '" + Precio + "',Ponderado '" + Ponderado + "',Duracion = '"+ Duracion +"' where IdProgramas = '" + IdProgramas + "' ";
             int res = objConexion.mtdConectado(consulta);
             return res;
+        }
+
+        public DataSet mtdListarCarreras()
+        {
+            string consulta = "Select * from Programas ";
+            DataSet dsProgramas = new DataSet();
+            dsProgramas = objConexion.mtdDesconectado(consulta);
+            return dsProgramas;
+
         }
 
 

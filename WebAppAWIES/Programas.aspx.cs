@@ -19,12 +19,17 @@ namespace WebAppAWIES
         clConexion conexion = new clConexion();
         clProgramas po = new clProgramas();
         
+        
+
+
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
 
             mtdBuscar();
+            
         }
         public void mtdBuscar()
+
         {
             string programa = txbBuscar.Text;
             DataSet dsProgrma = new DataSet();

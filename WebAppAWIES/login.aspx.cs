@@ -34,10 +34,11 @@ namespace WebAppAWIES
             DataTable login = new DataTable();
             adapter.Fill(login);
 
-            Application["Id"] = login.Rows[0][0].ToString();
+         
             
             if (login.Rows.Count == 1)
             {
+                Application["Id"] = login.Rows[0][0].ToString();
                 Response.Redirect  ("Index.aspx");
                
 

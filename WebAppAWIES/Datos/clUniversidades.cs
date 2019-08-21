@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Services.Description;
@@ -34,6 +35,14 @@ namespace WebAppAWIES.Datos
             int res = objConexion.mtdConectado(consulta);
             return res;
 
+        }
+
+        public DataSet mtdBuscarInstitucuines(string Instituto)
+        {
+            string consulta =" select * from Universidades where NombreInstitucion LIKE '%"+ Instituto+"%'";
+            DataSet dsInstituto = new DataSet();
+            dsInstituto = objConexion.mtdDesconectado(consulta);
+            return dsInstituto;
         }
         
     }

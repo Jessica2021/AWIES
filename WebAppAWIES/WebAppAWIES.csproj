@@ -219,6 +219,7 @@
     <Compile Include="Datos\clMunicipio.cs" />
     <Compile Include="Datos\clMuro.cs" />
     <Compile Include="Datos\clNivelFormacion.cs" />
+    <Compile Include="Datos\clProgramas.cs" />
     <Compile Include="Datos\clUniversidades.cs" />
     <Compile Include="EnvioSolicitud.aspx.cs">
       <DependentUpon>EnvioSolicitud.aspx</DependentUpon>

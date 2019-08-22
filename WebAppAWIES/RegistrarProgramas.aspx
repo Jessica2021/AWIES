@@ -81,15 +81,14 @@
 				        required class="single-input-primary">
 		        </div>
                             <div class="mt-10">
-                            <h5>Estado</h5>
-                                <div id="Estado">
-			                        <div class="primary-switch">
-									<input  name="Estado" type="checkbox" id="primary-switch" checked aria-live="off">
-									<label for="primary-switch"></label>
-								</div>
-								</div>
-                           
-                                </div>
+            <h5>Estado</h5>
+                <div class="default-select" id="Estado" name ="Estado">
+			        &nbsp;<asp:DropDownList ID="ddEstado" runat="server">
+                        <asp:ListItem>Activo</asp:ListItem>
+                        <asp:ListItem>Inactivo</asp:ListItem>
+                    </asp:DropDownList>
+		        </div>
+            </div>
             <div class="mt-10">
             <h5>Nivel Academico</h5>
                 <div class="default-select" id="NivelAcademico" name ="NivelAcademico">
@@ -163,17 +162,29 @@
 				        required class="single-input-primary">
 		        </div>
                 <div class="mt-10">
-                     <h5>Ponderado</h5>
-			        <input type="text" name="Ponderado" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
+                     <h5>Numero de Creditos</h5>
+			        <input type="text" name="NumeroCreditos" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
 				        required class="single-input-primary">
 		        </div>
-                             <div class="mt-10">
-                     <h5>Duracion</h5>
-			        <input type="text" name="Duracion" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
+              <div class="mt-10">
+                     <h5>Vigencia (Por años)</h5>
+			        <input type="text" name="VigenciaAños" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
+				        required class="single-input-primary">
+		        </div>
+                    
+                 <div class="mt-10">
+                     <h5>Duracion(Por semestres)</h5>
+			        <input type="text" name="DuracionSemestre" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
+				        required class="single-input-primary">
+		        </div>
+                        
+                 <div class="mt-10">
+                     <h5>Titulo Otorgado</h5>
+			        <input type="text" name="TituloOtorgado" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
 				        required class="single-input-primary">
 		        </div>
             <br />
-            <asp:Button ID="Button1" runat="server" Text="Registrar" class="genric-btn success" Height="34px" OnClick="Button1_Click"  />
+            <asp:Button ID="Button1" runat="server" Text="Registrar" class="genric-btn success" Height="40px" OnClick="Button1_Click"  />
             <a href="Index.aspx" class="genric-btn info">Inicio</a>
 				
             </div>

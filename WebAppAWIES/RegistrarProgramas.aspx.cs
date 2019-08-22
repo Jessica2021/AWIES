@@ -23,24 +23,38 @@ namespace WebAppAWIES
         {
             clProgramas objProgramas = new clProgramas();
             string Precio = Request.Form["Precio"];
+            Global global = new Global();
 
+
+            string a = Application["Id"].ToString();
             String Nombre = Request.Form["Nombre"];
             String Estado = Request.Form["Estado"];
-            String Ponderado = Request.Form["Ponderado"];
-            String Duracion = Request.Form["Duracion"];
+            String NumeroCreditos = Request.Form["NumeroCreditos"];
+            String Vigencia = Request.Form["VigenciaAños"];
+            String Duracion = Request.Form["DuracionSemestre"];
+            String TitutloOtorgado = Request.Form["TituloOtorgado"];
 
             objProgramas.NombrePrograma = Nombre;
-            objProgramas.EstadoPrograma = Estado;
+            objProgramas.EstadoPrograma = ddEstado.SelectedValue;
             objProgramas.NivelAcademico = ddlNivelAcademico.SelectedValue;
             objProgramas.ReconocimientoMinisterio = ddlMinisterio.SelectedValue;
             objProgramas.IdNivelFormacion = int.Parse(ddlNivelFormacion.SelectedValue);
             objProgramas.IdMetodologia = int.Parse(ddlMetodologia.SelectedValue.ToString());
             objProgramas.IdAreaConocimiento = int.Parse(ddlArea.SelectedValue.ToString());
             objProgramas.Precio = float.Parse(Precio.ToString());
-            objProgramas.Ponderado = int.Parse(Ponderado.ToString());
-            objProgramas.Duracion = Duracion;
+            objProgramas.NumeroCreditos = NumeroCreditos;
+            objProgramas.VigenciaAños = Vigencia;
+            objProgramas.DuracionSemestre = Duracion;
+            objProgramas.TituloOtorgado = TitutloOtorgado;
+            
+            int x = objProgramas.mtdRegistrarCarreras();
 
-            objProgramas.mtdRegistrarCarreras();
+            if (x == 1)
+            {
+                objProgramas.mtdRegistrarRompe(a);
+            }
+           
+
 
 
         }

@@ -111,7 +111,7 @@
 								MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money
 								on boot camp when you can get the MCSE study materials yourself at a fraction.
 							</p>
-							<a href="#" class="primary-btn">View More</a>
+							<a href="RegistrarProgramas.aspx" class="primary-btn">View More</a>
 						</div>
 					</div>
 					<div class="single-post row">
@@ -165,7 +165,7 @@
 								MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money
 								on boot camp when you can get the MCSE study materials yourself at a fraction.
 							</p>
-							<a href="#" class="primary-btn">View More</a>
+							<a href="DGVProgramas.aspx" class="primary-btn">View More</a>
 						</div>
 					</div>
 					<div class="single-post row">

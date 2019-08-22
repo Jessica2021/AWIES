@@ -20,7 +20,7 @@ namespace WebAppAWIES
 
         protected void BtnInicio_Click(object sender, EventArgs e)
         {
-
+            
             string usu = Request.Form["correo"];
             string con = Request.Form["contraseña"];
 
@@ -34,12 +34,14 @@ namespace WebAppAWIES
             DataTable login = new DataTable();
             adapter.Fill(login);
 
+
             Application["Id"] = login.Rows[0][0].ToString();
             
+
             if (login.Rows.Count == 1)
             {
                 Response.Redirect  ("Index.aspx");
-               
+                
 
             }
             else

@@ -13,10 +13,21 @@ namespace WebAppAWIES
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            clProgramas objProgramas = new clProgramas();
+            Global global = new Global();
+            
+            
+            string a = Application["Id"].ToString();
 
+            DataSet dsDepartamento = new DataSet();
+            dsDepartamento = objProgramas.mtdListarProgramas(a);
+            gvProgramas.DataSource = dsDepartamento;
+            gvProgramas.DataBind();
         }
 
-     
+        protected void SqlDataSource2_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
 
+        }
     }
 }

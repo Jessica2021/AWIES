@@ -92,14 +92,14 @@
                             <h5>Nivel Academico</h5>
                             <br />
 							<ul>
-                                <asp:Button ID="btnPos" runat="server" Text="POSGRADO" class="genric-btn success-border medium"/>
-                                <asp:Button ID="btnPre" runat="server" Text="PREGRADO" class="genric-btn success-border medium"/>
+                                <asp:Button ID="btnPos" runat="server" Text="POSGRADO" class="genric-btn success-border medium" OnClick="btnPos_Click"/>
+                                <asp:Button ID="btnPre" runat="server" Text="PREGRADO" class="genric-btn success-border medium" OnClick="btnPre_Click"/>
                             </ul>
                             <h5>Metodologia</h5>
                             <ul>
-                                <asp:Button ID="btnDista" runat="server" Text="A DISTANCIA" class="genric-btn success-border medium"/>
-                                <asp:Button ID="btnPresen" runat="server" Text="PRESENCIAL" class="genric-btn success-border medium"/>
-                                <asp:Button ID="btnVirtu" runat="server" Text="VIRTUAL" class="genric-btn success-border medium"/>
+                                <asp:Button ID="btnDista" runat="server" Text="A DISTANCIA" class="genric-btn success-border medium" OnClick="btnDista_Click"/>
+                                <asp:Button ID="btnPresen" runat="server" Text="PRESENCIAL" class="genric-btn success-border medium" OnClick="btnPresen_Click"/>
+                                <asp:Button ID="btnVirtu" runat="server" Text="VIRTUAL" class="genric-btn success-border medium" OnClick="btnVirtu_Click"/>
 							</ul>
 						</div>
                         <div class="single-sidebar-widget post-category-widget">
@@ -107,31 +107,31 @@
 							<ul class="cat-list">
                                 
 								<li>
-                                    <asp:Button ID="btnAreaAgronomia" runat="server" Text="AGRONOMIA, VETERINARIA Y AFINES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnBuscUniver_Click" />
+                                    <asp:Button ID="btnAreaAgronomia" runat="server" Text="AGRONOMIA, VETERINARIA Y AFINES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaAgronomia_Click" />
 								</li>
 								<li>
-                                  <asp:Button ID="btnAreaBellas" runat="server" Text="BELLAS ARTES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnBuscTecno_Click" />
+                                  <asp:Button ID="btnAreaBellas" runat="server" Text="BELLAS ARTES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaBellas_Click" />
                                  </li>
 								<li>
-                                  <asp:Button ID="btnAreaCienEdu" runat="server" Text="CIENCIAS DE LA EDUCACION" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnBuscTecno_Click" />
+                                  <asp:Button ID="btnAreaCienEdu" runat="server" Text="CIENCIAS DE LA EDUCACION" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaCienEdu_Click" />
                                  </li>
                                 <li>
-                                  <asp:Button ID="btnAreaCienSal" runat="server" Text="CIENCIAS DE LA SALUD" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnBuscTecno_Click" />
+                                  <asp:Button ID="btnAreaCienSal" runat="server" Text="CIENCIAS DE LA SALUD" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaCienSal_Click" />
                                  </li>
                                 <li>
-                                  <asp:Button ID="btnAreaCienSoci" runat="server" Text="CIENCIAS SOCIALES, DERECHO, CIENCIAS POLITICAS" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnBuscTecno_Click" />
+                                  <asp:Button ID="btnAreaCienSoci" runat="server" Text="CIENCIAS SOCIALES, DERECHO, CIENCIAS POLITICAS" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaCienSoci_Click" />
                                  </li>
                                 <li>
-                                  <asp:Button ID="btnAreaCienEco" runat="server" Text="ECONOMIA, ADMINISTRACION, CONTADURIA Y AFINES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnBuscTecno_Click" />
+                                  <asp:Button ID="btnAreaCienEco" runat="server" Text="ECONOMIA, ADMINISTRACION, CONTADURIA Y AFINES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaCienEco_Click" />
                                  </li>
                                 <li>
-                                  <asp:Button ID="btnAreaCienHuma" runat="server" Text="HUMANIDADES Y CIENCIAS RELIGIOSAS" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnBuscTecno_Click" />
+                                  <asp:Button ID="btnAreaCienHuma" runat="server" Text="HUMANIDADES Y CIENCIAS RELIGIOSAS" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaCienHuma_Click" />
                                  </li>
                                 <li>
-                                  <asp:Button ID="btnAreaIngeni" runat="server" Text="INGENIERIA, ARQUITECTURA, URBANISMO Y AFINES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnBuscTecno_Click" />
+                                  <asp:Button ID="btnAreaIngeni" runat="server" Text="INGENIERIA, ARQUITECTURA, URBANISMO Y AFINES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaIngeni_Click" />
                                  </li>
                                 <li>
-                                  <asp:Button ID="btnAreaMate" runat="server" Text="MATEMATICAS Y CIENCIAS NATURALES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnBuscTecno_Click" />
+                                  <asp:Button ID="btnAreaMate" runat="server" Text="MATEMATICAS Y CIENCIAS NATURALES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaMate_Click" />
                                  </li>
 							
 							</ul>

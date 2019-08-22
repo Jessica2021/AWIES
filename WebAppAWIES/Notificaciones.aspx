@@ -20,6 +20,7 @@
                                     <br />
                                     <br />
                                     <asp:TextBox ID="TextBox1" runat="server" Height="16px" Width="16px"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox2" runat="server" Height="16px" Width="16px"></asp:TextBox>
                                     <br />
 				                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="IdUniversidades" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" style="width: 178px; height: 157px; position: absolute; left: 95px; top: 319px; right: 497px">
                                         <Columns>

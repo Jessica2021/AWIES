@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Services.Description;
@@ -37,13 +36,14 @@ namespace WebAppAWIES.Datos
 
         }
 
-        public DataSet mtdBuscarInstitucuines(string Instituto)
+        public int mtdTerminar(string id)
         {
-            string consulta =" select * from Universidades where NombreInstitucion LIKE '%"+ Instituto+"%'";
-            DataSet dsInstituto = new DataSet();
-            dsInstituto = objConexion.mtdDesconectado(consulta);
-            return dsInstituto;
+            
+            string consu = "update Universidades set Codigo = " + Codigo + ",PrincipalSeccional = '" + PrincipalSeccional + "' ,Sector = '" + Sector + "' ,Acreditada =  '" + Acreditada + "',IdMunicipio = " + IdMunicipio + " ,IdCaracterAcademico = " + IdCaracterAcademico + " where IdUniversidades = " + id + " ";
+
+            int res = objConexion.mtdConectado(consu);
+            return res;
+
         }
-        
     }
 }

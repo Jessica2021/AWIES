@@ -41,65 +41,47 @@
 						<div class="single-sidebar-widget post-category-widget">
 							<h4 class="category-title">Nivel de Formacion</h4>
 							<ul class="cat-list">
+                                
 								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Universitaria</p>
-										<p>37</p>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Tecnológica</p>
-										<p>24</p>
-									</a>
+                                    <asp:Button ID="btnBuscUniver" runat="server" Text="Universitaria" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numUniver" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
 								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Postdoctorado</p>
-										<p>59</p>
-									</a>
+                                  <asp:Button ID="btnBuscTecno" runat="server" Text="Tecnologica" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numTecno" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
+								  
+								</li>
+								<li>
+									<asp:Button ID="btnBuscPostd" runat="server" Text="Postdoctorado" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numPostd" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
                                 <li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Maestría</p>
-										<p>59</p>
-									</a>
+									<asp:Button ID="btnBuscMaest" runat="server" Text="Maestria" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numMaest" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
                                 <li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Formacion Tecnica Profecional</p>
-										<p>59</p>
-									</a>
+									<asp:Button ID="btnBuscTecProfe" runat="server" Text="Formacion Tecnica Profecional" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numTecProfe" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
                                 <li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Especializacion Universitaria</p>
-										<p>59</p>
-									</a>
+									<asp:Button ID="btnBuscEspUni" runat="server" Text="Especializacion Univercitaria" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numEspUni" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
                                 <li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Especializacion Tecnológica</p>
-										<p>59</p>
-									</a>
+									<asp:Button ID="btnBuscEspTecno" runat="server" Text="Especializacion Tecnologica" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numEspTecno" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
                                 <li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Especializacion Técnica Profecional</p>
-										<p>59</p>
-									</a>
+									<asp:Button ID="btnBuscEspProfe" runat="server" Text="Especializacion Tecnica Profecional" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numEspProfe" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
                                 <li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Especializacion Médico Quirúrgica</p>
-										<p>59</p>
-									</a>
+									<asp:Button ID="btnBuscEspMedic" runat="server" Text="Especializacion Medico Quirúrgica" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numEspMedic" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
                                 <li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Doctorado</p>
-										<p>59</p>
-									</a>
+									<asp:Button ID="btnBuscEspDocto" runat="server" Text="Doctorado" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" />
+                                    <asp:Label ID="numEspDocto" runat="server" Text="25" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
 							
 							</ul>
@@ -128,12 +110,9 @@
 					    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, Programas.Precio, Programas.Ponderado, Area.Area, Metodologia.Metodologia, NivelFormacion.NivelFormacion FROM Programas INNER JOIN Area ON Programas.IdAreaConocimiento = Area.IdArea INNER JOIN Metodologia ON Programas.IdMetodologia = Metodologia.IdMetodologia INNER JOIN NivelFormacion ON Programas.IdNivelFormacion = NivelFormacion.IdNivelFormacion"></asp:SqlDataSource>
 						
 					    <br />
+                        <br />
+                        <br />
                         <asp:GridView ID="GridView1" runat="server">
-                        </asp:GridView>
-                        <br />
-                        <br />
-                        <br />
-                        dd="server">
                         </asp:GridView>
                         <br />
                         dd</div>

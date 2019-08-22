@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Institucion.aspx.cs" Inherits="WebAppAWIES.Muro" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Institucion.aspx.cs" Inherits="WebAppAWIES.Institucion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 	
@@ -55,22 +55,27 @@
 						</div>
 				
 						<div class="single-sidebar-widget tag-cloud-widget">
-							<h4 class="tagcloud-title">Filtrar</h4>
-							<ul>
-								<li><a href="#">PRIVADO</a></li>
-								<li><a href="#">PUBLICO</a></li>
-								<li><a href="#">Food</a></li>
-								<li><a href="#">Technology</a></li>
-								<li><a href="#">Lifestyle</a></li>
-								<li><a href="#">Art</a></li>
-								<li><a href="#">Adventure</a></li>
-								<li><a href="#">Food</a></li>
-								<li><a href="#">Lifestyle</a></li>
-								<li><a href="#">Adventure</a></li>
-							</ul>
-						</div>
-					</div>
+							<h4 class="tagcloud-title">Filtrar Por Departamento</h4>
+                             <div class="mt-10">
+            <h5>Departamento</h5>
+                <div class="default-select" id="Departamento">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Departamento]"></asp:SqlDataSource>
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Departamento" DataValueField="IdDepartamento" AutoPostBack="True"></asp:DropDownList>
+                </div>
+            </div>
+							<div class="mt-10">
+            <h5>Municipio</h5>
+                <div class="default-select" id="Municipio">
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Municipio] WHERE ([IdDepartamento] = @IdDepartamento)">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="DropDownList1" DefaultValue="" Name="IdDepartamento" PropertyName="SelectedValue" Type="Int32" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                    <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="Municipio" DataValueField="IdMunicipio" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged"></asp:DropDownList>  
+                </div>
+            </div></div>
 				</div>
+                    </div>
 				<div class="col-lg-8 posts-list">
 					<div class="single-post row">
 

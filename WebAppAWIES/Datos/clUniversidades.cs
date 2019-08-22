@@ -76,5 +76,13 @@ namespace WebAppAWIES.Datos
             dsInstituto = objConexion.mtdDesconectado(consulta);
             return dsInstituto;
         }
+
+        public DataSet mtdBusquedaMunicipio(int a)
+        {
+            string consulta = " select Universidades.Codigo, Universidades.PrincipalSeccional,Universidades.NombreInstitucion, Universidades.Sector, CaracterAcademico.CaracterAcademico , Departamento.Departamento, Municipio.Municipio, Universidades.Acreditada from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento) where Municipio.IdMunicipio = '"+a+"'";
+            DataSet dsInstituto = new DataSet();
+            dsInstituto = objConexion.mtdDesconectado(consulta);
+            return dsInstituto;
+        }
     }
 }

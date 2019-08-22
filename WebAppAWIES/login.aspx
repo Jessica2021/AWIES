@@ -109,7 +109,7 @@
 							
 						  
                            
-                                <asp:Button ID="Btn" runat="server" Text="Inicio Sesion"  class="genric-btn success" type="submit"  OnClick="BtnInicio_Click" Height="41px" Width="133px" />
+                                <asp:Button ID="Btn" runat="server" Text="Inicio Sesion" class="genric-btn success" type="submit" OnClick="BtnInicio_Click" Height="41px" Width="133px" />
                            
 							
                            

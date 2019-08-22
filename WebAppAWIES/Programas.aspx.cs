@@ -26,8 +26,10 @@ namespace WebAppAWIES
         {
 
             mtdBuscar();
+            
         }
         public void mtdBuscar()
+
         {
             string programa = txbBuscar.Text;
             DataSet dsProgrma = new DataSet();

@@ -78,7 +78,8 @@
 				<div class="col-lg-8 posts-list">
 					<div class="single-post row">
 
-                        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                        <asp:GridView ID="GridView1" runat="server">
+                        </asp:GridView>
 						
 					</div>
 					

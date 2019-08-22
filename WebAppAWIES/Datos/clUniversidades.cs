@@ -39,7 +39,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdBuscarInstitucuines(string Instituto)
         {
-            string consulta =" select * from Universidades where NombreInstitucion LIKE '%"+ Instituto+"%'";
+            string consulta = " select Universidades.Codigo ,  Universidades.PrincipalSeccional, Universidades.Sector, Universidades.NombreInstitucion, CaracterAcademico.CaracterAcademico,  Departamento.Departamento, Municipio.Municipio, Universidades.Acreditada from Universidades inner join CaracterAcademico on (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio ) inner join Departamento on (Departamento.IdDepartamento = Municipio.IdDepartamento) where NombreInstitucion LIKE '%" + Instituto+"%'";
             DataSet dsInstituto = new DataSet();
             dsInstituto = objConexion.mtdDesconectado(consulta);
             return dsInstituto;

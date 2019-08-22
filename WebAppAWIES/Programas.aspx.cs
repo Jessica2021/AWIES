@@ -359,7 +359,7 @@ namespace WebAppAWIES
 
         protected void btnAreaCienEco_Click(object sender, EventArgs e)
         {
-            mtdAreaCienEco
+            mtdAreaCienEco();
         }
 
         public void mtdAreaCienHuma()

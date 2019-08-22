@@ -1,4 +1,5 @@
-﻿
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EnvioSolicitud.aspx.cs" Inherits="WebAppAWIES.EnvioSolicitud" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -95,10 +96,8 @@
 							</div>
 
 							<br />
-							
-						    <button  class="genric-btn success" type="submit">
-                            Enviar Solicitud
-                            </button>
+                            <asp:Button ID="Button1" runat="server" Text="Enviar Solicitud" class="genric-btn success" Height="39px" OnClick="Button1_Click"/>
+						    
                             <a href="Index.aspx" class="genric-btn info">Volver</a>
 						</form>
                     </div>

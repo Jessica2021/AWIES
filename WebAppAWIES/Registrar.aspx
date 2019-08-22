@@ -80,7 +80,8 @@
                     <asp:TextBox ID="TextBox1" runat="server" type="text" name="Codigo" placeholder="Codigo" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Codigo'"  class="single-input-primary"></asp:TextBox>
 		        </div>
             <div class="mt-10">
-            <h5>Principal/Seccional</h5>
+            <h5>Principal/Seccional<asp:Label ID="Label1" runat="server"></asp:Label>
+                </h5>
                 <div class="default-select" id="default-select">
 			        
                         <asp:DropDownList ID="DropDownList4" runat="server">

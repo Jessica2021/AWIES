@@ -20,13 +20,13 @@ namespace WebAppAWIES
 
         protected void BtnInicio_Click(object sender, EventArgs e)
         {
-            
+
             string usu = Request.Form["correo"];
             string con = Request.Form["contraseña"];
 
 
             objConexion.Open();
-            string query = "select IdUniversidades, Correo,Contraseña from Universidades where Correo = @usuario and Contraseña = @password";
+            string query = "select IdUniversidades, Correo,Contraseña,Codigo,EstadoSolicitud from Universidades where Correo = @usuario and Contraseña = @password";
             SqlCommand cm = new SqlCommand(query, objConexion);
             cm.Parameters.AddWithValue("@usuario", usu);
             cm.Parameters.AddWithValue("@password", con);
@@ -34,14 +34,22 @@ namespace WebAppAWIES
             DataTable login = new DataTable();
             adapter.Fill(login);
 
-
-            Application["Id"] = login.Rows[0][0].ToString();
             
-
+            
             if (login.Rows.Count == 1)
             {
-                Response.Redirect  ("Index.aspx");
                 
+                if (login.Rows[0][3].ToString() == "" && login.Rows[0][4].ToString() == "Aprobado")
+                {
+                    Application["Id"] = login.Rows[0][0].ToString();
+                    Response.Redirect("Registrar.aspx");
+                    
+                }
+                else if (login.Rows[0][3].ToString() != "" && login.Rows[0][4].ToString() == "Aprobado")
+                {
+                    Application["Id"] = login.Rows[0][0].ToString();
+                    Response.Redirect("Index.aspx");
+                }
 
             }
             else

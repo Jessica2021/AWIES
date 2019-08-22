@@ -13,5 +13,11 @@ namespace WebAppAWIES
         {
 
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            int tam = fuploadImagen.PostedFile.ContentLength;
+            byte[] ImagenOriginal = new byte[tam];
+        }
     }
 }

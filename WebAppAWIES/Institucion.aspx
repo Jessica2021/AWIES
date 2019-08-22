@@ -37,22 +37,18 @@
 							<h4 class="category-title">Caracter Academico</h4>
 							<ul class="cat-list">
 								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Carreras Universitarias</p>
-										<p>37</p>
-									</a>
+									
+                                    <asp:Button ID="btnBuscUniver" runat="server"  class="d-flex justify-content-between" Text="Carreras Universitarias"  BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnBuscUniver_Click" />
+                                    <asp:Label ID="numUniver" runat="server" Text="37" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
+								</li>
+								
+								<li>
+									 <asp:Button ID="btnBucTec" runat="server"  class="d-flex justify-content-between" Text="Tecnicos"  BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnBuscTecn_Click" />
+                                    <asp:Label ID="Label1" runat="server" Text="24" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
 								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Tecnicos</p>
-										<p>24</p>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="d-flex justify-content-between">
-										<p>Tecnologos</p>
-										<p>59</p>
-									</a>
+									 <asp:Button ID="BtmBusTecn" runat="server"  class="d-flex justify-content-between" Text="Tecnologos"  BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnBuscTecnolo_Click" />
+                                    <asp:Label ID="Label2" runat="server" Text="59" class="d-flex justify-content-between" CssClass="auto-style1"></asp:Label>
 								</li>
 							
 							</ul>

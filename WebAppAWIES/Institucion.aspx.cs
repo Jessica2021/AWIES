@@ -29,5 +29,30 @@ namespace WebAppAWIES
         {
             mtdBuscar();
         }
+
+        protected void btnBuscUniver_Click(object sender, EventArgs e)
+        {
+            DataSet dsUniversidad = new DataSet();
+            dsUniversidad = Universidad.mtdBusquedaUniversidades();
+            GridView1.DataSource = dsUniversidad.Tables[0];
+            GridView1.DataBind();
+        }
+
+        protected void btnBuscTecn_Click(object sender, EventArgs e)
+        {
+            DataSet dsTecnico = new DataSet();
+            dsTecnico = Universidad.mtdBusquedaTecnica();
+            GridView1.DataSource = dsTecnico.Tables[0];
+            GridView1.DataBind();
+        }
+
+        protected void btnBuscTecnolo_Click(object sender, EventArgs e)
+        {
+            DataSet dsTecnologo = new DataSet();
+            dsTecnologo = Universidad.mtdBusquedaTecnologica();
+            GridView1.DataSource = dsTecnologo.Tables[0];
+            GridView1.DataBind();
+
+        }
     }
 }

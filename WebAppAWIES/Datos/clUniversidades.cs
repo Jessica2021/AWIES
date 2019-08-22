@@ -53,5 +53,28 @@ namespace WebAppAWIES.Datos
             dsInstituto = objConexion.mtdDesconectado(consulta);
             return dsInstituto;
         }
+
+        public DataSet mtdBusquedaUniversidades()
+        {
+            string consulta = " select Universidades.Codigo, Universidades.PrincipalSeccional,Universidades.NombreInstitucion, Universidades.Sector, CaracterAcademico.CaracterAcademico , Departamento.Departamento, Municipio.Municipio, Universidades.Acreditada from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento) where CaracterAcademico.IdCaracterAcademico = 4";
+            DataSet dsInstituto = new DataSet();
+            dsInstituto = objConexion.mtdDesconectado(consulta);
+            return dsInstituto;
+        }
+
+        public DataSet mtdBusquedaTecnica()
+        {
+            string consulta = " select Universidades.Codigo, Universidades.PrincipalSeccional,Universidades.NombreInstitucion, Universidades.Sector, CaracterAcademico.CaracterAcademico , Departamento.Departamento, Municipio.Municipio, Universidades.Acreditada from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento) where CaracterAcademico.IdCaracterAcademico = 1";
+            DataSet dsInstituto = new DataSet();
+            dsInstituto = objConexion.mtdDesconectado(consulta);
+            return dsInstituto;
+        }
+        public DataSet mtdBusquedaTecnologica()
+        {
+            string consulta = " select Universidades.Codigo, Universidades.PrincipalSeccional,Universidades.NombreInstitucion, Universidades.Sector, CaracterAcademico.CaracterAcademico , Departamento.Departamento, Municipio.Municipio, Universidades.Acreditada from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento) where CaracterAcademico.IdCaracterAcademico = 2";
+            DataSet dsInstituto = new DataSet();
+            dsInstituto = objConexion.mtdDesconectado(consulta);
+            return dsInstituto;
+        }
     }
 }

@@ -9,7 +9,7 @@ using WebAppAWIES.Datos;
 
 namespace WebAppAWIES
 {
-    public partial class Muro : System.Web.UI.Page
+    public partial class Institucion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -50,6 +50,15 @@ namespace WebAppAWIES
         {
             DataSet dsTecnologo = new DataSet();
             dsTecnologo = Universidad.mtdBusquedaTecnologica();
+            GridView1.DataSource = dsTecnologo.Tables[0];
+            GridView1.DataBind();
+
+        }
+
+        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataSet dsTecnologo = new DataSet();
+            dsTecnologo = Universidad.mtdBusquedaMunicipio(int.Parse(DropDownList2.SelectedValue.ToString()));
             GridView1.DataSource = dsTecnologo.Tables[0];
             GridView1.DataBind();
 

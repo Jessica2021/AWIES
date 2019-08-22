@@ -12,6 +12,13 @@ namespace WebAppAWIES
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
             clUniversidades objUniversidades = new clUniversidades();
             String Correo = Request.Form["correo"];
             String Contraseña = Request.Form["contraseña"];
@@ -26,16 +33,9 @@ namespace WebAppAWIES
                 int result = objUniversidades.mtdRegistrar();
                 if (result == 1)
                 {
-                    Response.Redirect("EnvioSolicitud.aspx");
+                    Response.Redirect("Index.aspx");
                 }
             }
-            
-
-
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
 
         }
     }

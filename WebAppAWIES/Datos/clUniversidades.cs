@@ -35,6 +35,15 @@ namespace WebAppAWIES.Datos
             return res;
 
         }
-        
+
+        public int mtdTerminar(string id)
+        {
+            
+            string consu = "update Universidades set Codigo = " + Codigo + ",PrincipalSeccional = '" + PrincipalSeccional + "' ,Sector = '" + Sector + "' ,Acreditada =  '" + Acreditada + "',IdMunicipio = " + IdMunicipio + " ,IdCaracterAcademico = " + IdCaracterAcademico + " where IdUniversidades = " + id + " ";
+
+            int res = objConexion.mtdConectado(consu);
+            return res;
+
+        }
     }
 }

@@ -60,7 +60,8 @@
             <h5>Departamento</h5>
                 <div class="default-select" id="Departamento">
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Departamento]"></asp:SqlDataSource>
-                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Departamento" DataValueField="IdDepartamento" AutoPostBack="True"></asp:DropDownList>
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Departamento" DataValueField="IdDepartamento" AutoPostBack="True">
+                    </asp:DropDownList>
                 </div>
             </div>
 							<div class="mt-10">
@@ -71,14 +72,16 @@
                             <asp:ControlParameter ControlID="DropDownList1" DefaultValue="" Name="IdDepartamento" PropertyName="SelectedValue" Type="Int32" />
                         </SelectParameters>
                     </asp:SqlDataSource>
-                    <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="Municipio" DataValueField="IdMunicipio" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged"></asp:DropDownList>  
+                    <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="Municipio" DataValueField="IdMunicipio" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+                           
+                    </asp:DropDownList>  
                 </div>
             </div></div>
 				</div>
                     </div>
 				<div class="col-lg-8 posts-list">
 					<div class="single-post row">
-
+                        <asp:Label ID="mensaje" runat="server" Text="No se encontraron resultados!!!" Font-Size="Large" ForeColor="#000099" Visible="False"></asp:Label>
                         <asp:GridView ID="GridView1" runat="server">
                         </asp:GridView>
 						

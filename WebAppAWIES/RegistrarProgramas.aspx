@@ -47,11 +47,22 @@
             border-radius: 11px 11px 11px 11px;
             background-color:#C1ECFA ;
         }
-        #Estado{
-            margin-left:20px;
-            margin-top:10px;
+        #imgs{
+            text-align:center;
         }
+            .auto-style1 {
+                position: relative;
+                width: 100%;
+                min-height: 1px;
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+                text-align: center;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
     </style>
+
 
 </head>
 
@@ -61,20 +72,26 @@
 
 	<!-- Start Align Area -->
     
-	<form id="form1" runat="server">
-       
+	 <form id="form1" runat="server">
+        <div>
              <div class="section-top-border">
-                 
-				<div class="row">
+                 <div class="row">
                     <div class="col-md-4">
                         </div>
-					<div  id="cont" class="col-md-4">
-					<div  class="widget-wrap">
+					<div id="cont" class="auto-style1">
+                    
+					<div class="widget-wrap">
                         <div id="imgs">
                             <img src="img/logo.png"  alt="" width="200px" height="100px" title="" />
                         </div>
+						
 						<div class="single-sidebar-widget user-info-widget">
-            <h3 class="mb-30">Agregar Programas Academicos</h3>
+							
+							<h3 class="mb-30">Agregar Programas Academicos</h3>
+
+						<form class="form-horizontal form-label-left" method="post" action="EnvioSolicitud.aspx.cs" novalidate>
+                            
+
                 <div class="mt-10">
                      <h5>Nombre del Programa</h5>
 			        <input type="text" name="Nombre" placeholder="Nombre" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Nombre'"
@@ -82,7 +99,7 @@
 		        </div>
                             <div class="mt-10">
             <h5>Estado</h5>
-                <div class="default-select" id="Estado" name ="Estado">
+                <div class="default-select" id="default-select" name ="Estado">
 			        &nbsp;<asp:DropDownList ID="ddEstado" runat="server">
                         <asp:ListItem>Activo</asp:ListItem>
                         <asp:ListItem>Inactivo</asp:ListItem>
@@ -168,32 +185,42 @@
 		        </div>
               <div class="mt-10">
                      <h5>Vigencia (Por años)</h5>
-			        <input type="text" name="VigenciaAños" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
+			        <input type="text" name="VigenciaAños" placeholder="00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00'"
 				        required class="single-input-primary">
 		        </div>
                     
                  <div class="mt-10">
                      <h5>Duracion(Por semestres)</h5>
-			        <input type="text" name="DuracionSemestre" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
+			        <input type="text" name="DuracionSemestre" placeholder="0000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '0000'"
 				        required class="single-input-primary">
 		        </div>
                         
                  <div class="mt-10">
                      <h5>Titulo Otorgado</h5>
-			        <input type="text" name="TituloOtorgado" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
+			        <input type="text" name="TituloOtorgado" placeholder="Ingeniero en..." onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Ingeniero en...'"
 				        required class="single-input-primary">
 		        </div>
             <br />
-            <asp:Button ID="Button1" runat="server" Text="Registrar" class="genric-btn success" Height="40px" OnClick="Button1_Click"  />
+            <asp:Button ID="Button1" runat="server" Text="Registrar" class="genric-btn success" Height="41px" OnClick="Button1_Click"  />
             <a href="Index.aspx" class="genric-btn info">Inicio</a>
-				
             </div>
+            <div class="mt-10">
+                            <asp:Label ID="lblCorrecto" runat="server" Text="El programa se a Registrado Correctamente" BackColor="#99CCFF" BorderColor="#000099" BorderStyle="Solid" BorderWidth="1px" ForeColor="#000099" Height="25px" Width="300px" Visible="False"></asp:Label>
+				        </div>
+
+                        <div class="mt-10">
+                            <asp:Label ID="lblError" runat="server" Text="Error: No se pudo registrar" BackColor="#E18C8C" BorderColor="#CC0000" BorderStyle="Solid" BorderWidth="1px" ForeColor="Maroon" Height="25px" Width="268px" Visible="False"></asp:Label>
+				        </div>
+           </form>
+                    </div>
+                </div>
+             </div>
             <div class="col-md-4">
             </div>
-            
-					</div>
-					</form>
-					</div>
+        </div>
+    </div>
+        </div>
+    </form>
 
 		
 	<!-- End Align Area -->

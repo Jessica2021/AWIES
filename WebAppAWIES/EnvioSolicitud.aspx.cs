@@ -33,9 +33,16 @@ namespace WebAppAWIES
                 int result = objUniversidades.mtdRegistrar();
                 if (result == 1)
                 {
-                    Response.Redirect("Index.aspx");
+                    lblCorrecto.Visible = true;
+                    lblError.Visible = false;
                 }
             }
+            else
+            {
+                lblCorrecto.Visible = false;
+                lblError.Visible = true;
+            }
+
 
         }
     }

@@ -52,7 +52,16 @@ namespace WebAppAWIES
             if (x == 1)
             {
                 objProgramas.mtdRegistrarRompe(a);
+
+                lblCorrecto.Visible = true;
+                lblError.Visible = false;
             }
+            else
+            {
+                lblCorrecto.Visible = false;
+                lblError.Visible = true;
+            }
+
            
 
 

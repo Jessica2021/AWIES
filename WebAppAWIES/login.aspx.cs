@@ -54,7 +54,7 @@ namespace WebAppAWIES
             }
             else
             {
-                LblError.Text = " DATOS INCORRECTOS";
+                LblError.Text = "Usuario y/o Contraseña incorrectos";
             }
             objConexion.Close();
 

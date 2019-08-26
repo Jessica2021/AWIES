@@ -44,11 +44,14 @@ namespace WebAppAWIES
 
             if (x == 1)
             {
-                Response.Redirect("Index.aspx");
+                Response.Redirect("IndexInstitucion.aspx");
+                lblError.Visible = false;
             }
             else
             {
                 Response.Redirect("Registrar.aspx");
+
+                lblError.Visible = true;
             }
         }
     }

@@ -22,7 +22,8 @@
                                     <asp:TextBox ID="TextBox1" runat="server" Height="16px" Width="16px"></asp:TextBox>
                                     <asp:TextBox ID="TextBox2" runat="server" Height="16px" Width="16px"></asp:TextBox>
                                     <br />
-				                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="IdUniversidades" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" style="width: 178px; height: 157px; position: absolute; left: 95px; top: 319px; right: 497px">
+				                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="IdUniversidades" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" style="width: 178px; height: 157px; position: absolute; left: 95px; top: 319px; right: 497px" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Horizontal">
+                                        <AlternatingRowStyle BackColor="#F7F7F7" />
                                         <Columns>
                                             <asp:CommandField ShowSelectButton="True" />
                                             <asp:BoundField DataField="IdUniversidades" HeaderText="IdUniversidades" SortExpression="IdUniversidades" InsertVisible="False" ReadOnly="True" />
@@ -32,6 +33,15 @@
                                             <asp:BoundField DataField="Nit" HeaderText="Nit" SortExpression="Nit" />
                                             <asp:BoundField DataField="EstadoSolicitud" HeaderText="EstadoSolicitud" SortExpression="EstadoSolicitud" />
                                         </Columns>
+                                        <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
+                                        <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
+                                        <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
+                                        <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
+                                        <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
+                                        <SortedAscendingCellStyle BackColor="#F4F4FD" />
+                                        <SortedAscendingHeaderStyle BackColor="#5A4C9D" />
+                                        <SortedDescendingCellStyle BackColor="#D8D8F0" />
+                                        <SortedDescendingHeaderStyle BackColor="#3E3277" />
                                     </asp:GridView>
                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [IdUniversidades], [NombreInstitucion], [Correo], [Contraseña], [Nit], [EstadoSolicitud] FROM [Universidades] WHERE ([EstadoSolicitud] IS NULL)" DeleteCommand="DELETE FROM [Universidades] WHERE [IdUniversidades] = @IdUniversidades" InsertCommand="INSERT INTO [Universidades] ([NombreInstitucion], [Correo], [Contraseña], [Nit], [EstadoSolicitud]) VALUES (@NombreInstitucion, @Correo, @Contraseña, @Nit, @EstadoSolicitud)" UpdateCommand="UPDATE Universidades SET EstadoSolicitud = @EstadoSolicitud WHERE (IdUniversidades = @IdUniversidades)">
                                         <DeleteParameters>

@@ -28,7 +28,7 @@ namespace WebAppAWIES
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlDataSource1.Update();
-            
+
             MailMessage email = new MailMessage();
             email.To.Add(new MailAddress(TextBox2.Text));
             email.From = new MailAddress("juansebastiandarkblak@gmail.com");
@@ -62,8 +62,20 @@ namespace WebAppAWIES
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            SqlDataSource1.Delete();
-            GridView1.DataBind();
+            try
+            {
+                SqlDataSource1.Delete();
+                GridView1.DataBind();
+
+                lblError.Visible = false;
+            }
+            catch (Exception)
+            {
+
+                lblError.Visible = true;
+            }
+           
+
         }
     }
 }

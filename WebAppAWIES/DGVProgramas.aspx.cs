@@ -19,10 +19,19 @@ namespace WebAppAWIES
             
             string a = Application["Id"].ToString();
 
-            DataSet dsDepartamento = new DataSet();
-            dsDepartamento = objProgramas.mtdListarProgramas(a);
-            gvProgramas.DataSource = dsDepartamento;
-            gvProgramas.DataBind();
+            try
+            {
+                DataSet dsDepartamento = new DataSet();
+                dsDepartamento = objProgramas.mtdListarProgramas(a);
+                gvProgramas.DataSource = dsDepartamento;
+                gvProgramas.DataBind();
+            }
+            catch (Exception)
+            {
+                
+            }
+
+            
         }
 
         protected void SqlDataSource2_Selecting(object sender, SqlDataSourceSelectingEventArgs e)

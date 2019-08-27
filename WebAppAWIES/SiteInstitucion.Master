@@ -46,6 +46,10 @@
        #conten{c
            position:relative;
        }
+        .auto-style1 {
+            margin-top: 0;
+            font-size: medium;
+        }
     </style>
 </head>
 <body>
@@ -74,7 +78,7 @@
 						</ul>
 						<ul>
 							<li>
-                                <asp:Button ID="BtmCerrar" runat="server" Text="Cerrar Sesión" BackColor="White" BorderColor="White" BorderStyle="None" CssClass="mt-0" Height="16px" OnClick="BtmCerrar_Click" Width="123px" />
+                                <asp:Button ID="BtmCerrar" runat="server" Text="Cerrar Sesión" BackColor="White" BorderColor="White" BorderStyle="None" CssClass="auto-style1" Height="42px" OnClick="BtmCerrar_Click" Width="145px" />
 							</li>
 						</ul>
 					</div>

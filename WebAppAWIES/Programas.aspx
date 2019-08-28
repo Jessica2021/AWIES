@@ -132,7 +132,7 @@
                                  </li>
                                 <li>
                                   <asp:Button ID="btnAreaMate" runat="server" Text="MATEMATICAS Y CIENCIAS NATURALES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaMate_Click" />
-                                 </li>
+                                    1</li>
 							
 							</ul>
 						</div>

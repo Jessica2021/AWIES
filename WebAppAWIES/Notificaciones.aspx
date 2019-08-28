@@ -29,12 +29,12 @@
                                         <AlternatingRowStyle BackColor="#F7F7F7" />
                                         <Columns>
                                             <asp:CommandField ShowSelectButton="True" />
-                                            <asp:BoundField DataField="IdUniversidades" HeaderText="IdUniversidades" SortExpression="IdUniversidades" InsertVisible="False" ReadOnly="True" Visible="False" />
+                                            <asp:BoundField DataField="IdUniversidades" HeaderText="IdUniversidades" SortExpression="IdUniversidades" InsertVisible="False" ReadOnly="True" />
                                             <asp:BoundField DataField="NombreInstitucion" HeaderText="NombreInstitucion" SortExpression="NombreInstitucion" />
                                             <asp:BoundField DataField="Correo" HeaderText="Correo" SortExpression="Correo" />
                                             <asp:BoundField DataField="Contraseña" HeaderText="Contraseña" SortExpression="Contraseña" />
                                             <asp:BoundField DataField="Nit" HeaderText="Nit" SortExpression="Nit" />
-                                            <asp:BoundField DataField="EstadoSolicitud" HeaderText="EstadoSolicitud" SortExpression="EstadoSolicitud" />
+                                            <asp:BoundField DataField="EstadoSolicitud" HeaderText="EstadoSolicitud" SortExpression="EstadoSolicitud" Visible="False" />
                                         </Columns>
                                         <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
                                         <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />

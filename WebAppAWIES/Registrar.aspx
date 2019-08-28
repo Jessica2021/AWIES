@@ -72,7 +72,7 @@
 
 	<!-- Start Align Area -->
  <form id="form1" runat="server">
-        <div>
+        
              <div class="section-top-border">
                  <div class="row">
                     <div class="col-md-4">
@@ -87,8 +87,6 @@
 						<div class="single-sidebar-widget user-info-widget">
 							
 							<h3 class="mb-30">Registrar</h3>
-
-						<form class="form-horizontal form-label-left" method="post" action="EnvioSolicitud.aspx.cs" novalidate>
                             <div class="mt-10">
                      <h5>Codigo de Institucion</h5>
                     <asp:TextBox ID="TextBox1" runat="server" type="text" name="Codigo" placeholder="Codigo" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Codigo'"  class="single-input-primary"></asp:TextBox>
@@ -169,16 +167,13 @@
                         <div class="mt-10">
                             <asp:Label ID="lblError" runat="server" Text="Error: Hubo un error con el Registro" BackColor="#E18C8C" BorderColor="#CC0000" BorderStyle="Solid" BorderWidth="1px" ForeColor="Maroon" Height="25px" Width="268px" Visible="False"></asp:Label>
 				        </div>
-           </form>
-                    </div>
-                </div>
-             </div>
-            <div class="col-md-4">
+
+                        </div>
+                         <div class="col-md-4">
             </div>
-        </div>
-    </div>
-        </div>
-    </form>
+           </form>
+    
+                   
 	<!-- End Align Area -->
 
 	

@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteInstitucion.Master" AutoEventWireup="true" CodeBehind="DGVProgramas.aspx.cs" Inherits="WebAppAWIES.Formulario_web12" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    &nbsp;
+   
+    <a href="RegistrarProgramas.aspx" class="genric-btn success circle arrow">Registrar Programa<span class="lnr lnr-arrow-right"></span></a>
+
     <asp:GridView ID="gvProgramas" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
         <AlternatingRowStyle BackColor="#DCDCDC" />
         <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
@@ -13,4 +15,6 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#000065" />
     </asp:GridView>
+
+
 </asp:Content>

@@ -22,6 +22,12 @@ namespace WebAppAWIES.Datos
         public string VigenciaAños { get; set; }
         public string DuracionSemestre { get; set; }
         public string TituloOtorgado { get; set; }
+        public int PrimerPrueba { get; set; }
+        public int UltimaPrueba { get; set; }
+        public int PrimerPonderado { get; set; }
+        public int UltimoPonderado { get; set; }
+        public int PrimerIcfes { get; set; }
+        public int UltimoIcfes { get; set; }
        
 
         clConexion objConexion = new clConexion();
@@ -29,8 +35,8 @@ namespace WebAppAWIES.Datos
         public int mtdRegistrarCarreras()
         {
 
-            string consulta = "insert into Programas (NombrePrograma, EstadoPrograma, NivelAcademico, ReconocimientoMinisterio, IdNivelFormacion, IdMetodologia, IdAreaConocimiento, Precio, NumeroCreditos, VigenciaAños, DuracionSemestre, TituloOtorgado)" +
-            "values ('" + NombrePrograma + "', '" + EstadoPrograma + "', '" + NivelAcademico + "', '" + ReconocimientoMinisterio + "', " + IdNivelFormacion + ", " + IdMetodologia + ", " + IdAreaConocimiento + ",'" + Precio + "', '" + NumeroCreditos + "', '"+ VigenciaAños +"', '"+ DuracionSemestre +"', '"+ TituloOtorgado + "' ) ";
+            string consulta = "insert into Programas (NombrePrograma, EstadoPrograma, NivelAcademico, ReconocimientoMinisterio, IdNivelFormacion, IdMetodologia, IdAreaConocimiento, Precio, NumeroCreditos, VigenciaAños, DuracionSemestre, TituloOtorgado, PrimerPrueba, UltimaPrueba, PrimerPonderado, UltimoPonderado, PrimerIcfes, UltimoIcfes)" +
+            "values ('" + NombrePrograma + "', '" + EstadoPrograma + "', '" + NivelAcademico + "', '" + ReconocimientoMinisterio + "', " + IdNivelFormacion + ", " + IdMetodologia + ", " + IdAreaConocimiento + ",'" + Precio + "', '" + NumeroCreditos + "', '"+ VigenciaAños +"', '"+ DuracionSemestre +"', '"+ TituloOtorgado + "', '"+ PrimerPrueba +"', '"+ UltimaPrueba +"', '"+ PrimerPonderado +"' , '"+ UltimoPonderado +"', '"+ PrimerIcfes +"' , '"+ UltimoIcfes +"'  ) ";
 
             int res = objConexion.mtdConectado(consulta);
 
@@ -50,7 +56,8 @@ namespace WebAppAWIES.Datos
 
         public int mtdEditarCarreras()
         {
-            string consulta = "update Programas set NombrePrograma = '" + NombrePrograma + "',EstadoPrograma = '" + EstadoPrograma + "' ,NivelAcademico = '" + NivelAcademico + "' ,ReconocimientoMinisterio = '" + ReconocimientoMinisterio + "' ,IdNivelFormacion  =  '" + IdNivelFormacion + "',IdMetodologia = '" + IdMetodologia + "',IdAreaConocimiento = '" + IdAreaConocimiento + "',Precio = '" + Precio + "',NumeroCreditos '" + NumeroCreditos + "',VigenciaAños = '" + VigenciaAños +"', DuracionSemestre = '"+ DuracionSemestre + "',TituloOtorgado = ' "+ TituloOtorgado +"' where IdProgramas = '" + IdProgramas + "' ";
+            string consulta = "update Programas set NombrePrograma = '" + NombrePrograma + "',EstadoPrograma = '" + EstadoPrograma + "' ,NivelAcademico = '" + NivelAcademico + "' ,ReconocimientoMinisterio = '" + ReconocimientoMinisterio + "' ,IdNivelFormacion  =  '" + IdNivelFormacion + "',IdMetodologia = '" + IdMetodologia + "',IdAreaConocimiento = '" + IdAreaConocimiento + "',Precio = '" + Precio + "',NumeroCreditos '" + NumeroCreditos + "',VigenciaAños = '" + VigenciaAños +"', DuracionSemestre = '"+ DuracionSemestre + "',TituloOtorgado = ' "+ TituloOtorgado +"' ,PrimerPrueba = '"+ PrimerPrueba +"' ,UltimaPrueba = '"+ UltimaPrueba +"' ,PrimerPonderado = '"+ PrimerPonderado +"',UltimoPonderado = '"+ UltimoPonderado +"',PrimerIcfes = '"+ PrimerIcfes +"',UltimoIcfes = '"+ UltimoIcfes +"'" +
+                " where IdProgramas = '" + IdProgramas + "' ";
             int res = objConexion.mtdConectado(consulta);
             return res;
         }

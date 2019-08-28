@@ -3,6 +3,15 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+    <script language="C#" runat="server">
+        public void m(object sender, EventArgs e)
+        {
+            registrarprogramas_aspx obj = new registrarprogramas_aspx();
+            obj.x();
+        }
+
+
+</script>
 <head>
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -308,9 +317,9 @@ border-radius: 11px 11px 11px 11px;
        			
 		        <h3 id="tit">Tipo de Admicion de Estudiantes</h3>
 
-        <button class="tablink" onclick="openPage('puntaje', this, '#006C90')">Icfes</button>
-        <button class="tablink" onclick="openPage('puntaje', this, '#008BB9')" id="defaultOpen">Ponderado</button>
-        <button class="tablink" onclick="openPage('puntaje', this, '#00B4F0')">Prueba</button>
+        <button runat="server" onserverclick="m"  class="tablink" name="Icfes" onclick="openPage('puntaje', this, '#006C90') " >Icfes</button>
+        <button class="tablink" name="Ponderado" onclick="openPage('puntaje', this, '#008BB9')" id="defaultOpen">Ponderado</button>
+        <button class="tablink" name="Prueba" onclick="openPage('puntaje', this, '#00B4F0')">Prueba</button>
         
         <div id="puntaje" class="tabcontent">
              <br />
@@ -318,7 +327,7 @@ border-radius: 11px 11px 11px 11px;
          
         <div class="mt-10">
                      <h5>Primero</h5>
-			        <input type="text" name="puntajeP" placeholder="000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '000'"
+			        <input type="text"  name="puntajeP" placeholder="000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '000'"
 				        required class="single-input-primary">
 		        </div>
                 <div class="mt-10">

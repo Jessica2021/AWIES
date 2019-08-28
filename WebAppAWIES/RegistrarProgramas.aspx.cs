@@ -17,11 +17,15 @@ namespace WebAppAWIES
             
             
         }
-        
 
+        public void x()
+        {
+            objProgramas.TipoIngreso = "icfes";
+        }
+        clProgramas objProgramas = new clProgramas();
         protected void Button1_Click(object sender, EventArgs e)
         {
-            clProgramas objProgramas = new clProgramas();
+            
             string Precio = Request.Form["Precio"];
             Global global = new Global();
 
@@ -35,6 +39,9 @@ namespace WebAppAWIES
             String TitutloOtorgado = Request.Form["TituloOtorgado"];
             string PuntajeP = Request.Form["puntajeP"];
             string PuntajeU = Request.Form["puntajeU"];
+            string btnIcfes = Request.Form["Icfes"];
+            string btnPonderado = Request.Form["Ponderado"];
+            string btnPrueba = Request.Form["Prueba"];
 
 
             objProgramas.NombrePrograma = Nombre;
@@ -49,8 +56,9 @@ namespace WebAppAWIES
             objProgramas.VigenciaAños = Vigencia;
             objProgramas.DuracionSemestre = Duracion;
             objProgramas.TituloOtorgado = TitutloOtorgado;
-            objProgramas.P
-
+            objProgramas.PrimerIngresado = float.Parse(PuntajeP.ToString());
+            objProgramas.UltimoIngresado = float.Parse(PuntajeU.ToString());
+            
            
 
             int x = objProgramas.mtdRegistrarCarreras();

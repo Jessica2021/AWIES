@@ -23,8 +23,8 @@ namespace WebAppAWIES.Datos
         public string DuracionSemestre { get; set; }
         public string TituloOtorgado { get; set; }
         public string TipoIngreso { get; set; }
-        public int PrimerIngresado { get; set; }
-        public int UltimoIngresado { get; set; }
+        public float PrimerIngresado { get; set; }
+        public float  UltimoIngresado { get; set; }
        
 
         clConexion objConexion = new clConexion();

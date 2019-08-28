@@ -16,6 +16,18 @@ namespace WebAppAWIES
             GridView1.DataBind();
         }
         clUniversidades Universidad = new clUniversidades();
+
+        public void mtdMensaje()
+        {
+            if (GridView1.Rows.Count == 0)
+            {
+                mensaje.Visible = true;
+            }
+            else
+            {
+                mensaje.Visible = false;
+            }
+        }
         public void mtdBuscar()
         {
             string institutos = txtBuscar.Text;
@@ -23,6 +35,7 @@ namespace WebAppAWIES
             dsInstitutos = Universidad.mtdBuscarInstitucuines(institutos);
             GridView1.DataSource = dsInstitutos.Tables[0];
             GridView1.DataBind();
+            mtdMensaje();
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -36,6 +49,7 @@ namespace WebAppAWIES
             dsUniversidad = Universidad.mtdBusquedaUniversidades();
             GridView1.DataSource = dsUniversidad.Tables[0];
             GridView1.DataBind();
+            mtdMensaje();
         }
 
         protected void btnBuscTecn_Click(object sender, EventArgs e)
@@ -44,6 +58,7 @@ namespace WebAppAWIES
             dsTecnico = Universidad.mtdBusquedaTecnica();
             GridView1.DataSource = dsTecnico.Tables[0];
             GridView1.DataBind();
+            mtdMensaje();
         }
 
         protected void btnBuscTecnolo_Click(object sender, EventArgs e)
@@ -52,7 +67,7 @@ namespace WebAppAWIES
             dsTecnologo = Universidad.mtdBusquedaTecnologica();
             GridView1.DataSource = dsTecnologo.Tables[0];
             GridView1.DataBind();
-
+            mtdMensaje();
         }
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,7 +76,14 @@ namespace WebAppAWIES
             dsTecnologo = Universidad.mtdBusquedaMunicipio(int.Parse(DropDownList2.SelectedValue.ToString()));
             GridView1.DataSource = dsTecnologo.Tables[0];
             GridView1.DataBind();
+            mtdMensaje();
+        }
 
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+             
         }
     }
 }

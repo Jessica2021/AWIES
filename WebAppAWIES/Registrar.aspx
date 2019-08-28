@@ -31,7 +31,8 @@
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
-    <style>
+   
+        <style>
         .container{
             margin-top:50px;
         }
@@ -47,6 +48,20 @@
             border-radius: 11px 11px 11px 11px;
             background-color:#C1ECFA ;
         }
+        #imgs{
+            text-align:center;
+        }
+            .auto-style1 {
+                position: relative;
+                width: 100%;
+                min-height: 1px;
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+                text-align: center;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
     </style>
 
 </head>
@@ -55,27 +70,24 @@
 
 <body>
 
-	<p>
-        <br />
-    </p>
-
 	<!-- Start Align Area -->
-    
-	<form id="form1" runat="server">
-       
+ <form id="form1" runat="server">
+        
              <div class="section-top-border">
-                 
-				<div class="row">
+                 <div class="row">
                     <div class="col-md-4">
                         </div>
-					<div  id="cont" class="col-md-4">
-					<div  class="widget-wrap">
+					<div id="cont" class="auto-style1">
+                    
+					<div class="widget-wrap">
                         <div id="imgs">
                             <img src="img/logo.png"  alt="" width="200px" height="100px" title="" />
                         </div>
+						
 						<div class="single-sidebar-widget user-info-widget">
-            <h3 class="mb-30">Registrar</h3>
-                <div class="mt-10">
+							
+							<h3 class="mb-30">Registrar</h3>
+                            <div class="mt-10">
                      <h5>Codigo de Institucion</h5>
                     <asp:TextBox ID="TextBox1" runat="server" type="text" name="Codigo" placeholder="Codigo" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Codigo'"  class="single-input-primary"></asp:TextBox>
 		        </div>
@@ -149,17 +161,19 @@
                 </div>
             </div>
             <br />
-               <asp:Button ID="Button1" runat="server"  class="genric-btn success" Text="Registrar" Height="29px" OnClick="Button1_Click1" />
+               <asp:Button ID="Button1" runat="server"  class="genric-btn success" Text="Registrar" Height="39px" OnClick="Button1_Click1" Font-Size="12pt" Width="158px" />
                 
-				
             </div>
-            <div class="col-md-4">
-            </div>
-            
-					</div>
-					</form>
+                        <div class="mt-10">
+                            <asp:Label ID="lblError" runat="server" Text="Error: Hubo un error con el Registro" BackColor="#E18C8C" BorderColor="#CC0000" BorderStyle="Solid" BorderWidth="1px" ForeColor="Maroon" Height="25px" Width="268px" Visible="False"></asp:Label>
+				        </div>
 
-		
+                        </div>
+                         <div class="col-md-4">
+            </div>
+           </form>
+    
+                   
 	<!-- End Align Area -->
 
 	

@@ -11,7 +11,11 @@ namespace WebAppAWIES
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+             
+            if (Application["id"].ToString() == "" )
+            {
+                Response.Redirect("Index.aspx", true);
+            }
         }
 
         protected void Button2_Click(object sender, EventArgs e)

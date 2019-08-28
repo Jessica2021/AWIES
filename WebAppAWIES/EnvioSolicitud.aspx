@@ -55,18 +55,32 @@
         #imgs{
             text-align:center;
         }
+            .auto-style1 {
+                position: relative;
+                width: 100%;
+                min-height: 1px;
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+                text-align: center;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
              <div class="section-top-border">
-                 
-				<div class="row">
+                 <div class="row">
                     <div class="col-md-4">
                         </div>
-					<div id="cont" class="col-md-4">
+					<div id="cont" class="auto-style1">
+                    
 					<div class="widget-wrap">
+
+                        
+
                         <div id="imgs">
                             <img src="img/logo.png"  alt="" width="200px" height="100px" title="" />
                         </div>
@@ -74,6 +88,7 @@
 						<div class="single-sidebar-widget user-info-widget">
 							
 							<h3 class="mb-30">Envio Solicitud</h3>
+
 						<form class="form-horizontal form-label-left" method="post" action="EnvioSolicitud.aspx.cs" novalidate>
                             <div class="mt-10">
                                
@@ -96,9 +111,16 @@
 							</div>
 
 							<br />
-                            <asp:Button ID="Button1" runat="server" Text="Enviar Solicitud" class="genric-btn success" Height="39px" OnClick="Button1_Click"/>
+                            <asp:Button ID="Button1" runat="server" Text="Enviar Solicitud" class="genric-btn success" Height="43px" OnClick="Button1_Click"/>
 						    
                             <a href="Index.aspx" class="genric-btn info">Volver</a>
+
+                            <div class="mt-10">
+                        <asp:Label ID="lblCorrecto" runat="server" Text="Tu Solicitus a sido enviada" BackColor="#A4D78E" BorderColor="#006600" BorderStyle="Solid" BorderWidth="1px" ForeColor="#006600" Height="26px" Width="284px" Visible="False"></asp:Label>
+                    </div>
+                        <div class="mt-10">
+                            <asp:Label ID="lblError" runat="server" Text="Error: No se a podido enviar tu solicitud" BackColor="#E18C8C" BorderColor="#CC0000" BorderStyle="Solid" BorderWidth="1px" ForeColor="Maroon" Height="25px" Width="268px" Visible="False"></asp:Label>
+				        </div>
 						</form>
                     </div>
                 </div>

@@ -48,13 +48,13 @@ namespace WebAppAWIES
                 else if (login.Rows[0][3].ToString() != "" && login.Rows[0][4].ToString() == "Aprobado")
                 {
                     Application["Id"] = login.Rows[0][0].ToString();
-                    Response.Redirect("Index.aspx");
+                    Response.Redirect("IndexInstitucion.aspx");
                 }
 
             }
             else
             {
-                LblError.Text = " DATOS INCORRECTOS";
+                LblError.Text = "Usuario y/o Contraseña incorrectos";
             }
             objConexion.Close();
 

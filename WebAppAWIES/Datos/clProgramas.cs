@@ -279,7 +279,13 @@ namespace WebAppAWIES.Datos
         }
 
 
-
+        public DataSet mtdCount()
+        {
+            string query = "select COUNT(InstitucionPrograma.IdProgramas) from Programas INNER JOIN InstitucionPrograma ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN Universidades ON (Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades)";
+            DataSet tblPrograma = new DataSet();
+            tblPrograma = objConexion.mtdDesconectado(query);
+            return tblPrograma;
+        }
 
     }
 }

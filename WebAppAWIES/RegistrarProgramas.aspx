@@ -135,7 +135,7 @@ border-radius: 11px 11px 11px 11px;
 
 }
 
-#prueba {
+#puntaje {
 border-radius: 11px 11px 11px 11px;
       border: 5px solid #00B4F0;
       background-color:#FFFFFF ;
@@ -308,27 +308,27 @@ border-radius: 11px 11px 11px 11px;
        			
 		        <h3 id="tit">Tipo de Admicion de Estudiantes</h3>
 
-        <button class="tablink" onclick="openPage('icfes', this, '#006C90')">Icfes</button>
-        <button class="tablink" onclick="openPage('ponde', this, '#008BB9')" id="defaultOpen">Ponderado</button>
-        <button class="tablink" onclick="openPage('prueba', this, '#00B4F0')">Prueba</button>
+        <button class="tablink" onclick="openPage('puntaje', this, '#006C90')">Icfes</button>
+        <button class="tablink" onclick="openPage('puntaje', this, '#008BB9')" id="defaultOpen">Ponderado</button>
+        <button class="tablink" onclick="openPage('puntaje', this, '#00B4F0')">Prueba</button>
         
-        <div id="icfes" class="tabcontent">
+        <div id="puntaje" class="tabcontent">
              <br />
-            <h4>Puntaje del ICFES</h4>
+            <h4>Puntaje</h4>
          
         <div class="mt-10">
                      <h5>Primero</h5>
-			        <input type="text" name="icfesP" placeholder="000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '000'"
+			        <input type="text" name="puntajeP" placeholder="000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '000'"
 				        required class="single-input-primary">
 		        </div>
                 <div class="mt-10">
                      <h5>Ultimo</h5>
-			        <input type="text" name="icfesU" placeholder="000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '000'"
+			        <input type="text" name="puntajeU" placeholder="000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '000'"
 				        required class="single-input-primary">
 		        </div>
         </div>
 
-        <div id="ponde" class="tabcontent">
+       <%-- <div id="ponde" class="tabcontent">
         <br />
                   <h4>Ponderado del Programa</h4>
            
@@ -358,7 +358,7 @@ border-radius: 11px 11px 11px 11px;
 			        <input type="text" name="pruebaU" placeholder="0000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '0000'"
 				        required class="single-input-primary">
 		        </div>
-        </div>
+        </div>--%>
 
         
         </div>

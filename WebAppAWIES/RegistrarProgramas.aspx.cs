@@ -33,6 +33,9 @@ namespace WebAppAWIES
             String Vigencia = Request.Form["VigenciaAños"];
             String Duracion = Request.Form["DuracionSemestre"];
             String TitutloOtorgado = Request.Form["TituloOtorgado"];
+            string PuntajeP = Request.Form["puntajeP"];
+            string PuntajeU = Request.Form["puntajeU"];
+
 
             objProgramas.NombrePrograma = Nombre;
             objProgramas.EstadoPrograma = ddEstado.SelectedValue;
@@ -46,7 +49,10 @@ namespace WebAppAWIES
             objProgramas.VigenciaAños = Vigencia;
             objProgramas.DuracionSemestre = Duracion;
             objProgramas.TituloOtorgado = TitutloOtorgado;
-            
+            objProgramas.P
+
+           
+
             int x = objProgramas.mtdRegistrarCarreras();
 
             if (x == 1)

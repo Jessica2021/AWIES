@@ -61,6 +61,92 @@
                 padding-left: 15px;
                 padding-right: 15px;
             }
+
+            h1{
+    color: white;
+    padding-top: 50px;
+
+}
+
+h3{
+	color: #2E2E2E;
+	font-size: 40px;
+	font-family: calibri;
+
+}
+
+p{
+	color: #151515;
+	font-size: 30px;
+	font-family: calibri;
+}
+
+img.icono{
+	width: 100px;
+    float: left;
+
+}
+
+img.ser{
+    width: 100px;
+    float: left;
+}
+
+div.tec{
+  
+   float:left;
+}
+
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 15px;
+    width: 30%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 50px 20px;
+    height: 100%;
+}
+
+#icfes {
+      border-radius: 11px 11px 11px 11px;
+      border: 5px solid #006C90;
+      background-color:#FFFFFF ;
+
+}
+
+#ponde {
+border-radius: 11px 11px 11px 11px;
+      border: 5px solid #008BB9;
+      background-color:#FFFFFF ;
+
+}
+
+#prueba {
+border-radius: 11px 11px 11px 11px;
+      border: 5px solid #00B4F0;
+      background-color:#FFFFFF ;
+}
+
+#tit{
+    color:white;
+    margin-bottom:20px;
+    font-size:25px;
+}
+
     </style>
 
 
@@ -73,11 +159,10 @@
 	<!-- Start Align Area -->
     
 	 <form id="form1" runat="server">
-        <div>
-             <div class="section-top-border">
+       <div class="section-top-border">
                  <div class="row">
-                    <div class="col-md-4">
-                        </div>
+                     <div class="col-md-2">
+                         </div>
 					<div id="cont" class="auto-style1">
                     
 					<div class="widget-wrap">
@@ -89,7 +174,7 @@
 							
 							<h3 class="mb-30">Agregar Programas Academicos</h3>
 
-						<form class="form-horizontal form-label-left" method="post" action="EnvioSolicitud.aspx.cs" novalidate>
+						<form class="form-horizontal form-label-left" method="post" action="EnvioSolicitud.aspx.cs" novalidate/>
                             
 
                 <div class="mt-10">
@@ -211,16 +296,101 @@
                         <div class="mt-10">
                             <asp:Label ID="lblError" runat="server" Text="Error: No se pudo registrar" BackColor="#E18C8C" BorderColor="#CC0000" BorderStyle="Solid" BorderWidth="1px" ForeColor="Maroon" Height="25px" Width="268px" Visible="False"></asp:Label>
 				        </div>
-           </form>
-                    </div>
-                </div>
-             </div>
+                        </div>
+                        </div>
+                     
+
+         
             <div class="col-md-4">
+
+        <div class="col-md-12">
+ 
+       			
+		        <h3 id="tit">Tipo de Admicion de Estudiantes</h3>
+
+        <button class="tablink" onclick="openPage('icfes', this, '#006C90')">Icfes</button>
+        <button class="tablink" onclick="openPage('ponde', this, '#008BB9')" id="defaultOpen">Ponderado</button>
+        <button class="tablink" onclick="openPage('prueba', this, '#00B4F0')">Prueba</button>
+        
+        <div id="icfes" class="tabcontent">
+             <br />
+            <h4>Puntaje del ICFES</h4>
+         
+        <div class="mt-10">
+                     <h5>Primero</h5>
+			        <input type="text" name="icfesP" placeholder="000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '000'"
+				        required class="single-input-primary">
+		        </div>
+                <div class="mt-10">
+                     <h5>Ultimo</h5>
+			        <input type="text" name="icfesU" placeholder="000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '000'"
+				        required class="single-input-primary">
+		        </div>
+        </div>
+
+        <div id="ponde" class="tabcontent">
+        <br />
+                  <h4>Ponderado del Programa</h4>
+           
+        <div class="mt-10">
+                     <h5>Primero</h5>
+			        <input type="text" name="ponderadoP" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
+				        required class="single-input-primary">
+		        </div>
+                <div class="mt-10">
+                     <h5>Ultimo</h5>
+			        <input type="text" name="ponderadoU" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
+				        required class="single-input-primary">
+		        </div>
+        </div>
+
+        <div id="prueba" class="tabcontent">
+             <br />
+           <h4>Prueba de Admicion</h4>
+
+        <div class="mt-10">
+                     <h5>Primero</h5>
+			        <input type="text" name="pruebaP" placeholder="0000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '0000'"
+				        required class="single-input-primary">
+		        </div>
+                <div class="mt-10">
+                     <h5>Ultimo</h5>
+			        <input type="text" name="pruebaU" placeholder="0000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '0000'"
+				        required class="single-input-primary">
+		        </div>
+        </div>
+
+        
+        </div>
+                    </div>
             </div>
+            </div>
+                </div>
+
         </div>
-    </div>
-        </div>
-    </form>
+            </div>
+        </form>
+        <script>
+        function openPage(pageName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+
+        }
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+</script>
+
+
+
 
 		
 	<!-- End Align Area -->

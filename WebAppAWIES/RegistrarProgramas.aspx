@@ -3,15 +3,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <script language="C#" runat="server">
-        public void m(object sender, EventArgs e)
-        {
-            registrarprogramas_aspx obj = new registrarprogramas_aspx();
-            obj.x();
-        }
-
-
-</script>
+   
 <head>
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -122,10 +114,12 @@ div.tec{
     background-color: #777;
 }
 
+.tablink:active{
+    background-color: #00A5DC;
+}
 /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
     color: white;
-    display: none;
     padding: 50px 20px;
     height: 100%;
 }
@@ -188,8 +182,8 @@ border-radius: 11px 11px 11px 11px;
 
                 <div class="mt-10">
                      <h5>Nombre del Programa</h5>
-			        <input type="text" name="Nombre" placeholder="Nombre" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Nombre'"
-				        required class="single-input-primary">
+			        
+                    <asp:TextBox class="single-input-primary" ID="Nombre" runat="server" placeholder="Nombre" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Nombre'"></asp:TextBox>
 		        </div>
                             <div class="mt-10">
             <h5>Estado</h5>
@@ -241,8 +235,8 @@ border-radius: 11px 11px 11px 11px;
                 
             <div class="mt-10">
             <h5>Metodologia</h5>
-                <div class="default-select" id="Departamento"  name ="Departamento">
-                    &nbsp;<asp:DropDownList ID="ddlMetodologia" runat="server" DataSourceID="DataMetodologia" DataTextField="Metodologia" DataValueField="IdMetodologia">
+                <div class="default-select" id="metodo"  name ="Metodologia">
+                <asp:DropDownList ID="ddlMetodologia" runat="server" DataSourceID="DataMetodologia" DataTextField="Metodologia" DataValueField="IdMetodologia">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="DataMetodologia" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Metodologia] WHERE [IdMetodologia] = @IdMetodologia" InsertCommand="INSERT INTO [Metodologia] ([Metodologia]) VALUES (@Metodologia)" SelectCommand="SELECT * FROM [Metodologia]" UpdateCommand="UPDATE [Metodologia] SET [Metodologia] = @Metodologia WHERE [IdMetodologia] = @IdMetodologia">
                         <DeleteParameters>
@@ -257,11 +251,11 @@ border-radius: 11px 11px 11px 11px;
                         </UpdateParameters>
                     </asp:SqlDataSource>
                 </div>
-            </div>
+                </div>
             <div class="mt-10">
             <h5>Area Conocimiento</h5>
-                <div class="default-select" id="Municipio"  name ="Municipio">
-                    &nbsp;<asp:DropDownList ID="ddlArea" runat="server" DataSourceID="DataArea" DataTextField="Area" DataValueField="IdArea">
+                <div class="default-select" id="area"  name ="Area">
+                <asp:DropDownList ID="ddlArea" runat="server" DataSourceID="DataArea" DataTextField="Area" DataValueField="IdArea">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="DataArea" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Area]"></asp:SqlDataSource>
                 </div>
@@ -269,30 +263,30 @@ border-radius: 11px 11px 11px 11px;
             
                 <div class="mt-10">
                      <h5>Precio</h5>
-			        <input type="text" name="Precio" placeholder="000.000.000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '000.000.000'"
-				        required class="single-input-primary">
+                    <asp:TextBox ID="Precio" class="single-input-primary" runat="server" placeholder="000.000.000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '000.000.000'"></asp:TextBox>
 		        </div>
                 <div class="mt-10">
                      <h5>Numero de Creditos</h5>
-			        <input type="text" name="NumeroCreditos" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
-				        required class="single-input-primary">
+                    <asp:TextBox ID="NumeroCreditos" runat="server" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
+				         class="single-input-primary"></asp:TextBox>
 		        </div>
               <div class="mt-10">
                      <h5>Vigencia (Por años)</h5>
-			        <input type="text" name="VigenciaAños" placeholder="00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00'"
-				        required class="single-input-primary">
+			        
+                  <asp:TextBox ID="VigenciaAños" runat="server" placeholder="00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00'"
+				         class="single-input-primary"></asp:TextBox>
 		        </div>
                     
                  <div class="mt-10">
                      <h5>Duracion(Por semestres)</h5>
-			        <input type="text" name="DuracionSemestre" placeholder="0000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '0000'"
-				        required class="single-input-primary">
+                     <asp:TextBox ID="Duracion" runat="server" placeholder="0000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '0000'"
+				         class="single-input-primary"></asp:TextBox>
 		        </div>
                         
                  <div class="mt-10">
                      <h5>Titulo Otorgado</h5>
-			        <input type="text" name="TituloOtorgado" placeholder="Ingeniero en..." onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Ingeniero en...'"
-				        required class="single-input-primary">
+                     <asp:TextBox ID="TituloOtorgado" runat="server" placeholder="Ingeniero en..." onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Ingeniero en...'"
+				        required class="single-input-primary"></asp:TextBox>
 		        </div>
             <br />
             <asp:Button ID="Button1" runat="server" Text="Registrar" class="genric-btn success" Height="41px" OnClick="Button1_Click"  />
@@ -316,10 +310,9 @@ border-radius: 11px 11px 11px 11px;
  
        			
 		        <h3 id="tit">Tipo de Admicion de Estudiantes</h3>
-
-        <button runat="server" onserverclick="m"  class="tablink" name="Icfes" onclick="openPage('puntaje', this, '#006C90') " >Icfes</button>
-        <button class="tablink" name="Ponderado" onclick="openPage('puntaje', this, '#008BB9')" id="defaultOpen">Ponderado</button>
-        <button class="tablink" name="Prueba" onclick="openPage('puntaje', this, '#00B4F0')">Prueba</button>
+            <asp:Button ID="btnIcfes" runat="server" Text="Icfes" class="tablink" OnClick="btnIcfes_Click" />
+            <asp:Button ID="btnPonderado" runat="server" Text="Ponderado" class="tablink" OnClick="btnPonderado_Click" />
+            <asp:Button ID="btnPrueba" runat="server" Text="Prueba" class="tablink" OnClick="btnPrueba_Click" />
         
         <div id="puntaje" class="tabcontent">
              <br />
@@ -327,47 +320,16 @@ border-radius: 11px 11px 11px 11px;
          
         <div class="mt-10">
                      <h5>Primero</h5>
-			        <input type="text"  name="puntajeP" placeholder="000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '000'"
-				        required class="single-input-primary">
+			        
+            <asp:TextBox ID="Primero" runat="server"  placeholder="000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '000'"
+				         class="single-input-primary"></asp:TextBox>
 		        </div>
                 <div class="mt-10">
                      <h5>Ultimo</h5>
-			        <input type="text" name="puntajeU" placeholder="000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '000'"
-				        required class="single-input-primary">
+                    <asp:TextBox ID="ultimo" runat="server"  placeholder="000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '000'"
+				         class="single-input-primary"></asp:TextBox>
 		        </div>
         </div>
-
-       <%-- <div id="ponde" class="tabcontent">
-        <br />
-                  <h4>Ponderado del Programa</h4>
-           
-        <div class="mt-10">
-                     <h5>Primero</h5>
-			        <input type="text" name="ponderadoP" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
-				        required class="single-input-primary">
-		        </div>
-                <div class="mt-10">
-                     <h5>Ultimo</h5>
-			        <input type="text" name="ponderadoU" placeholder="00.00" onfocus="this.placeholder = ''"  onblur="this.placeholder = '00.00'"
-				        required class="single-input-primary">
-		        </div>
-        </div>
-
-        <div id="prueba" class="tabcontent">
-             <br />
-           <h4>Prueba de Admicion</h4>
-
-        <div class="mt-10">
-                     <h5>Primero</h5>
-			        <input type="text" name="pruebaP" placeholder="0000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '0000'"
-				        required class="single-input-primary">
-		        </div>
-                <div class="mt-10">
-                     <h5>Ultimo</h5>
-			        <input type="text" name="pruebaU" placeholder="0000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '0000'"
-				        required class="single-input-primary">
-		        </div>
-        </div>--%>
 
         
         </div>

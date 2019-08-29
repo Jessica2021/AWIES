@@ -19,5 +19,7 @@
         <SortedDescendingHeaderStyle BackColor="#000065" />
     </asp:GridView>
 
-
+    <div class="mt-10">
+            <asp:Button ID="btnEditar" runat="server" Text="Editar" class="genric-btn primary radius"  />
+        </div>
 </asp:Content>

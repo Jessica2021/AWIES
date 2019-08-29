@@ -22,12 +22,9 @@ namespace WebAppAWIES.Datos
         public string VigenciaAños { get; set; }
         public string DuracionSemestre { get; set; }
         public string TituloOtorgado { get; set; }
-        public int PrimerPrueba { get; set; }
-        public int UltimaPrueba { get; set; }
-        public int PrimerPonderado { get; set; }
-        public int UltimoPonderado { get; set; }
-        public int PrimerIcfes { get; set; }
-        public int UltimoIcfes { get; set; }
+        public string TipoIngreso { get; set; }
+        public float PrimerIngresado { get; set; }
+        public float  UltimoIngresado { get; set; }
        
 
         clConexion objConexion = new clConexion();
@@ -35,8 +32,8 @@ namespace WebAppAWIES.Datos
         public int mtdRegistrarCarreras()
         {
 
-            string consulta = "insert into Programas (NombrePrograma, EstadoPrograma, NivelAcademico, ReconocimientoMinisterio, IdNivelFormacion, IdMetodologia, IdAreaConocimiento, Precio, NumeroCreditos, VigenciaAños, DuracionSemestre, TituloOtorgado, PrimerPrueba, UltimaPrueba, PrimerPonderado, UltimoPonderado, PrimerIcfes, UltimoIcfes)" +
-            "values ('" + NombrePrograma + "', '" + EstadoPrograma + "', '" + NivelAcademico + "', '" + ReconocimientoMinisterio + "', " + IdNivelFormacion + ", " + IdMetodologia + ", " + IdAreaConocimiento + ",'" + Precio + "', '" + NumeroCreditos + "', '"+ VigenciaAños +"', '"+ DuracionSemestre +"', '"+ TituloOtorgado + "', '"+ PrimerPrueba +"', '"+ UltimaPrueba +"', '"+ PrimerPonderado +"' , '"+ UltimoPonderado +"', '"+ PrimerIcfes +"' , '"+ UltimoIcfes +"'  ) ";
+            string consulta = "insert into Programas (NombrePrograma, EstadoPrograma, NivelAcademico, ReconocimientoMinisterio, IdNivelFormacion, IdMetodologia, IdAreaConocimiento, Precio, NumeroCreditos, VigenciaAños, DuracionSemestre, TituloOtorgado, TipoIngreso, PrimerIngresado, UltimoIngresado)" +
+            "values ('" + NombrePrograma + "', '" + EstadoPrograma + "', '" + NivelAcademico + "', '" + ReconocimientoMinisterio + "', " + IdNivelFormacion + ", " + IdMetodologia + ", " + IdAreaConocimiento + ",'" + Precio + "', '" + NumeroCreditos + "', '"+ VigenciaAños +"', '"+ DuracionSemestre +"', '"+ TituloOtorgado + "', '"+ TipoIngreso +"', '"+ PrimerIngresado +"', '"+ UltimoIngresado +"'  ) ";
 
             int res = objConexion.mtdConectado(consulta);
 
@@ -56,8 +53,7 @@ namespace WebAppAWIES.Datos
 
         public int mtdEditarCarreras()
         {
-            string consulta = "update Programas set NombrePrograma = '" + NombrePrograma + "',EstadoPrograma = '" + EstadoPrograma + "' ,NivelAcademico = '" + NivelAcademico + "' ,ReconocimientoMinisterio = '" + ReconocimientoMinisterio + "' ,IdNivelFormacion  =  '" + IdNivelFormacion + "',IdMetodologia = '" + IdMetodologia + "',IdAreaConocimiento = '" + IdAreaConocimiento + "',Precio = '" + Precio + "',NumeroCreditos '" + NumeroCreditos + "',VigenciaAños = '" + VigenciaAños +"', DuracionSemestre = '"+ DuracionSemestre + "',TituloOtorgado = ' "+ TituloOtorgado +"' ,PrimerPrueba = '"+ PrimerPrueba +"' ,UltimaPrueba = '"+ UltimaPrueba +"' ,PrimerPonderado = '"+ PrimerPonderado +"',UltimoPonderado = '"+ UltimoPonderado +"',PrimerIcfes = '"+ PrimerIcfes +"',UltimoIcfes = '"+ UltimoIcfes +"'" +
-                " where IdProgramas = '" + IdProgramas + "' ";
+            string consulta = "update Programas set NombrePrograma = '" + NombrePrograma + "',EstadoPrograma = '" + EstadoPrograma + "' ,NivelAcademico = '" + NivelAcademico + "' ,ReconocimientoMinisterio = '" + ReconocimientoMinisterio + "' ,IdNivelFormacion  =  '" + IdNivelFormacion + "',IdMetodologia = '" + IdMetodologia + "',IdAreaConocimiento = '" + IdAreaConocimiento + "',Precio = '" + Precio + "',NumeroCreditos '" + NumeroCreditos + "',VigenciaAños = '" + VigenciaAños +"', DuracionSemestre = '"+ DuracionSemestre + "',TituloOtorgado = ' "+ TituloOtorgado +"' ,TipoIngreso = '"+ TipoIngreso +"' ,PrimerIngresado = '"+ PrimerIngresado +"' ,UltimoIngresado = '"+ UltimoIngresado +"' where IdProgramas = "+ IdProgramas+"";
             int res = objConexion.mtdConectado(consulta);
             return res;
         }
@@ -279,7 +275,13 @@ namespace WebAppAWIES.Datos
         }
 
 
-
+        public DataSet mtdCount()
+        {
+            string query = "select COUNT(InstitucionPrograma.IdProgramas) from Programas INNER JOIN InstitucionPrograma ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN Universidades ON (Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades)";
+            DataSet tblPrograma = new DataSet();
+            tblPrograma = objConexion.mtdDesconectado(query);
+            return tblPrograma;
+        }
 
     }
 }

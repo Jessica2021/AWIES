@@ -141,12 +141,12 @@
                                     
 									<a href="DGVInstituciones.aspx" class="d-flex justify-content-between">
 										<p>Institucion</p>
-                                        <p>5</p>
 									</a>
 								</li>
 								<li>
 									<a href="DGVProgramas.aspx" class="d-flex justify-content-between">
 										<p>Programas</p>
+                                        <asp:Label ID="lblCount" runat="server"></asp:Label>
 										<p>38</p>
 									</a>
 								</li>

@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteInstitucion.Master" AutoEventWireup="true" CodeBehind="DGVInstituciones.aspx.cs" Inherits="WebAppAWIES.DGVInstituciones" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <%-- <p>
+    <%-- <p>
         <br />
         <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
             <AlternatingRowStyle BackColor="#DCDCDC" />
@@ -53,162 +54,174 @@
     </p>--%>
 
     <style>
-        h5{
-            text-align:right;
+        h5 {
+            text-align: right;
             padding-top: 5%;
             padding-bottom: 5%;
         }
     </style>
 
-    	<!-- Start Align Area -->
-     
-             <div class="section-top-border">
-                 <h3>Datos Generales</h3>
-                <asp:Button ID="Button1" runat="server" Text="Editar" class="genric-btn primary circle arrow"  />
-                
-                 <div class="row">
-                     
-                    <div class="col-md-4">
+    <!-- Start Align Area -->
 
-                        <div class="mt-10">
-								<h5>Codigo Institucional</h5>
-							</div>
-                            <div class="mt-10">
-								<h5>Nombre Institucion</h5>
-							</div>
-                            <div class="mt-10">
-								<h5>Nit</h5>
-							</div>
-							<div class="mt-10">
-								<h5>Sector</h5>
-							</div>
-							
-                            <div class="mt-10">
-								<h5>Acreditada</h5>
-							</div>
-                            <div class="mt-10">
-								<h5>Principal/Seccional</h5>
-							</div>
-                           <div class="mt-10">
-								<h5>Departamento</h5>
-							</div>
-                           <div class="mt-10">
-								<h5>Municipio</h5>
-							</div>
-                          <div class="mt-10">
-								<h5>Caracter Academico</h5>
-							</div>
-                        <div class="mt-10">
-								<h5>Correo</h5>
-							</div>
-						<div class="mt-10">
-								<h5>Contraseña</h5>
-							</div>
-                        </div>
-					 <div class="col-md-6">
+    <div class="section-top-border">
+        <h3>Datos Generales</h3>
+        <asp:Button ID="Button1" runat="server" Text="Editar" class="genric-btn primary circle arrow" OnClick="Button1_Click" />
 
-                         <div class="mt-10">
-                            <asp:TextBox ID="TextBox1" runat="server" type="text" name="Codigo" placeholder="Codigo" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Codigo'"  class="single-input-primary"></asp:TextBox>
-		                </div>
+        <div class="row">
 
-                         <div class="mt-10">
-								<input type="text" name="nombre" placeholder="Nombre Institucion" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Nombre Institucion'"
-								 required class="single-input-primary">
-							</div>
+            <div class="col-md-4">
 
-                         <div class="mt-10">
-								<input type="text" name="nit" placeholder="Nit" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Nit'"
-								 required class="single-input-primary">
-							</div>
+                <div class="mt-10">
+                    <h5>Codigo Institucional</h5>
+                </div>
+                <div class="mt-10">
+                    <h5>Nombre Institucion</h5>
+                </div>
+                <div class="mt-10">
+                    <h5>Nit</h5>
+                </div>
+                <div class="mt-10">
+                    <h5>Sector</h5>
+                </div>
 
-                  <div class="mt-10">
-  
-                <div class="default-select" id="Sector">
+                <div class="mt-10">
+                    <h5>Acreditada</h5>
+                </div>
+                <div class="mt-10">
+                    <h5>Principal/Seccional</h5>
+                </div>
+                <div class="mt-10">
+                    <h5>Departamento</h5>
+                </div>
+                <div class="mt-10">
+                    <h5>Municipio</h5>
+                </div>
+                <div class="mt-10">
+                    <h5>Caracter Academico</h5>
+                </div>
+                <div class="mt-10">
+                    <h5>Correo</h5>
+                </div>
+                <div class="mt-10">
+                    <h5>Contraseña</h5>
+                </div>
+            </div>
+            <br />
+            <div class="col-md-6">
+
+                <div class="mt-10">
+                    <asp:TextBox ID="TextCodigo" runat="server" BorderStyle="None"></asp:TextBox>
                     
+                    <asp:Label ID="Codigo" runat="server" type="text" name="Codigo" placeholder="Codigo" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Codigo'" class="single-input-primary" Enabled="False" EnableTheming="True"></asp:Label>
+                </div>
+
+                <div class="mt-10">
+                    <asp:TextBox ID="TextNombre" runat="server" BorderStyle="None"></asp:TextBox>
+                    <asp:Label ID="Nombre" runat="server" type="text" name="Codigo" placeholder="Codigo" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre Institucion'" class="single-input-primary" Enabled="False"></asp:Label>
+
+                </div>
+
+                <div class="mt-10">
+                    <asp:TextBox ID="TextNit" runat="server" BorderStyle="None"></asp:TextBox>
+                    <asp:Label ID="Nit"  runat="server" type="text" name="Codigo" placeholder="Codigo" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Codigo'" class="single-input-primary" Enabled="False" EnableTheming="True"></asp:Label>
+             
+                </div>
+
+                <div class="mt-10">
+
+                    <div class="default-select" id="Sector">
+                        <asp:Label ID="sec" runat="server" Text="Label"></asp:Label>
+
                         <asp:DropDownList ID="DropDownList5" runat="server">
                             <asp:ListItem>Oficial</asp:ListItem>
                             <asp:ListItem>Privada</asp:ListItem>
                         </asp:DropDownList>
-                    
-                </div>
-            </div>
-                         
-            
-                          <div class="mt-10">
-   
-                <div class="default-select" id="Acreditada">
-                    
+                        <asp:Label ID="acre" runat="server" Text="Label"></asp:Label>
+                     
                         <asp:DropDownList ID="DropDownList6" runat="server">
                             <asp:ListItem>Si</asp:ListItem>
                             <asp:ListItem>No</asp:ListItem>
                         </asp:DropDownList>
-                    
+
+                    </div>
                 </div>
-            </div>
-            
-           <div class="mt-10">
-           <asp:Label ID="Label1" runat="server"></asp:Label>
-               
-                <div class="default-select" id="default-select">
-			        
+
+                <div class="mt-10">
+
+
+                    <div class="default-select" id="default-select">
+                         <asp:Label ID="pri" runat="server" BorderStyle="None"></asp:Label>
+                 
                         <asp:DropDownList ID="DropDownList4" runat="server">
                             <asp:ListItem>Principal</asp:ListItem>
                             <asp:ListItem>Seccional</asp:ListItem>
                         </asp:DropDownList>
-			           
-		        </div>
-            </div>
-                
-            <div class="mt-10">
-                <div class="default-select" id="Departamento">
-                    <asp:DropDownList ID="DropDownList7" runat="server" DataSourceID="SqlDataSource1" DataTextField="Departamento" DataValueField="IdDepartamento" AutoPostBack="True"></asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Departamento]"></asp:SqlDataSource>
-                  
-                </div>
-            </div>
-            <div class="mt-10">
-                <div class="default-select" id="Municipio">
-                    
-                    <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource2" DataTextField="Municipio" DataValueField="IdMunicipio"></asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [IdMunicipio], [Municipio] FROM [Municipio] WHERE ([IdDepartamento] = @IdDepartamento)">
+
                         
-                        <SelectParameters>
-                            <asp:ControlParameter ControlID="DropDownList7" DefaultValue="1" Name="IdDepartamento" PropertyName="SelectedValue" />
-                        </SelectParameters>
-                        
-                    </asp:SqlDataSource>
-                        
+
+                    </div>
                 </div>
-            </div>
-            <div class="mt-10">
-                <div class="default-select" id="CaracterAcademico">
-                   
-                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="CaracterAcademico" DataValueField="IdCaracterAcademico" DataMember="DefaultView"></asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT CaracterAcademico, IdCaracterAcademico FROM CaracterAcademico" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>"></asp:SqlDataSource>
-                    
-                </div>
-            </div>
 
                 <div class="mt-10">
-                               
-					<input type="text" name="correo" placeholder="ejemplo@gmail.com" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ejemplo@gmail.com'"
-						required class="single-input-primary">
-				</div>
-				<div class="mt-10">
-                                
-                                
-					<input type="password" name="contraseña" placeholder="Contraseña" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Contraseña'"
-						required class="single-input-primary">
-				</div>
+                    <div class="default-select" id="Departamento">
+                        <asp:Label ID="departamento" runat="server" BorderStyle="None"></asp:Label>
+                        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Departamento" DataValueField="IdDepartamento"></asp:DropDownList>
+                       
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Departamento]"></asp:SqlDataSource>
 
-                        </div>
 
-                      </div>
-            
-                
+
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <div class="default-select" id="Municipio">
+                        <asp:Label ID="municipio" runat="server"></asp:Label>
+
+                        <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource2" DataTextField="Municipio" DataValueField="IdMunicipio"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Municipio] WHERE ([IdDepartamento] = @IdDepartamento)">
+
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="DropDownList1" DefaultValue="1" Name="IdDepartamento" PropertyName="SelectedValue" />
+                            </SelectParameters>
+
+                        </asp:SqlDataSource>
+
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <div class="default-select" id="CaracterAcademico">
+                        <asp:Label ID="caracter" runat="server" BorderStyle="None"></asp:Label>
+
+                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="CaracterAcademico" DataValueField="IdCaracterAcademico"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [CaracterAcademico], [IdCaracterAcademico] FROM [CaracterAcademico]"></asp:SqlDataSource>
+
+                    </div>
+                </div>
+
+                <div class="mt-10">
+                    <asp:TextBox ID="TextCorreo" runat="server" BorderStyle="None"></asp:TextBox>
+                    <asp:Label ID="Correo" runat="server" type="text" name="Codigo" placeholder="Codigo" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Codigo'" class="single-input-primary" Enabled="False" EnableTheming="True"></asp:Label>
+
+                </div>
+                <div class="mt-10">
+
+                    <asp:TextBox ID="TextContraseña" runat="server" BorderStyle="None"></asp:TextBox>
+                    <asp:Label ID="Contraseña"  runat="server" type="text" name="Codigo" placeholder="Codigo" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Codigo'" class="single-input-primary" Enabled="False" EnableTheming="True"></asp:Label>
+
+                </div>
+
             </div>
-            
-	<!-- End Align Area -->
+            <asp:Button ID="Button2" runat="server" Text="Guardar Cambios" class="genric-btn primary circle arrow" OnClick="Button2_Click"  />
+
+        </div>
+
+
+        <asp:Label ID="mensaje" runat="server" Text=""></asp:Label>
+
+
+    </div>
+
+    <!-- End Align Area -->
 
 </asp:Content>
 

@@ -11,7 +11,8 @@ namespace WebAppAWIES
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-             
+            Label1.Text = Application["Id"].ToString();
+            string id = Application["Id"].ToString();
             if (Application["id"].ToString() == "" )
             {
                 Response.Redirect("Index.aspx", true);

@@ -84,5 +84,22 @@ namespace WebAppAWIES.Datos
             dsInstituto = objConexion.mtdDesconectado(consulta);
             return dsInstituto;
         }
+
+        public DataSet mtdListaInformacion(string id)
+        {
+            string consulta = " select Universidades.Codigo,Universidades.NombreInstitucion, Universidades.Nit, Universidades.Sector,Universidades.Acreditada, Universidades.PrincipalSeccional, Departamento.Departamento, Municipio.Municipio,   CaracterAcademico.CaracterAcademico , Universidades.Correo, Universidades.Contraseña from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento) where Universidades.IdUniversidades = '" + id + "'";
+            DataSet dsInstituto = new DataSet();
+            dsInstituto = objConexion.mtdDesconectado(consulta);
+            return dsInstituto;
+        }
+        public int mtdEditar(string id)
+        {
+
+            string consu = "update Universidades set Codigo = '" + Codigo + "',Sector = '" + Sector + "',Nit = '" + Nit + "',Correo = '" + Correo + "' ,Contraseña =  '" + Contraseña + "',NombreInstitucion = '" + NombreInstitucion + "' ,Acreditada = '" + Acreditada + "',PrincipalSeccional = '" + PrincipalSeccional + "', IdCaracterAcademico = " + IdCaracterAcademico + ", IdMunicipio = " + IdMunicipio + "  where IdUniversidades = " + id + " ";
+
+            int res = objConexion.mtdConectado(consu);
+            return res;
+
+        }
     }
 }

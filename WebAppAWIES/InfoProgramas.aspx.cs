@@ -25,8 +25,6 @@ namespace WebAppAWIES
             string id = Request.QueryString["valor"].ToString();
             DataSet dsPrograma = new DataSet();
             dsPrograma = Programa.mtdListaInformacion(id);
-            Codigo.Text = dsPrograma.Tables[0].Rows[0][0].ToString();
-            Nombre.Text = dsPrograma.Tables[0].Rows[0][1].ToString();
             NombreIn.Text = dsPrograma.Tables[0].Rows[0][2].ToString();
             Estado.Text = dsPrograma.Tables[0].Rows[0][3].ToString();
             NivelA.Text = dsPrograma.Tables[0].Rows[0][4].ToString();

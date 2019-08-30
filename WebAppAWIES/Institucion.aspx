@@ -83,11 +83,15 @@
 
                         <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" CssClass="position-absolute" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" style="width: 205px; height: 174px; left: -3px; top: 41px">
                             <AlternatingRowStyle BackColor="#DCDCDC" />
+                            <Columns>
+                                <asp:CommandField />
+                                <asp:CommandField ShowSelectButton="True" />
+                            </Columns>
                             <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                             <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
                             <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
                             <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
-                            <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                            <SelectedRowStyle   BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
                             <SortedAscendingCellStyle BackColor="#F1F1F1" />
                             <SortedAscendingHeaderStyle BackColor="#0000A9" />
                             <SortedDescendingCellStyle BackColor="#CAC9C9" />
@@ -97,7 +101,30 @@
                         <asp:Label ID="mensaje" runat="server" Text="No se encontraron resultados!!!" Font-Size="Large" ForeColor="#000099" Visible="False"></asp:Label>
 
 					    <br />
+                        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="IdUniversidades" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView2_SelectedIndexChanged">
+                            <AlternatingRowStyle BackColor="White" />
+                            <Columns>
+                                <asp:BoundField DataField="IdUniversidades" HeaderText="IdUniversidades" InsertVisible="False" ReadOnly="True" SortExpression="IdUniversidades" />
+                                <asp:BoundField DataField="Codigo" HeaderText="Codigo" SortExpression="Codigo" />
+                                <asp:BoundField DataField="Sector" HeaderText="Sector" SortExpression="Sector" />
+                                <asp:BoundField DataField="PrincipalSeccional" HeaderText="PrincipalSeccional" SortExpression="PrincipalSeccional" />
+                                <asp:BoundField DataField="NombreInstitucion" HeaderText="NombreInstitucion" SortExpression="NombreInstitucion" />
+                                <asp:CommandField ShowSelectButton="True" />
+                            </Columns>
+                            <EditRowStyle BackColor="#2461BF" />
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#EFF3FB" />
+                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                        </asp:GridView>
                         <br />
+						
+					    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [IdUniversidades], [Codigo], [Sector], [PrincipalSeccional], [NombreInstitucion] FROM [Universidades]"></asp:SqlDataSource>
 						
 					</div>
 					

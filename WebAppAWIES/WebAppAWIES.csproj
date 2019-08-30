@@ -90,6 +90,7 @@
     <Content Include="DGVProgramas.aspx" />
     <Content Include="EditarPrograma.aspx" />
     <Content Include="EditarInstituciones.aspx" />
+    <Content Include="InfoInstitucion.aspx" />
     <Content Include="img\fondoinsertar.jpg" />
     <Content Include="IndexInstitucion.aspx" />
     <Content Include="Global.asax" />
@@ -264,6 +265,13 @@
     </Compile>
     <Compile Include="EditarInstituciones.aspx.designer.cs">
       <DependentUpon>EditarInstituciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InfoInstitucion.aspx.cs">
+      <DependentUpon>InfoInstitucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InfoInstitucion.aspx.designer.cs">
+      <DependentUpon>InfoInstitucion.aspx</DependentUpon>
     </Compile>
     <Compile Include="IndexInstitucion.aspx.cs">
       <DependentUpon>IndexInstitucion.aspx</DependentUpon>

@@ -81,49 +81,29 @@
 				<div class="col-lg-8 posts-list">
 					<div class="single-post row">
 
-                        <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Horizontal" CssClass="position-absolute" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" style="width: 205px; height: 174px; left: 0px; top: 24px">
-                            <AlternatingRowStyle BackColor="#F7F7F7" />
-                            <Columns>
-                                <asp:CommandField ShowSelectButton="True" />
-                            </Columns>
-                            <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
-                            <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
-                            <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
-                            <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
-                            <SelectedRowStyle   BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
-                            <SortedAscendingCellStyle BackColor="#F4F4FD" />
-                            <SortedAscendingHeaderStyle BackColor="#5A4C9D" />
-                            <SortedDescendingCellStyle BackColor="#D8D8F0" />
-                            <SortedDescendingHeaderStyle BackColor="#3E3277" />
-                        </asp:GridView>
-						
-                        <asp:Label ID="mensaje" runat="server" Text="No se encontraron resultados!!!" Font-Size="Large" ForeColor="#000099" Visible="False"></asp:Label>
-
-					    <br />
-                        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="IdUniversidades" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView2_SelectedIndexChanged">
+                        <asp:GridView ID="GridView1" runat="server" CellPadding="4" GridLines="None" CssClass="position-absolute" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" style="width: 303px; height: 209px; left: 0px; top: 24px" ForeColor="#333333">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:BoundField DataField="IdUniversidades" HeaderText="IdUniversidades" InsertVisible="False" ReadOnly="True" SortExpression="IdUniversidades" />
-                                <asp:BoundField DataField="Codigo" HeaderText="Codigo" SortExpression="Codigo" />
-                                <asp:BoundField DataField="Sector" HeaderText="Sector" SortExpression="Sector" />
-                                <asp:BoundField DataField="PrincipalSeccional" HeaderText="PrincipalSeccional" SortExpression="PrincipalSeccional" />
-                                <asp:BoundField DataField="NombreInstitucion" HeaderText="NombreInstitucion" SortExpression="NombreInstitucion" />
-                                <asp:CommandField ShowSelectButton="True" />
+                                <asp:CommandField ShowSelectButton="True" ButtonType="Image" NewImageUrl="~/img/ver.png" >
+                                <ControlStyle Height="30px" Width="50px" />
+                                </asp:CommandField>
                             </Columns>
                             <EditRowStyle BackColor="#2461BF" />
                             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                             <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                             <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#EFF3FB" />
+                            <RowStyle BackColor="#EFF3FB" BorderStyle="None" />
                             <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
                             <SortedAscendingCellStyle BackColor="#F5F7FB" />
                             <SortedAscendingHeaderStyle BackColor="#6D95E1" />
                             <SortedDescendingCellStyle BackColor="#E9EBEF" />
                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
                         </asp:GridView>
-                        <br />
 						
-					    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [IdUniversidades], [Codigo], [Sector], [PrincipalSeccional], [NombreInstitucion] FROM [Universidades]"></asp:SqlDataSource>
+                        <asp:Label ID="mensaje" runat="server" Text="No se encontraron resultados!!!" Font-Size="Large" ForeColor="#000099" Visible="False"></asp:Label>
+
+					    <br />
+                        <br />
 						
 					</div>
 					

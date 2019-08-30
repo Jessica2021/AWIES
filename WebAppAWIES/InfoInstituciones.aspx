@@ -80,6 +80,7 @@
                 <div class="mt-10">
                     <h5>Caracter Academico: </h5>
                 </div>
+               
             </div>
             <div class="col-md-6">
 
@@ -110,15 +111,15 @@
                 </div>
 
                 <div class="mt-10" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
-                   <asp:Label ID="departamento" runat="server" BorderStyle="None"  Height="30px" Width="80%"></asp:Label>
+                   <asp:Label ID="departamento" runat="server" BorderStyle="None"  Height="30px" Width="80%" CssClass="auto-style2"></asp:Label>
                     
                 </div>
                 <div class="mt-10" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
-                     <asp:Label ID="municipio" runat="server"  BorderStyle="None"   Height="30px" Width="80%"></asp:Label>
+                     <asp:Label ID="municipio" runat="server"  BorderStyle="None"   Height="30px" Width="80%" CssClass="auto-style2"></asp:Label>
 
                 </div>
                 <div class="mt-10" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
-                     <asp:Label ID="caracter" runat="server" BorderStyle="None"   Height="30px" Width="80%"></asp:Label>
+                     <asp:Label ID="caracter" runat="server" BorderStyle="None"   Height="30px" Width="80%" CssClass="auto-style2"></asp:Label>
 
                 </div>
 

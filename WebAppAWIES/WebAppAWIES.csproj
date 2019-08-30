@@ -93,7 +93,6 @@
     <Content Include="InfoInstituciones.aspx" />
     <Content Include="InfoProgramas.aspx" />
     <Content Include="img\ver.png" />
-    <Content Include="InfoInstitucion.aspx" />
     <Content Include="img\fondoinsertar.jpg" />
     <Content Include="IndexInstitucion.aspx" />
     <Content Include="Global.asax" />
@@ -282,13 +281,6 @@
     </Compile>
     <Compile Include="InfoProgramas.aspx.designer.cs">
       <DependentUpon>InfoProgramas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="InfoInstitucion.aspx.cs">
-      <DependentUpon>InfoInstitucion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="InfoInstitucion.aspx.designer.cs">
-      <DependentUpon>InfoInstitucion.aspx</DependentUpon>
     </Compile>
     <Compile Include="IndexInstitucion.aspx.cs">
       <DependentUpon>IndexInstitucion.aspx</DependentUpon>

@@ -30,6 +30,7 @@ namespace WebAppAWIES
         }
         public void mtdBuscar()
         {
+            GridView2.Visible = false;
             string institutos = txtBuscar.Text;
             DataSet dsInstitutos = new DataSet();
             dsInstitutos = Universidad.mtdBuscarInstitucuines(institutos);
@@ -45,6 +46,7 @@ namespace WebAppAWIES
 
         protected void btnBuscUniver_Click(object sender, EventArgs e)
         {
+            GridView2.Visible = false;
             DataSet dsUniversidad = new DataSet();
             dsUniversidad = Universidad.mtdBusquedaUniversidades();
             GridView1.DataSource = dsUniversidad.Tables[0];
@@ -54,6 +56,7 @@ namespace WebAppAWIES
 
         protected void btnBuscTecn_Click(object sender, EventArgs e)
         {
+            GridView2.Visible = false;
             DataSet dsTecnico = new DataSet();
             dsTecnico = Universidad.mtdBusquedaTecnica();
             GridView1.DataSource = dsTecnico.Tables[0];
@@ -63,6 +66,7 @@ namespace WebAppAWIES
 
         protected void btnBuscTecnolo_Click(object sender, EventArgs e)
         {
+            GridView2.Visible = false;
             DataSet dsTecnologo = new DataSet();
             dsTecnologo = Universidad.mtdBusquedaTecnologica();
             GridView1.DataSource = dsTecnologo.Tables[0];
@@ -72,6 +76,7 @@ namespace WebAppAWIES
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            GridView2.Visible = false;
             DataSet dsTecnologo = new DataSet();
             dsTecnologo = Universidad.mtdBusquedaMunicipio(int.Parse(DropDownList2.SelectedValue.ToString()));
             GridView1.DataSource = dsTecnologo.Tables[0];
@@ -82,15 +87,17 @@ namespace WebAppAWIES
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            int pos = GridView1.SelectedIndex;
+            string valor = GridView1.Rows[pos].Cells[1].Text;
+            Response.Redirect("InfoInstitucion.aspx?id=" + valor + "");
 
-             
         }
 
         protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
         {
             int pos = GridView2.SelectedIndex;
             string valor = GridView2.Rows[pos].Cells[0].Text;
-            Response.Redirect("DGVInstituciones.aspx?id=" + valor+"");
+            Response.Redirect("InfoInstitucion.aspx?id=" + valor+"");
         }
     }
 }

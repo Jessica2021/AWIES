@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteInstitucion.Master" AutoEventWireup="true" CodeBehind="InfoInstitucion.aspx.cs" Inherits="WebAppAWIES.Formulario_web14" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="InfoInstitucion.aspx.cs" Inherits="WebAppAWIES.Formulario_web14" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
      <style>
@@ -78,12 +78,7 @@
                 <div class="mt-10">
                     <h5>Caracter Academico</h5>
                 </div>
-                <div class="mt-10">
-                    <h5>Correo</h5>
-                </div>
-                <div class="mt-10">
-                    <h5>Contraseña</h5>
-                </div>
+               
             </div>
             <div class="col-md-6">
 
@@ -126,15 +121,7 @@
 
                 </div>
 
-                <div class="mt-10" id="tex10">
-                   <asp:Label ID="Correo" runat="server" type="text" name="Codigo" BackColor="#E9F4F5" Height="30px" Width="80%"></asp:Label>
-
-                </div>
-                <div class="mt-10" id="tex11">
-
-                    <asp:Label ID="Contraseña"  runat="server" type="text" name="Codigo" BackColor="#E9F4F5" Height="30px" Width="80%"></asp:Label>
-
-                </div>
+               
             </div>
              
             </div>

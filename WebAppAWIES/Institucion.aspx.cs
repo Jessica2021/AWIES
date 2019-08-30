@@ -13,7 +13,7 @@ namespace WebAppAWIES
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataBind();
+            GridView2.DataBind();
         }
         clUniversidades Universidad = new clUniversidades();
 
@@ -84,6 +84,13 @@ namespace WebAppAWIES
 
 
              
+        }
+
+        protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int pos = GridView2.SelectedIndex;
+            string valor = GridView2.Rows[pos].Cells[0].Text;
+            Response.Redirect("DGVInstituciones.aspx?id=" + valor+"");
         }
     }
 }

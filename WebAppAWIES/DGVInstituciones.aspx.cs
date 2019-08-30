@@ -13,11 +13,14 @@ namespace WebAppAWIES
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
            
+
 
         }
         protected void Page_Init (object sender, EventArgs e)
             {
+            string valor = Request.QueryString["id"];
             DropDownList1.Visible = false;
             DropDownList3.Visible = false;
             DropDownList2.Visible = false;
@@ -33,7 +36,7 @@ namespace WebAppAWIES
 
             string id = Application["Id"].ToString();
             DataSet dsInstitutos = new DataSet();
-            dsInstitutos = Universidad.mtdListaInformacion(id);
+            dsInstitutos = Universidad.mtdListaInformacion(valor);
             Codigo.Text = dsInstitutos.Tables[0].Rows[0][0].ToString();
             Nombre.Text = dsInstitutos.Tables[0].Rows[0][1].ToString();
             Nit.Text = dsInstitutos.Tables[0].Rows[0][2].ToString();
@@ -48,7 +51,7 @@ namespace WebAppAWIES
 
 
         }
-        clUniversidades Universidad = new clUniversidades();
+        clUniversidades Universidad = new clUniversidades();   
 
         protected void Button1_Click(object sender, EventArgs e)
         {

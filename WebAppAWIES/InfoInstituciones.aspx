@@ -53,38 +53,38 @@
            <div class="col-md-4">
 
                 <div class="mt-10">
-                    <h5>Codigo Institucional</h5>
+                    <h5>Codigo Institucional: </h5>
                 </div>
                 <div class="mt-10">
-                    <h5>Nombre Institucion</h5>
+                    <h5>Nombre Institucion: </h5>
                 </div>
                 <div class="mt-10">
-                    <h5>Nit</h5>
+                    <h5>Nit: </h5>
                 </div>
                 <div class="mt-10">
-                    <h5>Sector</h5>
+                    <h5>Sector: </h5>
                 </div>
 
                 <div class="mt-10">
-                    <h5>Acreditada</h5>
+                    <h5>Acreditada: </h5>
                 </div>
                 <div class="mt-10">
-                    <h5>Principal/Seccional</h5>
+                    <h5>Principal/Seccional: </h5>
                 </div>
                 <div class="mt-10">
-                    <h5>Departamento</h5>
+                    <h5>Departamento: </h5>
                 </div>
                 <div class="mt-10">
                     <h5>Municipio</h5>
                 </div>
                 <div class="mt-10">
-                    <h5>Caracter Academico</h5>
+                    <h5>Caracter Academico: </h5>
                 </div>
                 <div class="mt-10">
-                    <h5>Correo</h5>
+                    <h5>Correo: </h5>
                 </div>
                 <div class="mt-10">
-                    <h5>Contraseña</h5>
+                    <h5>Contraseña: </h5>
                 </div>
             </div>
             <div class="col-md-6">

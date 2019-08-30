@@ -145,7 +145,7 @@
 
                         <asp:Label ID="mensaje" runat="server" Text="No se encontraron resultados!!!" Font-Size="Large" ForeColor="#000099" Visible="False"></asp:Label>
 
-					    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, Programas.Precio, Programas.Ponderado, Area.Area, Metodologia.Metodologia, NivelFormacion.NivelFormacion FROM Programas INNER JOIN Area ON Programas.IdAreaConocimiento = Area.IdArea INNER JOIN Metodologia ON Programas.IdMetodologia = Metodologia.IdMetodologia INNER JOIN NivelFormacion ON Programas.IdNivelFormacion = NivelFormacion.IdNivelFormacion"></asp:SqlDataSource>
+					    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Programas.IdProgramas, Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, Area.Area, Metodologia.Metodologia, NivelFormacion.NivelFormacion FROM Programas INNER JOIN Area ON Programas.IdAreaConocimiento = Area.IdArea INNER JOIN Metodologia ON Programas.IdMetodologia = Metodologia.IdMetodologia INNER JOIN NivelFormacion ON Programas.IdNivelFormacion = NivelFormacion.IdNivelFormacion"></asp:SqlDataSource>
 						
 					    <br />
                         <br />
@@ -154,8 +154,8 @@
                         <asp:GridView ID="GridView1" runat="server" CellPadding="4" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" ForeColor="#333333">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:ButtonField ButtonType="Image" CommandName="Select" HeaderText="Mas Informacion" ImageUrl="~/img/ver.png" ShowHeader="True" Text="ver">
-                                <ControlStyle Height="30px" Width="50px" />
+                                <asp:ButtonField ButtonType="Image" CommandName="Select" HeaderText="Mas Informacion" ImageUrl="~/img/ver.png" ShowHeader="True" Text="Ver">
+                                <ControlStyle Height="25px" Width="45px" />
                                 </asp:ButtonField>
                             </Columns>
                             <EditRowStyle BackColor="#2461BF" />
@@ -171,6 +171,7 @@
                         </asp:GridView>
                         </div>
                         <br />
+                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                         </div>
 					
 				</div>

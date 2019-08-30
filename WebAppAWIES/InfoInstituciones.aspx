@@ -80,12 +80,6 @@
                 <div class="mt-10">
                     <h5>Caracter Academico: </h5>
                 </div>
-                <div class="mt-10">
-                    <h5>Correo: </h5>
-                </div>
-                <div class="mt-10">
-                    <h5>Contraseña: </h5>
-                </div>
             </div>
             <div class="col-md-6">
 

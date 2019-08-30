@@ -1652,7 +1652,7 @@ h1, h2, h3, h4, h5, h6 {
     display: none; } }
 /* Nav Meu Styling */
 .nav-menu a {
-  padding: 38.5px 8px;
+  padding: 5.5px 8px;
   text-decoration: none;
   display: inline-block;
   color: #222222;

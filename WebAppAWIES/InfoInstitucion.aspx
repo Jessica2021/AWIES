@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteInstitucion.Master" AutoEventWireup="true" CodeBehind="DGVInstituciones.aspx.cs" Inherits="WebAppAWIES.DGVInstituciones" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteInstitucion.Master" AutoEventWireup="true" CodeBehind="InfoInstitucion.aspx.cs" Inherits="WebAppAWIES.Formulario_web14" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   
-    <style>
+
+     <style>
         h5 {
             text-align: right;
             padding-top: 5%;
@@ -46,8 +45,7 @@
 
     <div class="section-top-border">
         <h3>Datos Generales</h3>
-        <asp:Button ID="Button1" runat="server" Text="Editar" class="genric-btn primary circle arrow" OnClick="Button1_Click" />
-
+       
         <div class="row">
 
             <div class="col-md-4">
@@ -138,13 +136,13 @@
 
                 </div>
             </div>
+             
             </div>
-        
+        <div class="mt-10">
+         <a href="Institucion.aspx" class="genric-btn success-border circle arrow">Volver<span class="lnr lnr-arrow-right"></span></a>
+         </div>
     </div>
 
     <!-- End Align Area -->
 
 </asp:Content>
-
-
-

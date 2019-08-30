@@ -110,10 +110,56 @@
             <div class="col-md-6">
 
                 <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
-                   <asp:Label ID="Codigo" runat="server" type="text" text="Arquitectura" name="Codigo"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                   <asp:Label ID="Nombre" runat="server" type="text"  name="Nombre"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
                 </div>
-
-               
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="Codigo" runat="server" type="text"  name="Codigo"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="NombreIn" runat="server" type="text" name="NombreIn"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+               <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="Estado" runat="server" type="text"  name="Estado"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="NivelA" runat="server" type="text" name="NivelA"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="Recono" runat="server" type="text" name="Recono"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="NivelF" runat="server" type="text" name="NivelF"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="Metodo" runat="server" type="text" name="Metodo"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="AreaC" runat="server" type="text" name="AreaC"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="Valo" runat="server" type="text" name="Valo"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="Numero" runat="server" type="text" name="Numero"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="Vigencia" runat="server" type="text" name="Vigencia"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="Duracion" runat="server" type="text" name="Duracion"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="Titulo" runat="server" type="text" name="Titulo"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="Tipo" runat="server" type="text" name="Tipo"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="Primero" runat="server" type="text" name="Primero"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="Ultimo" runat="server" type="text" name="Ultimo"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
             </div>
              
             </div>

@@ -51,10 +51,10 @@ namespace WebAppAWIES.Datos
 
         
 
-        public int mtdEditarCarreras()
+        public int mtdEditarCarreras(string valor)
         {
-            string consulta = "update Programas set NombrePrograma = '" + NombrePrograma + "',EstadoPrograma = '" + EstadoPrograma + "' ,NivelAcademico = '" + NivelAcademico + "' ,ReconocimientoMinisterio = '" + ReconocimientoMinisterio + "' ,IdNivelFormacion  =  '" + IdNivelFormacion + "',IdMetodologia = '" + IdMetodologia + "',IdAreaConocimiento = '" + IdAreaConocimiento + "',Precio = '" + Precio + "',NumeroCreditos '" + NumeroCreditos + "',VigenciaAños = '" + VigenciaAños +"', DuracionSemestre = '"+ DuracionSemestre + "',TituloOtorgado = ' "+ TituloOtorgado +"' ,TipoIngreso = '"+ TipoIngreso +"' ,PrimerIngresado = '"+ PrimerIngresado +"' ,UltimoIngresado = '"+ UltimoIngresado +"' where IdProgramas = "+ IdProgramas+"";
-            int res = objConexion.mtdConectado(consulta);
+            string consulta = "update Programas set NombrePrograma = '" + NombrePrograma + "',EstadoPrograma = '" + EstadoPrograma + "' ,NivelAcademico = '" + NivelAcademico + "' ,ReconocimientoMinisterio = '" + ReconocimientoMinisterio + "' ,IdNivelFormacion  =  " + IdNivelFormacion + ",IdMetodologia = " + IdMetodologia + ",IdAreaConocimiento = " + IdAreaConocimiento + ",Precio = '" + Precio + "', NumeroCreditos ='" + NumeroCreditos + "', VigenciaAños = '" + VigenciaAños +"', DuracionSemestre = '"+ DuracionSemestre + "',TituloOtorgado = ' "+ TituloOtorgado +"' ,TipoIngreso = '"+ TipoIngreso +"' ,PrimerIngresado = '"+ PrimerIngresado +"' ,UltimoIngresado = '"+ UltimoIngresado +"' where IdProgramas = "+ valor+"";
+             int res = objConexion.mtdConectado(consulta);
             return res;
         }
 
@@ -67,9 +67,19 @@ namespace WebAppAWIES.Datos
 
             //string a = global.Application["Id"].ToString();
             
-            string consulta = "SELECT Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, " +
+            string consulta = "SELECT Programas.IdProgramas, Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, " +
                 "Programas.Precio, Programas.NumeroCreditos, Programas.VigenciaAños,Programas.DuracionSemestre,TituloOtorgado " +
                 "FROM InstitucionPrograma INNER JOIN Programas ON InstitucionPrograma.IdProgramas = Programas.IdProgramas INNER JOIN Universidades ON InstitucionPrograma.IdUniversidades = Universidades.IdUniversidades WHERE(Universidades.IdUniversidades = '"+ a +"')";
+            DataSet dsPrograma = new DataSet();
+            dsPrograma = objConexion.mtdDesconectado(consulta);
+            return dsPrograma;
+        }
+
+        public DataSet mtdListar2 (string valor)
+        {
+            string consulta  = "SELECT Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, " +
+                "NivelFormacion.NivelFormacion, Metodologia.Metodologia, Area.Area, Programas.Precio, Programas.NumeroCreditos, Programas.VigenciaAños,Programas.DuracionSemestre,TituloOtorgado, Programas.TipoIngreso, Programas.PrimerIngresado, Programas.UltimoIngresado " +
+                "FROM Programas INNER JOIN NivelFormacion ON Programas.IdNivelFormacion = NivelFormacion.IdNivelFormacion INNER JOIN Metodologia ON Programas.IdMetodologia = Metodologia.IdMetodologia INNER JOIN Area ON Programas.IdAreaConocimiento = Area.IdArea WHERE(Programas.IdProgramas = '" + valor + "')";
             DataSet dsPrograma = new DataSet();
             dsPrograma = objConexion.mtdDesconectado(consulta);
             return dsPrograma;

@@ -195,7 +195,7 @@
 			</div>
             </div>
             <div class="mt-10">
-            <asp:Button ID="btnEditar" runat="server" Text="Editar" class="genric-btn primary radius"  />
+            <asp:Button ID="btnEditar" runat="server" Text="Editar" class="genric-btn primary radius" OnClick="btnEditar_Click"  />
             <a href="DGVProgramas.aspx" class="genric-btn primary-border radius">Volver</a>
                </div> 
                         </div>

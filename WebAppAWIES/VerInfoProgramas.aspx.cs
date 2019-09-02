@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebAppAWIES
 {
-    public partial class Formulario_web16 : System.Web.UI.Page
+    public partial class Formulario_web14 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

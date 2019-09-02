@@ -10,7 +10,7 @@
 namespace WebAppAWIES {
     
     
-    public partial class Formulario_web15 {
+    public partial class Formulario_web14 {
         
         /// <summary>
         /// Control Nombre.
@@ -19,25 +19,7 @@ namespace WebAppAWIES {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-
-        
-        /// <summary>
-        /// Control Codigo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-
-        
-        /// <summary>
-        /// Control NombreIn.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NombreIn;
+        protected global::System.Web.UI.WebControls.Label Nombre;
         
         /// <summary>
         /// Control Estado.

@@ -409,10 +409,16 @@ namespace WebAppAWIES
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id = GridView1.SelectedIndex;
-            string valor = GridView1.Rows[id].Cells[1].Text;
+            //int id = GridView1.SelectedIndex;
+            //string valor = GridView1.Rows[id].Cells[1].Text;
             //TextBox1.Text = valor;
             //Response.Redirect("InfoProgramas.aspx" + ) ;
+
+            int id = GridView1.SelectedIndex;
+            string valor = GridView1.Rows[id].Cells[1].Text;
+
+            Response.Write("<script>window.open ('InfProgramas.aspx?id=" + valor + "','_blank');</script>");
+
         }
     }
 }

@@ -81,17 +81,23 @@
 				<div class="col-lg-8 posts-list">
 					<div class="single-post row">
 
-                        <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" CssClass="position-absolute" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" style="width: 205px; height: 174px; left: -3px; top: 41px">
-                            <AlternatingRowStyle BackColor="#DCDCDC" />
-                            <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                            <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
-                            <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
-                            <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                            <SortedAscendingHeaderStyle BackColor="#0000A9" />
-                            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                            <SortedDescendingHeaderStyle BackColor="#000065" />
+                        <asp:GridView ID="GridView1" runat="server" CellPadding="4" GridLines="None" CssClass="position-absolute" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" style="width: 303px; height: 209px; left: 0px; top: 24px" ForeColor="#333333">
+                            <AlternatingRowStyle BackColor="White" />
+                            <Columns>
+                                <asp:CommandField ShowSelectButton="True" ButtonType="Image" NewImageUrl="~/img/ver.png" >
+                                <ControlStyle Height="30px" Width="50px" />
+                                </asp:CommandField>
+                            </Columns>
+                            <EditRowStyle BackColor="#2461BF" />
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#EFF3FB" BorderStyle="None" />
+                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
                         </asp:GridView>
 						
                         <asp:Label ID="mensaje" runat="server" Text="No se encontraron resultados!!!" Font-Size="Large" ForeColor="#000099" Visible="False"></asp:Label>

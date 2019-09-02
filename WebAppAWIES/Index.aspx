@@ -247,6 +247,7 @@
 					</nav>
 				</div>
 		</div>
+            |
 	</section>
 	<!--######## End post-content Area ########-->
 </asp:Content>

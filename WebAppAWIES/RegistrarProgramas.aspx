@@ -262,7 +262,7 @@ border-radius: 11px 11px 11px 11px;
             </div>
             
                 <div class="mt-10">
-                     <h5>Precio</h5>
+                     <h5>Valor Matricula</h5>
                     <asp:TextBox ID="Precio" class="single-input-primary" runat="server" placeholder="000.000.000" onfocus="this.placeholder = ''"  onblur="this.placeholder = '000.000.000'"></asp:TextBox>
 		        </div>
                 <div class="mt-10">

@@ -34,6 +34,12 @@
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
+   <style>
+       hr {
+        color: yellow;
+        font-size: 10px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -102,7 +108,6 @@
 		</div>
 	</header>
 	<!--######## End Header Area ########-->
-        <hr />
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

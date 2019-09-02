@@ -10,7 +10,7 @@
 
 	<!--######## Start post-content Area ########-->
 	<section class="post-content-area">
-		<div class="container">
+	
 			<div class="row">
                 <div class="col-lg-4 sidebar-widgets">
 					<div class="widget-wrap">
@@ -95,7 +95,9 @@
                                 <asp:Button ID="btnPos" runat="server" Text="POSGRADO" class="genric-btn success-border medium" OnClick="btnPos_Click"/>
                                 <asp:Button ID="btnPre" runat="server" Text="PREGRADO" class="genric-btn success-border medium" OnClick="btnPre_Click"/>
                             </ul>
+                             <br />
                             <h5>Metodologia</h5>
+                             <br />
                             <ul>
                                 <asp:Button ID="btnDista" runat="server" Text="A DISTANCIA" class="genric-btn success-border medium" OnClick="btnDista_Click"/>
                                 <asp:Button ID="btnPresen" runat="server" Text="PRESENCIAL" class="genric-btn success-border medium" OnClick="btnPresen_Click"/>
@@ -143,24 +145,33 @@
 
                         <asp:Label ID="mensaje" runat="server" Text="No se encontraron resultados!!!" Font-Size="Large" ForeColor="#000099" Visible="False"></asp:Label>
 
-					    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, Programas.Precio, Programas.Ponderado, Area.Area, Metodologia.Metodologia, NivelFormacion.NivelFormacion FROM Programas INNER JOIN Area ON Programas.IdAreaConocimiento = Area.IdArea INNER JOIN Metodologia ON Programas.IdMetodologia = Metodologia.IdMetodologia INNER JOIN NivelFormacion ON Programas.IdNivelFormacion = NivelFormacion.IdNivelFormacion"></asp:SqlDataSource>
+					    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Programas.IdProgramas, Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, Area.Area, Metodologia.Metodologia, NivelFormacion.NivelFormacion FROM Programas INNER JOIN Area ON Programas.IdAreaConocimiento = Area.IdArea INNER JOIN Metodologia ON Programas.IdMetodologia = Metodologia.IdMetodologia INNER JOIN NivelFormacion ON Programas.IdNivelFormacion = NivelFormacion.IdNivelFormacion"></asp:SqlDataSource>
 						
 					    <br />
                         <br />
                         <br />
-                        <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
-                            <AlternatingRowStyle BackColor="#DCDCDC" />
-                            <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                            <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
-                            <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
-                            <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                            <SortedAscendingHeaderStyle BackColor="#0000A9" />
-                            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                            <SortedDescendingHeaderStyle BackColor="#000065" />
+                        <div class="text-sm-center">
+                        <asp:GridView ID="GridView1" runat="server" CellPadding="4" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" ForeColor="#333333">
+                            <AlternatingRowStyle BackColor="White" />
+                            <Columns>
+                                <asp:ButtonField ButtonType="Image" CommandName="Select" HeaderText="Mas Informacion" ImageUrl="~/img/ver.png" ShowHeader="True" Text="Ver">
+                                <ControlStyle Height="25px" Width="45px" />
+                                </asp:ButtonField>
+                            </Columns>
+                            <EditRowStyle BackColor="#2461BF" />
+                            <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#EFF3FB" />
+                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
                         </asp:GridView>
+                        </div>
                         <br />
+                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                         </div>
 					
 				</div>

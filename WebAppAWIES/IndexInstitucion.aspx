@@ -8,6 +8,7 @@
 	<h3 class="mb-30">Publicar Noticias...</h3>
 	<form action="#">
 		<div class="mt-10">
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
             <asp:TextBox ID="TextBox1" runat="server" name="Titulo" placeholder="Titulo" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Titulo'"
 				 class="single-input-primary"></asp:TextBox>
 			

@@ -7,6 +7,17 @@
     <div class="col-lg-8 col-md-8" style="margin-left:100px;">
 	<h3 class="mb-30">Publicar Noticias...</h3>
 	<form action="#">
+       
+         <div class="mt-10">
+            <asp:FileUpload ID="FileUpload1" runat="server" />
+		</div>
+        <div class="mt-10">
+            <asp:Button ID="btnVer" runat="server" Text="Vista Previa" OnClick="btnVer_Click" />
+            </div>
+         <div class="mt-10">
+        <asp:Image ID="ImagenPrevia" runat="server" Height="257px" ImageUrl="~/img/fondoinsertar.jpg" Width="471px"/>
+        </div>
+        <asp:Label ID="lblExtension" runat="server" Visible="False" ></asp:Label>
 		<div class="mt-10">
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
             <asp:TextBox ID="TextBox1" runat="server" name="Titulo" placeholder="Titulo" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Titulo'"
@@ -19,17 +30,9 @@
 		
 		</div>
         <div class="mt-10">
-        <asp:Image ID="Image1" runat="server" Height="257px" ImageUrl="~/img/fondoinsertar.jpg" Width="471px"/>
-        </div>
-        <div class="mt-10">
-            
-            <asp:FileUpload ID="FileUpload1" runat="server" />
-		</div>
-        <div class="mt-10">
             <asp:Button ID="btnSubir" runat="server" class="genric-btn info-border circle arrow" Text="Subir Archivo" OnClick="btnSubir_Click" />
-            
-		</div>
-        <asp:Label ID="lblText" runat="server" Text="Label"></asp:Label>
+            </div>
+        <asp:Label ID="lblText" runat="server" ></asp:Label>
         </form>
         </div>
     </div>

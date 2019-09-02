@@ -10,7 +10,7 @@
 namespace WebAppAWIES {
     
     
-    public partial class Formulario_web16 {
+    public partial class Formulario_web15 {
         
         /// <summary>
         /// Control Codigo.

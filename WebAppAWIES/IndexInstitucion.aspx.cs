@@ -13,16 +13,35 @@ namespace WebAppAWIES
         {
             Label1.Text = Application["Id"].ToString();
             string id = Application["Id"].ToString();
-            if (Application["id"].ToString() == "" )
+            if (Application["id"].ToString() == "")
             {
                 Response.Redirect("Index.aspx", true);
             }
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        
+
+        protected void btnSubir_Click(object sender, EventArgs e)
+
         {
-            int tam = fuploadImagen.PostedFile.ContentLength;
-            byte[] ImagenOriginal = new byte[tam];
+            string extension = System.IO.Path.GetExtension(FileUpload1.FileName);
+
+            if (FileUpload1.HasFile)
+            {
+                if (extension==".jpg" || extension==".png")
+                {
+                    FileUpload1.SaveAs(Server.MapPath("~/img/Publicaciones" + FileUpload1.FileName));
+                    lblText.Text = extension;
+                }
+                else
+                {
+                    lblText.Text = "El tipo de Archivo no es correcto";
+                }
+            }
+            else
+            {
+                lblText.Text = "Debe seleccionar un archivo";
+            }
         }
     }
 }

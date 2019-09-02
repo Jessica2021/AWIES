@@ -22,12 +22,14 @@
         <asp:Image ID="Image1" runat="server" Height="257px" ImageUrl="~/img/fondoinsertar.jpg" Width="471px"/>
         </div>
         <div class="mt-10">
-            <asp:FileUpload ID="fuploadImagen" accept=".jpg" runat="server" />
+            
+            <asp:FileUpload ID="FileUpload1" runat="server" />
 		</div>
         <div class="mt-10">
+            <asp:Button ID="btnSubir" runat="server" class="genric-btn info-border circle arrow" Text="Subir Archivo" OnClick="btnSubir_Click" />
             
-            <asp:Button ID="Button2" runat="server" class="genric-btn info-border circle arrow" Text="Publicar" OnClick="Button2_Click" style="height: 20px" />
 		</div>
+        <asp:Label ID="lblText" runat="server" Text="Label"></asp:Label>
         </form>
         </div>
     </div>

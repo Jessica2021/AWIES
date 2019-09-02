@@ -68,5 +68,10 @@ namespace WebAppAWIES
         {
             Response.Write("<script>window.open ('EditarPrograma.aspx?id=" + x + "','_blank');</script>");
         }
+
+        protected void btnEditar0_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>window.open ('VerInfoProgramas.aspx?id=" + x + "','_blank');</script>");
+        }
     }
 }

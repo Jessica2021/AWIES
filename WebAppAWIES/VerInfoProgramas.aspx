@@ -32,11 +32,7 @@
          .auto-style2 {
              font-size: x-large;
          }
-         .auto-style3 {
-             margin-top: 10px;
-             text-align: left;
-         }
-    </style>
+         </style>
 
     <!-- Start Align Area -->
     <hr style="border: medium solid #000080" />
@@ -54,12 +50,6 @@
 
                 <div class="mt-10">
                     <h5>Nombre del Programa: </h5>
-                </div>
-                <div class="mt-10">
-                    <h5>Codigo Institucion: </h5>
-                </div>
-                <div class="mt-10">
-                    <h5>Nombre Institucion: </h5>
                 </div>
                 <div class="mt-10">
                     <h5>Estado del Programa: </h5>

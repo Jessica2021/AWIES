@@ -43,20 +43,20 @@ namespace WebAppAWIES
 
            
 
-            try
-            {
-                if (lblText.Text != "")
-                {
-                    ImageField foto = lblText.Text;
-                    foto.SaveAs(Server.MapPath("~/img/Publicaciones/" + FileUpload1.FileName));
-                    lblText.Text = extension;
-                }
-            }
-            catch (Exception)
-            {
+            //try
+            //{
+            //    if (lblText.Text != "")
+            //    {
+            //        ImageField foto = lblText.Text;
+            //        foto.SaveAs(Server.MapPath("~/img/Publicaciones/" + FileUpload1.FileName));
+            //        lblText.Text = extension;
+            //    }
+            //}
+            //catch (Exception)
+            //{
 
                 
-            }
+            //}
            
         }
 

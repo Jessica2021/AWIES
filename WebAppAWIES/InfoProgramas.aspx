@@ -27,7 +27,7 @@
             -ms-flex: 0 0 33.333333%;
             flex: 0 0 33.333333%;
             text-align: center;
-            padding-left: 15px;
+            padding-left: 15px;Response.Write("<script>window.open ('NewQuote.aspx?val=" + txtQuotationNo.Text+"','_blank');</script>");
             padding-right: 15px;
         }
          .auto-style2 {

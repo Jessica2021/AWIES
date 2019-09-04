@@ -14,7 +14,7 @@ namespace WebAppAWIES
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataBind();
+          //  GridView1.DataBind();
         }
         clConexion conexion = new clConexion();
         clProgramas po = new clProgramas();
@@ -409,10 +409,11 @@ namespace WebAppAWIES
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id = GridView1.SelectedIndex;
-            string valor = GridView1.Rows[id].Cells[1].Text;
-            //TextBox1.Text = valor;
-            //Response.Redirect("InfoProgramas.aspx" + ) ;
+            int pos = GridView1.SelectedIndex;
+            string valor = GridView1.Rows[pos].Cells[1].Text;
+            Response.Write("<script>window.open ('InfoProgramas.aspx?id=" + valor + "','_blank');</script>");
         }
+
+
     }
 }

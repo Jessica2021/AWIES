@@ -13,6 +13,7 @@ namespace WebAppAWIES
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             clProgramas objProgramas = new clProgramas();
             Global global = new Global();
             
@@ -66,6 +67,11 @@ namespace WebAppAWIES
         protected void btnEditar_Click(object sender, EventArgs e)
         {
             Response.Write("<script>window.open ('EditarPrograma.aspx?id=" + x + "','_blank');</script>");
+        }
+
+        protected void btnEditar0_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>window.open ('VerInfoProgramas.aspx?id=" + x + "','_blank');</script>");
         }
     }
 }

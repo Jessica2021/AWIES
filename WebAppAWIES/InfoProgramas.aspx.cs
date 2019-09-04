@@ -14,17 +14,13 @@ namespace WebAppAWIES
         
         protected void Page_Load(object sender, EventArgs e)
         {
-          
 
-        }
 
-        clProgramas Programa = new clProgramas();
-        protected void Page_Init(object sender, EventArgs e)
-        {
-            
-            string id = Request.QueryString["valor"].ToString();
+            string id = Request.QueryString["id"].ToString();
             DataSet dsPrograma = new DataSet();
-            dsPrograma = Programa.mtdListaInformacion(id);
+            dsPrograma = Programa.mtdListaInformacion1(id);
+            Nombre.Text = dsPrograma.Tables[0].Rows[0][0].ToString();
+            Codigo.Text = dsPrograma.Tables[0].Rows[0][1].ToString();
             NombreIn.Text = dsPrograma.Tables[0].Rows[0][2].ToString();
             Estado.Text = dsPrograma.Tables[0].Rows[0][3].ToString();
             NivelA.Text = dsPrograma.Tables[0].Rows[0][4].ToString();
@@ -41,7 +37,9 @@ namespace WebAppAWIES
             Primero.Text = dsPrograma.Tables[0].Rows[0][15].ToString();
             Ultimo.Text = dsPrograma.Tables[0].Rows[0][16].ToString();
 
-
         }
+
+        clProgramas Programa = new clProgramas();
+       
     }
 }

@@ -93,7 +93,7 @@ namespace WebAppAWIES
             int pos = GridView1.SelectedIndex;
             string valor = GridView1.Rows[pos].Cells[1].Text;
  
-            Response.Write("<script>window.open ('InfoInstituciones.aspx?id=" + valor + "','_blank');</script>");
+           Response.Write("<script>window.open ('InfoInstituciones.aspx?id=" + valor + "','_blank');</script>");
           
         }
 

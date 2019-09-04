@@ -67,8 +67,8 @@ namespace WebAppAWIES.Datos
 
             //string a = global.Application["Id"].ToString();
             
-            string consulta = "SELECT Programas.IdProgramas,Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, " +
-                "Programas.Precio, Programas.NumeroCreditos, Programas.VigenciaAños,Programas.DuracionSemestre,TituloOtorgado " +
+            string consulta = "SELECT Programas.IdProgramas,Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico,  " +
+                "Programas.Precio,Programas.DuracionSemestre,TituloOtorgado " +
                 "FROM InstitucionPrograma INNER JOIN Programas ON InstitucionPrograma.IdProgramas = Programas.IdProgramas INNER JOIN Universidades ON InstitucionPrograma.IdUniversidades = Universidades.IdUniversidades WHERE(Universidades.IdUniversidades = '"+ a +"')";
             DataSet dsPrograma = new DataSet();
             dsPrograma = objConexion.mtdDesconectado(consulta);
@@ -77,7 +77,14 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdListaInformacion(string id)
         {
-            string consulta = " select Programas.NombrePrograma ,Universidades.Codigo, Universidades.NombreInstitucion, EstadoPrograma, NivelAcademico,ReconocimientoMinisterio, NivelFormacion,Metodologia, Area, Precio, NumeroCreditos, VigenciaAños, DuracionSemestre,TituloOtorgado,TipoIngreso, PrimerIngresado, UltimoIngresado from Programas INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion=Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON (Area.IdArea = Programas.IdAreaConocimiento) INNER JOIN InstitucionPrograma ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN Universidades ON (Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) where Universidades.IdUniversidades = '" + id + "'";
+            string consulta = " select Programas.NombrePrograma ,Universidades.Codigo, Universidades.NombreInstitucion, EstadoPrograma, NivelAcademico,ReconocimientoMinisterio, NivelFormacion.NivelFormacion,Metodologia.Metodologia, Area.Area, Precio, NumeroCreditos, VigenciaAños, DuracionSemestre,TituloOtorgado,Programas.TipoIngreso, Programas.PrimerIngresado, Programas.UltimoIngresado  from Programas INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion=Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON (Area.IdArea = Programas.IdAreaConocimiento) INNER JOIN InstitucionPrograma ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN Universidades ON (Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) where Universidades.IdUniversidades = '" + id + "'";
+            DataSet dsInstituto = new DataSet();
+            dsInstituto = objConexion.mtdDesconectado(consulta);
+            return dsInstituto;
+        }
+        public DataSet mtdListaInformacion1(string id)
+        {
+            string consulta = " select Programas.NombrePrograma ,Universidades.Codigo, Universidades.NombreInstitucion, EstadoPrograma, NivelAcademico,ReconocimientoMinisterio, NivelFormacion.NivelFormacion,Metodologia.Metodologia, Area.Area, Precio, NumeroCreditos, VigenciaAños, DuracionSemestre,TituloOtorgado,Programas.TipoIngreso, Programas.PrimerIngresado, Programas.UltimoIngresado  from Programas INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion=Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON (Area.IdArea = Programas.IdAreaConocimiento) INNER JOIN InstitucionPrograma ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN Universidades ON (Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) where Programas.IdProgramas = '" + id + "'";
             DataSet dsInstituto = new DataSet();
             dsInstituto = objConexion.mtdDesconectado(consulta);
             return dsInstituto;
@@ -92,7 +99,9 @@ namespace WebAppAWIES.Datos
             dsPrograma = objConexion.mtdDesconectado(consulta);
             return dsPrograma;
         }
-            public DataSet mtdBuscar(string programa)
+
+       
+        public DataSet mtdBuscar(string programa)
         {
             string query = "select Programas.IdProgramas,Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) where NombrePrograma lIKE '%" + programa + "%' ";
             DataSet tblPrograma = new DataSet();
@@ -110,7 +119,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdBuscTecno()
         {
-            string query = "select Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Tecnológica'";
+            string query = "select Programas.IdProgramas, Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Tecnológica'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -118,7 +127,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdBuscPostd()
         {
-            string query = "select Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Posdoctorado '";
+            string query = "select Programas.IdProgramas, Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Posdoctorado '";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -126,7 +135,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdBuscMaest()
         {
-            string query = "select Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Maestría'";
+            string query = "select Programas.IdProgramas,Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Maestría'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -134,7 +143,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdBuscTecProfe()
         {
-            string query = "select Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Formacion Técnica Profesional'";
+            string query = "select Programas.IdProgramas, Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Formacion Técnica Profesional'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -142,7 +151,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdBuscEspUni()
         {
-            string query = "select Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Especialización Universitaria'";
+            string query = "select Programas.IdProgramas, Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Especialización Universitaria'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -150,7 +159,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdBuscEspTecno()
         {
-            string query = "select Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Especialización Tecnológica'";
+            string query = "select Programas.IdProgramas, Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Especialización Tecnológica'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -158,7 +167,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdBuscEspProfe()
         {
-            string query = "select Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Especialización Técnica Profesional'";
+            string query = "select Programas.IdProgramas, Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Especialización Técnica Profesional'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -166,7 +175,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdBuscEspMedic()
         {
-            string query = "select Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Especialización Medico Quirúrgica'";
+            string query = "select Programas.IdProgramas, Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Especialización Medico Quirúrgica'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -174,7 +183,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdBuscEspDocto()
         {
-            string query = "select Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Doctorado'";
+            string query = "select Programas.IdProgramas, Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelFormacion='Doctorado'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -182,7 +191,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdPosgrado()
         {
-            string query = "select Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,NivelAcademico, Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelAcademico ='Posgrado'";
+            string query = "select Programas.IdProgramas, Universidades.Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,NivelAcademico, Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelAcademico ='Posgrado'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -190,7 +199,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdPregrado()
         {
-            string query = "select Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,NivelAcademico, Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelAcademico ='Pregrado'";
+            string query = "select Programas.IdProgramas, Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion,NivelAcademico, Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE NivelAcademico ='Pregrado'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -198,7 +207,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdDistancia()
         {
-            string query = "select Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion, Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE Metodologia ='A DISTANCIA'";
+            string query = "select Programas.IdProgramas, Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion, Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE Metodologia ='A DISTANCIA'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -206,7 +215,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdPresencial()
         {
-            string query = "select Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion, Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE Metodologia ='PRESENCIAL'";
+            string query = "select Programas.IdProgramas, Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion, Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE Metodologia ='PRESENCIAL'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -214,7 +223,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdVirtual()
         {
-            string query = "select Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion, Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE Metodologia ='VIRTUAL'";
+            string query = "select Programas.IdProgramas, Codigo,NombreInstitucion,NombrePrograma,EstadoPrograma,NivelFormacion, Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON (Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON (NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON (Metodologia.IdMetodologia = Programas.IdMetodologia) WHERE Metodologia ='VIRTUAL'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -222,7 +231,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdAreaAgronomia()
         {
-            string query = "select Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'AGRONOMIA, VETERINARIA Y AFINES'";
+            string query = "select Programas.IdProgramas, Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'AGRONOMIA, VETERINARIA Y AFINES'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -230,14 +239,14 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdAreaBellas()
         {
-            string query = "select Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'BELLAS ARTES'";
+            string query = "select Programas.IdProgramas, Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'BELLAS ARTES'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
         }
         public DataSet mtdAreaCienEdu()
         {
-            string query = "select Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'CIENCIAS DE LA EDUCACION'";
+            string query = "select Programas.IdProgramas, Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'CIENCIAS DE LA EDUCACION'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -245,7 +254,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdAreaCienSal()
         {
-            string query = "select Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'CIENCIAS DE LA SALUD'";
+            string query = "select Programas.IdProgramas, Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'CIENCIAS DE LA SALUD'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -253,7 +262,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdAreaCienSoci()
         {
-            string query = "select Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'CIENCIAS SOCIALES, DERECHO, CIENCIAS POLITICAS'";
+            string query = "select Programas.IdProgramas, Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'CIENCIAS SOCIALES, DERECHO, CIENCIAS POLITICAS'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -261,7 +270,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdAreaCienEco()
         {
-            string query = "select Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'ECONOMIA, ADMINISTRACION, CONTADURIA Y AFINES'";
+            string query = "select Programas.IdProgramas, Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'ECONOMIA, ADMINISTRACION, CONTADURIA Y AFINES'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -269,7 +278,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdAreaCienHuma()
         {
-            string query = "select Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'HUMANIDADES Y CIENCIAS RELIGIOSAS'";
+            string query = "select Programas.IdProgramas, Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'HUMANIDADES Y CIENCIAS RELIGIOSAS'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -277,7 +286,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdAreaIngeni()
         {
-            string query = "select Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'INGENIERIA, ARQUITECTURA, URBANISMO Y AFINES'";
+            string query = "select Programas.IdProgramas, Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'INGENIERIA, ARQUITECTURA, URBANISMO Y AFINES'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;
@@ -285,7 +294,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdAreaMate()
         {
-            string query = "select Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'MATEMATICAS Y CIENCIAS NATURALES'";
+            string query = "select Programas.IdProgramas, Codigo, NombreInstitucion, NombrePrograma, EstadoPrograma, NivelFormacion, Metodologia, Area from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE Area = 'MATEMATICAS Y CIENCIAS NATURALES'";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;

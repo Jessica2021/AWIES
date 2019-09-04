@@ -194,7 +194,7 @@
                         <asp:GridView ID="GridView1" runat="server" CellPadding="4" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" ForeColor="#333333">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:ButtonField ButtonType="Image" CommandName="Select" HeaderText="Mas Informacion" ImageUrl="~/img/ver.png" ShowHeader="True" Text="Ver">
+                                <asp:ButtonField ButtonType="Image" CommandName="Select" ImageUrl="~/img/ver.png" ShowHeader="True" Text="Ver">
                                 <ControlStyle Height="25px" Width="45px" />
                                 </asp:ButtonField>
                             </Columns>
@@ -211,7 +211,6 @@
                         </asp:GridView>
                         </div>
                         <br />
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                         </div>
 					
 				</div>

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteInstitucion.Master" AutoEventWireup="true" CodeBehind="DGVProgramas.aspx.cs" Inherits="WebAppAWIES.Formulario_web12" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
-    <a href="RegistrarProgramas.aspx" class="genric-btn success circle arrow">Registrar Programa<span class="lnr lnr-arrow-right"></span></a><asp:TextBox ID="TextBox1" runat="server" Height="16px" Width="16px"></asp:TextBox>
+    <a href="RegistrarProgramas.aspx" class="genric-btn success circle arrow">Registrar Programa<span class="lnr lnr-arrow-right"></span></a><asp:TextBox ID="TextBox1" runat="server" Height="16px" Width="16px" Wrap="False" Visible="False"></asp:TextBox>
                                     &nbsp;<asp:GridView ID="gvProgramas" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" OnSelectedIndexChanged="gvProgramas_SelectedIndexChanged" PageSize="5">
         <AlternatingRowStyle BackColor="#DCDCDC" />
         <Columns>
@@ -20,6 +20,6 @@
 
     <div class="mt-10">
             <asp:Button ID="btnEditar" runat="server" Text="Editar" class="genric-btn primary radius" OnClick="btnEditar_Click"  />
-            <asp:Button ID="btnEditar0" runat="server" Text="Ver Más" class="genric-btn primary radius"  />
+            <asp:Button ID="btnEditar0" runat="server" Text="Ver Más" class="genric-btn primary radius" OnClick="btnEditar0_Click"  />
         </div>
 </asp:Content>

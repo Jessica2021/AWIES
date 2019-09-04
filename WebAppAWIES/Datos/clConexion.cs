@@ -48,20 +48,32 @@ namespace WebAppAWIES.Datos
 
         }
 
+        //public DataSet mtdDesconectado(string consulta) //select
+        //{
+        //    objConexion.Open();
+        //    SqlDataAdapter adaptador = new SqlDataAdapter(consulta, objConexion);
+        //    //DataTable tblDatos = new DataTable(); //toma las tablas Data set, Data relation, Data row-colum, Data table
+        //    DataSet dsDatos = new DataSet();//conjunto de datos, al devolver el dataset regresa como xml
+        //    adaptador.Fill(dsDatos); //obtiene datos de la tabla
+        //    objConexion.Close();
+
+        //    return dsDatos;
+
+
+        //}
+
         public DataSet mtdDesconectado(string consulta) //select
         {
             objConexion.Open();
             SqlDataAdapter adaptador = new SqlDataAdapter(consulta, objConexion);
             //DataTable tblDatos = new DataTable(); //toma las tablas Data set, Data relation, Data row-colum, Data table
             DataSet dsDatos = new DataSet();//conjunto de datos, al devolver el dataset regresa como xml
-            adaptador.Fill(dsDatos); //obtiene datos de la tabla
+            adaptador.Fill(dsDatos, "tbldatos"); //obtiene datos de la tabla
             objConexion.Close();
 
             return dsDatos;
 
 
         }
-
-           
     }
 }

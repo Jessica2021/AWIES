@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebAppAWIES.Datos;
 
 namespace WebAppAWIES
 {
@@ -26,52 +27,79 @@ namespace WebAppAWIES
 
         {
             
+            //Guardar datos en BD
+            clPublicaciones objMuro = new clPublicaciones();
+            objMuro.foto = lblURL.Text;
+            objMuro.titulo = titulo.Text;
+            objMuro.texto = texto.Text;
+            objMuro.idUniversidad = int.Parse(Label1.Text.ToString());
+
+                int result = objMuro.mtdRegistrar();
+                if (result == 1)
+                {
+                    lblCorrecto.Visible = true;
+                    lblError.Visible = false;
+                    titulo.Text = "";
+                    texto.Text = "";
+                    lblURL.Text = "";
+                }
+                else
+                {
+                    lblCorrecto.Visible = false;
+                    lblError.Visible = true;
+                }
+
+        }
+
+        
+        protected void btnVer_Click(object sender, EventArgs e)
+        {
+            //Guardar imagen en servidor
             string extension = System.IO.Path.GetExtension(FileUpload1.FileName);
 
             if (FileUpload1.HasFile)
             {
                 if (extension == ".jpg" || extension == ".png")
                 {
+                   
                     FileUpload1.SaveAs(Server.MapPath("~/img/Publicaciones/" + FileUpload1.FileName));
-                    lblText.Text = extension;
+
+                    string ruta = FileUpload1.FileName;
+
+                    lblURL.Text = ruta;
+                    lblExtension.Text = extension;
+
+                    lblError.Visible = false;
                 }
                 else
                 {
-                    lblText.Text = "El tipo de Archivo no es correcto";
+                    lblError.Visible = true;
                 }
             }
 
-           
 
+
+            //VistaPrevia de Imagen
             try
             {
-                if (lblText.Text != "")
-                {
-                    ImageField foto = lblText.Text;
-                    foto.SaveAs(Server.MapPath("~/img/Publicaciones/" + FileUpload1.FileName));
-                    lblText.Text = extension;
-                }
+                int Tama = FileUpload1.PostedFile.ContentLength;
+                byte[] ImagenOriginal = new byte[Tama];
+                FileUpload1.PostedFile.InputStream.Read(ImagenOriginal, 0, Tama);
+                Bitmap ImagenOriginalBinaria = new Bitmap(FileUpload1.PostedFile.InputStream);
+
+                string ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal);
+                ImagenPrevia.ImageUrl = ImagenDataURL64;
+
+                //lblURL.Text = FileUpload1.PostedFile.FileName;
+
+                lblError.Visible = false;
             }
             catch (Exception)
             {
 
-                
+                lblError.Visible = true;
             }
            
-        }
-
-        
-        protected void btnVer_Click(object sender, EventArgs e)
-        {
-            int Tama = FileUpload1.PostedFile.ContentLength;
-            byte[] ImagenOriginal = new byte[Tama];
-            FileUpload1.PostedFile.InputStream.Read(ImagenOriginal, 0, Tama);
-            Bitmap ImagenOriginalBinaria = new Bitmap(FileUpload1.PostedFile.InputStream);
-
-            string ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal);
-            ImagenPrevia.ImageUrl = ImagenDataURL64;
-
-            lblText.Text = FileUpload1.PostedFile.FileName;
             
         }
     }

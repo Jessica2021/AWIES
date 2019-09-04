@@ -90,6 +90,7 @@
     <Content Include="DGVProgramas.aspx" />
     <Content Include="EditarPrograma.aspx" />
     <Content Include="EditarInstituciones.aspx" />
+    <Content Include="img\Publicaciones\f2cfe450d95215f419823726b79bf6a1.jpg" />
     <Content Include="VerInfoProgramas.aspx" />
     <Content Include="InfoInstituciones.aspx" />
     <Content Include="InfoProgramas.aspx" />
@@ -230,9 +231,9 @@
     <Compile Include="Datos\clDepartamento.cs" />
     <Compile Include="Datos\clMetodologia.cs" />
     <Compile Include="Datos\clMunicipio.cs" />
-    <Compile Include="Datos\clMuro.cs" />
     <Compile Include="Datos\clNivelFormacion.cs" />
     <Compile Include="Datos\clProgramas.cs" />
+    <Compile Include="Datos\clPublicaciones.cs" />
     <Compile Include="Datos\clUniversidades.cs" />
     <Compile Include="EnvioSolicitud.aspx.cs">
       <DependentUpon>EnvioSolicitud.aspx</DependentUpon>
@@ -500,9 +501,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="img\Publicaciones\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

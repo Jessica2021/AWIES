@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="WebAppAWIES.Index" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
- <!--######## start banner Area ########-->
-	<section class="banner-area relative" id="home">
+    ss<!--######## start banner Area ########--><section class="banner-area relative" id="home">
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
 				<div class="about-content col-lg-12">

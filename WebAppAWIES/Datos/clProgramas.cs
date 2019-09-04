@@ -67,8 +67,8 @@ namespace WebAppAWIES.Datos
 
             //string a = global.Application["Id"].ToString();
             
-            string consulta = "SELECT Programas.IdProgramas,Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, " +
-                "Programas.Precio, Programas.NumeroCreditos, Programas.VigenciaAños,Programas.DuracionSemestre,TituloOtorgado " +
+            string consulta = "SELECT Programas.IdProgramas,Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico,  " +
+                "Programas.Precio,Programas.DuracionSemestre,TituloOtorgado " +
                 "FROM InstitucionPrograma INNER JOIN Programas ON InstitucionPrograma.IdProgramas = Programas.IdProgramas INNER JOIN Universidades ON InstitucionPrograma.IdUniversidades = Universidades.IdUniversidades WHERE(Universidades.IdUniversidades = '"+ a +"')";
             DataSet dsPrograma = new DataSet();
             dsPrograma = objConexion.mtdDesconectado(consulta);

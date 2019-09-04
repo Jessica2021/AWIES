@@ -90,6 +90,7 @@
     <Content Include="DGVProgramas.aspx" />
     <Content Include="EditarPrograma.aspx" />
     <Content Include="EditarInstituciones.aspx" />
+    <Content Include="VerInfoProgramas.aspx" />
     <Content Include="InfoInstituciones.aspx" />
     <Content Include="InfoProgramas.aspx" />
     <Content Include="img\ver.png" />
@@ -267,6 +268,13 @@
     </Compile>
     <Compile Include="EditarInstituciones.aspx.designer.cs">
       <DependentUpon>EditarInstituciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerInfoProgramas.aspx.cs">
+      <DependentUpon>VerInfoProgramas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerInfoProgramas.aspx.designer.cs">
+      <DependentUpon>VerInfoProgramas.aspx</DependentUpon>
     </Compile>
     <Compile Include="InfoInstituciones.aspx.cs">
       <DependentUpon>InfoInstituciones.aspx</DependentUpon>
@@ -492,7 +500,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="img\Publicaciones\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

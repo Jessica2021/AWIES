@@ -13,12 +13,11 @@
     
 
 	<!--######## Start post-content Area ########-->
+<!--######## Start post-content Area ########-->
 	<section class="post-content-area">
 	
 			<div class="row">
-
-                
-                <div class="col-lg-4 sidebar-widgets" id="cont">
+                <div class="col-lg-4 sidebar-widgets" style="left: 0px; top: 0px; height: 866px">
 					<div class="widget-wrap">
 							<div class="single-sidebar-widget newsletter-widget">
 							<h4 class="newsletter-title">Busqueda</h4>
@@ -37,14 +36,14 @@
                                     </div>
                                 
 								</div>
-                                
-								<div>
+                              </div>  
+							
 							<p class="text-bottom">
 								Escribe Nombre del Programa
 							</p>
 						</div>
                         <div class="single-sidebar-widget newsletter-widget">
-                          <p>Busca programas de formacion con tu resultado de...</p>
+                          <h4 class="newsletter-title">Busca programas de formacion con tu resultado de...</h4>
                                 <div class="mt-10">
                                     <div class="default-select" id="default-select">
 			        
@@ -54,6 +53,7 @@
                                         <asp:ListItem>Prueba de Admicion</asp:ListItem>
                                     </asp:DropDownList>
 			                        </div>
+                                    
                                 </div>
                         
                                 <div class="mt-10">
@@ -61,22 +61,9 @@
                                           	
 		                        </div>
                                 <div class="mt-10">
-                                    <asp:Button ID="Button1" runat="server"  class="genric-btn success" Text="Buscar"  />
+                                    <asp:Button ID="btnBuscarP" runat="server"  class="genric-btn success" Text="Buscar"  />
                                 </div>
                                     <hr />
-                                     <p>Selecciona una carrera Universidad</p>
-                                    <div class="default-select" id="default-select1">
-			        
-                                    <asp:DropDownList ID="DropDownList1" runat="server">
-                                        <asp:ListItem>Selecciona una opcion</asp:ListItem>
-                                        <asp:ListItem>Icfes</asp:ListItem>
-                                        <asp:ListItem>Ponderado</asp:ListItem>
-                                        <asp:ListItem>Prueba de Admicion</asp:ListItem>
-                                    </asp:DropDownList>
-                                        </div>
-                                    <p>Calcula tu ponderado aqui</p>
-
-                                    <asp:Button ID="Button2" runat="server" Text="Ir" />
 	                        </div>
 						<div class="single-sidebar-widget post-category-widget">
 							<h4 class="category-title">Nivel de Formacion</h4>

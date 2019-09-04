@@ -40,6 +40,24 @@ namespace WebAppAWIES {
         protected global::System.Web.UI.WebControls.Label NombreIn;
         
         /// <summary>
+        /// Control Departamento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Departamento;
+        
+        /// <summary>
+        /// Control Municipio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Municipio;
+        
+        /// <summary>
         /// Control Estado.
         /// </summary>
         /// <remarks>

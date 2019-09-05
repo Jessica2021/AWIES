@@ -46,7 +46,7 @@ namespace WebAppAWIES
             objProgramas.IdNivelFormacion = int.Parse(ddlNivelFormacion.SelectedValue.ToString());
             objProgramas.IdMetodologia = int.Parse(ddlMetodologia.SelectedValue.ToString());
             objProgramas.IdAreaConocimiento = int.Parse(ddlArea.SelectedValue.ToString());
-            objProgramas.Precio = float.Parse(Precio.Text.ToString());
+            objProgramas.Precio = int.Parse(Precio.Text.ToString());
             objProgramas.NumeroCreditos = NumeroCreditos.Text;
             objProgramas.VigenciaAños = VigenciaAños.Text;
             objProgramas.DuracionSemestre = Duracion.Text;

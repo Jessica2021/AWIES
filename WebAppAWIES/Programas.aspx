@@ -10,12 +10,11 @@
 
         </style>
 
-    
+
 
 	<!--######## Start post-content Area ########-->
-<!--######## Start post-content Area ########-->
 	<section class="post-content-area">
-	
+		<div class="container">
 			<div class="row">
                 <div class="col-lg-4 sidebar-widgets" style="left: 0px; top: 0px; height: 866px">
 					<div class="widget-wrap">
@@ -170,8 +169,7 @@
 				<div class="col-lg-8 posts-list">
 					<div class="single-post row">
 
-                        <asp:Label ID="mensaje" runat="server" Text="No se encontraron resultados!!!" Font-Size="Large" ForeColor="#000099" Visible="False"></asp:Label>
-
+                        
 					    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Programas.IdProgramas, Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, Area.Area, Metodologia.Metodologia, NivelFormacion.NivelFormacion FROM Programas INNER JOIN Area ON Programas.IdAreaConocimiento = Area.IdArea INNER JOIN Metodologia ON Programas.IdMetodologia = Metodologia.IdMetodologia INNER JOIN NivelFormacion ON Programas.IdNivelFormacion = NivelFormacion.IdNivelFormacion"></asp:SqlDataSource>
 						
 					    <br />
@@ -196,35 +194,21 @@
                             <SortedDescendingCellStyle BackColor="#E9EBEF" Height="20px" Width="30px"  />
                             <SortedDescendingHeaderStyle BackColor="#4870BE" Height="20px" Width="30px" />
                         </asp:GridView>
-                        </div>
+
+                         <asp:Label ID="mensaje" runat="server" Text="No se encontraron resultados!!!" Font-Size="Large" ForeColor="#000099" Visible="False"></asp:Label>
+
+					    <br />
                         <br />
+						
+					</div>
                         </div>
 					
 				</div>
-				
-			    <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
 				
 			</div>
 		</div>
 	</section>
 	<!--######## End post-content Area ########-->
+    
+   
 </asp:Content>

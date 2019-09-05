@@ -17,7 +17,7 @@ namespace WebAppAWIES.Datos
         public int IdNivelFormacion { get; set; }
         public int IdMetodologia { get; set; }
         public int IdAreaConocimiento { get; set; }
-        public float Precio { get; set; }
+        public int Precio { get; set; }
         public string NumeroCreditos { get; set; }
         public string VigenciaAños { get; set; }
         public string DuracionSemestre { get; set; }

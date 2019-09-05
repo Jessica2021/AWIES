@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="WebAppAWIES.Index" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
+    <head>
+           <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
 
  <!--######## start banner Area ########-->
 
@@ -11,15 +13,20 @@
 .w3-badge {height:13px;width:13px;padding:0}
 
 #fil{
-    background-color:#00A3C4;
-    padding:5px;
+    background-image:url(img/fondopun.jpg);
 }
 
+#imag{
+    border-color:#B6DFE7;
+    border:solid 10px;
+    border-radius:10px;
+}
 </style>
 
 <div class="row" id="fil">
-				<div class="col-lg-12">
-<div class="w3-content w3-display-container" >
+    <div class="col-lg-2"></div>
+	<div class="col-lg-8"  id="imag" style="border-color: #ADDDEB">
+<div class="w3-content w3-display-container">
   <img class="mySlides" src="img/1.png" style="width:100%">
   <img class="mySlides" src="img/2.png" style="width:100%">
   <img class="mySlides" src="img/3.png" style="width:100%">
@@ -32,6 +39,7 @@
   </div>
 </div>
            </div>
+    <div class="col-lg-2"></div>
     </div>
 
 <script>
@@ -63,9 +71,10 @@ function showDivs(n) {
 }
 </script>
 
-			    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+			    <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
 		
 	<!--######## End banner Area ########-->
+   
 	<!--######## Start top-category-widget Area ########-->
 	<section class="top-category-widget-area pt-90 pb-90 ">
 		<div class="container">
@@ -126,28 +135,23 @@ function showDivs(n) {
 	</section>
 	<!--######## End top-category-widget Area ########-->
 
-
+   
 	<!--######## Start post-content Area ########-->
 	<section class="post-content-area">
 		<div class="container">
-
-
+        
 			<div class="row">
                 <div class="col-lg-10 posts-list">
                     <div class="single-post row">
-                <asp:Repeater ID="Repeater1" runat="server">
-
-                    <ItemTemplate>
+               
+                        <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
+                   
+                    <ItemTemplate runat="server">
                         <div class="col-lg-3  col-md-3 meta-details">
-							<ul class="tags">
-								<li><a href="#">Food,</a></li>
-								<li><a href="#">Technology,</a></li>
-								<li><a href="#">Politics,</a></li>
-								<li><a href="#">Lifestyle</a></li>
-							</ul>
+						
 							<div class="user-details row">
-								<p class="user-name col-lg-12 col-md-12 col-6"><a href="#"><%#Eval("IdUniversidad") %></a> <span class="lnr lnr-user"></span></p>
-								<p class="date col-lg-12 col-md-12 col-6"><a href="#">12 Dec, 2017</a> <span class="lnr lnr-calendar-full"></span></p>
+								<p class="user-name col-lg-12 col-md-12 col-6"><a href="#"><%#Eval("NombreInstitucion") %></a> <span class="lnr lnr-user"></span></p>
+								<p class="date col-lg-12 col-md-12 col-6"><a href="#"><%#Eval("Fecha") %></a><span class="lnr lnr-calendar-full"></span></p>
 								<p class="view col-lg-12 col-md-12 col-6"><a href="#">1.2M Views</a> <span class="lnr lnr-eye"></span></p>
 								<p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span class="lnr lnr-bubble"></span></p>
 							</div>
@@ -170,6 +174,7 @@ function showDivs(n) {
 					</div>
                 </div>
 			</div>
+               
 		</div>
 	</section>
 	<!--######## End post-content Area ########-->

@@ -7,7 +7,7 @@
     <div class="col-lg-10 col-md-10" style="margin-left:100px;">
 	<h3 class="mb-30">Publicar Noticias...</h3>
 	<form action="#">
-       
+        <asp:Label ID="lblFecha" runat="server" Text="Label"></asp:Label>
          <div class="mt-10">
            
              <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -26,6 +26,7 @@
             
         <asp:Image ID="ImagenPrevia" runat="server" Height="358px" ImageUrl="~/img/fondoinsertar.jpg" Width="636px"/>
         </div>
+       
         <div class="mt-10">
             <asp:Label ID="lblCorrecto" runat="server" Text="Publicacion Exitosa!!" BackColor="#99CCFF" BorderColor="#000099" BorderStyle="Solid" BorderWidth="1px" ForeColor="#000099" Height="25px" Width="300px" Visible="False"></asp:Label>
 		</div>
@@ -48,7 +49,8 @@
         <div class="mt-10">
             <asp:Button ID="btnSubir" runat="server" class="genric-btn info-border circle arrow" Text="Subir Archivo" OnClick="btnSubir_Click" />
             </div>
-        <asp:Label ID="lblURL" runat="server" ></asp:Label>
+        <asp:Label ID="lblURL" runat="server" Visible="False"></asp:Label>
+
         </form>
         </div>
     </div>

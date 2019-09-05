@@ -14,12 +14,18 @@ namespace WebAppAWIES
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          //  GridView1.DataBind();
+          
         }
         clConexion conexion = new clConexion();
         clProgramas po = new clProgramas();
-        
-        
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            DataSet dsProgrma = new DataSet();
+            dsProgrma = po.mtdListarProgramas();
+            GridView1.DataSource = dsProgrma.Tables[0];
+            GridView1.DataBind();
+        }
         public void mtdMensaje()
         {
             if (GridView1.Rows.Count == 0)
@@ -414,6 +420,22 @@ namespace WebAppAWIES
             Response.Write("<script>window.open ('InfoProgramas.aspx?id=" + valor + "','_blank');</script>");
         }
 
+        public void mtdPonderado()
+        {
+            string resultado = DropDownList4.SelectedValue.ToString();
+            string ponderado = txtPonderado.Text;
+            DataSet dsProgrma = new DataSet();
+            dsProgrma = po.mtdPonderado(ponderado, resultado);
+            GridView1.DataSource = dsProgrma.Tables[0];
+            GridView1.DataBind();
 
+            mtdMensaje();
+
+        }
+
+        protected void btnBuscarP_Click(object sender, EventArgs e)
+        {
+            mtdPonderado();
+        }
     }
 }

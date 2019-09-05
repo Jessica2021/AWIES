@@ -57,11 +57,11 @@
                                 </div>
                         
                                 <div class="mt-10">
-                                   <asp:TextBox ID="TextBox2" runat="server" class="form-control" name="search"  placeholder="Buscar..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Buscar...'" style="width: 82%"></asp:TextBox>
+                                   <asp:TextBox ID="txtPonderado" runat="server" class="form-control" name="search"  placeholder="Buscar..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Buscar...'" style="width: 82%"></asp:TextBox>
                                           	
 		                        </div>
                                 <div class="mt-10">
-                                    <asp:Button ID="btnBuscarP" runat="server"  class="genric-btn success" Text="Buscar"  />
+                                    <asp:Button ID="btnBuscarP" runat="server"  class="genric-btn success" Text="Buscar" OnClick="btnBuscarP_Click"  />
                                 </div>
                                     <hr />
 	                        </div>
@@ -178,23 +178,23 @@
                         <br />
                         <br />
                         <div class="text-sm-center">
-                        <asp:GridView ID="GridView1" runat="server" CellPadding="4" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" ForeColor="#333333">
-                            <AlternatingRowStyle BackColor="White" />
+                         <asp:GridView ID="GridView1" runat="server" CellPadding="4" GridLines="None" CssClass="position-absolute" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" style="width: 30px; height: 20px; left: 0px; top: 24px" ForeColor="#333333" Font-Size="Larger" Height="20px" HorizontalAlign="Justify" ShowFooter="True" Width="30px" Font-Strikeout="False">
+                            <AlternatingRowStyle BackColor="White" Font-Size="Smaller" Height="20px" HorizontalAlign="Left" Width="30px" />
                             <Columns>
-                                <asp:ButtonField ButtonType="Image" CommandName="Select" ImageUrl="~/img/ver.png" ShowHeader="True" Text="Ver">
-                                <ControlStyle Height="25px" Width="45px" />
+                                 <asp:ButtonField ButtonType="Image" CommandName="Select" ImageUrl="~/img/ver.png" ShowHeader="True" Text="Ver">
+                                <ControlStyle Height="20px" Width="30px" />
                                 </asp:ButtonField>
                             </Columns>
                             <EditRowStyle BackColor="#2461BF" />
-                            <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
-                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#EFF3FB" />
-                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" Font-Size="Smaller" Height="20px" Width="30px" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" Height="20px" Width="30px" />
+                            <RowStyle BackColor="#EFF3FB" BorderStyle="None" Font-Size="Smaller" Height="20px" Width="30px" HorizontalAlign="Left" />
+                            <SelectedRowStyle BackColor="#D1DDF1" ForeColor="#333333" Font-Size="Smaller" Height="20px" HorizontalAlign="Left" VerticalAlign="Top" Width="20px"   /> 
+                            <SortedAscendingCellStyle BackColor="#F5F7FB"  />
                             <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                            <SortedDescendingCellStyle BackColor="#E9EBEF" Height="20px" Width="30px"  />
+                            <SortedDescendingHeaderStyle BackColor="#4870BE" Height="20px" Width="30px" />
                         </asp:GridView>
                         </div>
                         <br />

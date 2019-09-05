@@ -63,6 +63,12 @@
                     <h5>Nombre Institucion: </h5>
                 </div>
                 <div class="mt-10">
+                    <h5>Departamento: </h5>
+                </div>
+                <div class="mt-10">
+                    <h5>Municipio: </h5>
+                </div>
+                <div class="mt-10">
                     <h5>Estado del Programa: </h5>
                 </div>
 
@@ -115,8 +121,15 @@
                 <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
                    <asp:Label ID="Codigo" runat="server" type="text"  name="Codigo"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
                 </div>
+                
                 <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
                    <asp:Label ID="NombreIn" runat="server" type="text" name="NombreIn"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="Departamento" runat="server" type="text"  name="Departamento"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
+                </div>
+                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
+                   <asp:Label ID="Municipio" runat="server" type="text"  name="Municipio"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>
                 </div>
                <div class="auto-style3" id="tex1" style="border-bottom-style: solid; border-color: #0099FF; border-width: thin">
                    <asp:Label ID="Estado" runat="server" type="text"  name="Estado"  Height="30px" Width="80%" CssClass="auto-style2" ></asp:Label>

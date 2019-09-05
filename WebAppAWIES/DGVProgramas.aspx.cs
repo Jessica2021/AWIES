@@ -13,49 +13,41 @@ namespace WebAppAWIES
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
+
+
+
+        }
+        protected void Page_Init(object sender, EventArgs e)
+        {
             clProgramas objProgramas = new clProgramas();
             Global global = new Global();
-            
-            
+
+
             string a = Application["Id"].ToString();
             try
             {
                 DataSet dsDepartamento = new DataSet();
-                
+
                 dsDepartamento = objProgramas.mtdListarProgramas(a);
                 gvProgramas.DataSource = dsDepartamento;
-            
-                
+
+
                 gvProgramas.DataBind();
             }
             catch (Exception)
             {
-                
-            }
 
-            
+            }
         }
 
         protected void SqlDataSource2_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
 
         }
-        
-        protected void gvProgramas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int pos = gvProgramas.SelectedIndex;
-            
-                 x = gvProgramas.Rows[pos].Cells[1].Text;
-
-                TextBox1.Text = x;
-           
-
-            
 
 
-        }
-        
+
 
         protected void gvProgramas_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -72,6 +64,15 @@ namespace WebAppAWIES
         protected void btnEditar0_Click(object sender, EventArgs e)
         {
             Response.Write("<script>window.open ('VerInfoProgramas.aspx?id=" + x + "','_blank');</script>");
+        }
+
+        protected void gvProgramas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int pos = gvProgramas.SelectedIndex;
+
+            x = gvProgramas.Rows[pos].Cells[1].Text;
+
+            TextBox1.Text = x;
         }
     }
 }

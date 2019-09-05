@@ -10,15 +10,13 @@
 
         </style>
 
-    
+
 
 	<!--######## Start post-content Area ########-->
 	<section class="post-content-area">
-	
+		<div class="container">
 			<div class="row">
-
-                
-                <div class="col-lg-4 sidebar-widgets" id="cont">
+                <div class="col-lg-4 sidebar-widgets" style="left: 0px; top: 0px; height: 866px">
 					<div class="widget-wrap">
 							<div class="single-sidebar-widget newsletter-widget">
 							<h4 class="newsletter-title">Busqueda</h4>
@@ -37,14 +35,14 @@
                                     </div>
                                 
 								</div>
-                                
-								<div>
+                              </div>  
+							
 							<p class="text-bottom">
 								Escribe Nombre del Programa
 							</p>
 						</div>
                         <div class="single-sidebar-widget newsletter-widget">
-                          <p>Busca programas de formacion con tu resultado de...</p>
+                          <h4 class="newsletter-title">Busca programas de formacion con tu resultado de...</h4>
                                 <div class="mt-10">
                                     <div class="default-select" id="default-select">
 			        
@@ -54,29 +52,17 @@
                                         <asp:ListItem>Prueba de Admicion</asp:ListItem>
                                     </asp:DropDownList>
 			                        </div>
+                                    
                                 </div>
                         
                                 <div class="mt-10">
-                                   <asp:TextBox ID="TextBox2" runat="server" class="form-control" name="search"  placeholder="Buscar..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Buscar...'" style="width: 82%"></asp:TextBox>
+                                   <asp:TextBox ID="txtPonderado" runat="server" class="form-control" name="search"  placeholder="Buscar..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Buscar...'" style="width: 82%"></asp:TextBox>
                                           	
 		                        </div>
                                 <div class="mt-10">
-                                    <asp:Button ID="Button1" runat="server"  class="genric-btn success" Text="Buscar"  />
+                                    <asp:Button ID="btnBuscarP" runat="server"  class="genric-btn success" Text="Buscar" OnClick="btnBuscarP_Click"  />
                                 </div>
                                     <hr />
-                                     <p>Selecciona una carrera Universidad</p>
-                                    <div class="default-select" id="default-select1">
-			        
-                                    <asp:DropDownList ID="DropDownList1" runat="server">
-                                        <asp:ListItem>Selecciona una opcion</asp:ListItem>
-                                        <asp:ListItem>Icfes</asp:ListItem>
-                                        <asp:ListItem>Ponderado</asp:ListItem>
-                                        <asp:ListItem>Prueba de Admicion</asp:ListItem>
-                                    </asp:DropDownList>
-                                        </div>
-                                    <p>Calcula tu ponderado aqui</p>
-
-                                    <asp:Button ID="Button2" runat="server" Text="Ir" />
 	                        </div>
 						<div class="single-sidebar-widget post-category-widget">
 							<h4 class="category-title">Nivel de Formacion</h4>
@@ -183,61 +169,46 @@
 				<div class="col-lg-8 posts-list">
 					<div class="single-post row">
 
-                        <asp:Label ID="mensaje" runat="server" Text="No se encontraron resultados!!!" Font-Size="Large" ForeColor="#000099" Visible="False"></asp:Label>
-
+                        
 					    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Programas.IdProgramas, Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, Area.Area, Metodologia.Metodologia, NivelFormacion.NivelFormacion FROM Programas INNER JOIN Area ON Programas.IdAreaConocimiento = Area.IdArea INNER JOIN Metodologia ON Programas.IdMetodologia = Metodologia.IdMetodologia INNER JOIN NivelFormacion ON Programas.IdNivelFormacion = NivelFormacion.IdNivelFormacion"></asp:SqlDataSource>
 						
 					    <br />
                         <br />
                         <br />
                         <div class="text-sm-center">
-                        <asp:GridView ID="GridView1" runat="server" CellPadding="4" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" ForeColor="#333333">
-                            <AlternatingRowStyle BackColor="White" />
+                         <asp:GridView ID="GridView1" runat="server" CellPadding="4" GridLines="None" CssClass="position-absolute" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" style="width: 30px; height: 20px; left: 0px; top: 24px" ForeColor="#333333" Font-Size="Larger" Height="20px" HorizontalAlign="Justify" ShowFooter="True" Width="30px" Font-Strikeout="False">
+                            <AlternatingRowStyle BackColor="White" Font-Size="Smaller" Height="20px" HorizontalAlign="Left" Width="30px" />
                             <Columns>
-                                <asp:ButtonField ButtonType="Image" CommandName="Select" ImageUrl="~/img/ver.png" ShowHeader="True" Text="Ver">
-                                <ControlStyle Height="25px" Width="45px" />
+                                 <asp:ButtonField ButtonType="Image" CommandName="Select" ImageUrl="~/img/ver.png" ShowHeader="True" Text="Ver">
+                                <ControlStyle Height="20px" Width="30px" />
                                 </asp:ButtonField>
                             </Columns>
                             <EditRowStyle BackColor="#2461BF" />
-                            <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
-                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#EFF3FB" />
-                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" Font-Size="Smaller" Height="20px" Width="30px" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" Height="20px" Width="30px" />
+                            <RowStyle BackColor="#EFF3FB" BorderStyle="None" Font-Size="Smaller" Height="20px" Width="30px" HorizontalAlign="Left" />
+                            <SelectedRowStyle BackColor="#D1DDF1" ForeColor="#333333" Font-Size="Smaller" Height="20px" HorizontalAlign="Left" VerticalAlign="Top" Width="20px"   /> 
+                            <SortedAscendingCellStyle BackColor="#F5F7FB"  />
                             <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                            <SortedDescendingCellStyle BackColor="#E9EBEF" Height="20px" Width="30px"  />
+                            <SortedDescendingHeaderStyle BackColor="#4870BE" Height="20px" Width="30px" />
                         </asp:GridView>
-                        </div>
+
+                         <asp:Label ID="mensaje" runat="server" Text="No se encontraron resultados!!!" Font-Size="Large" ForeColor="#000099" Visible="False"></asp:Label>
+
+					    <br />
                         <br />
+						
+					</div>
                         </div>
 					
 				</div>
-				
-			    <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
 				
 			</div>
 		</div>
 	</section>
 	<!--######## End post-content Area ########-->
+    
+   
 </asp:Content>

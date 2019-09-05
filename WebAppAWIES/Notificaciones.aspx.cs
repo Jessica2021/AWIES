@@ -44,9 +44,9 @@ namespace WebAppAWIES
 
             MailMessage email = new MailMessage();
             email.To.Add(new MailAddress(TextBox2.Text));
-            email.From = new MailAddress("juansebastiandarkblak@gmail.com");
+            email.From = new MailAddress("awies.adsi@gmail.com");
             email.Subject = "Asunto ( " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss") + " Solicitud De Ingreso Awies) ";
-            email.Body = "!Te damos la bienvenida a AWIES! " +
+            email.Body = "¡Te damos la bienvenida a AWIES! " +
                 "Antes de comenzar, debes finalizar tu registro de ingreso. Inicia sesión y completa tu registro ingresando al siguiente enlace:  http://localhost:59792/login.aspx";
             email.IsBodyHtml = true;
             email.Priority = MailPriority.Normal;
@@ -55,7 +55,7 @@ namespace WebAppAWIES
             smtp.Port = 587;
             smtp.EnableSsl = true;
             smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new NetworkCredential("juansebastiandarkblak@gmail.com", "darkblak");
+            smtp.Credentials = new NetworkCredential("awies.adsi@gmail.com", "Awies 123");
 
             string output = null;
             try

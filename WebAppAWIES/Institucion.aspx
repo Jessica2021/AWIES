@@ -5,7 +5,7 @@
 
 	<!--######## Start post-content Area ########-->
 	<section class="post-content-area">
-		<div class="container">
+
 			<div class="row">
                 <div class="col-lg-4 sidebar-widgets" style="left: 0px; top: 0px; height: 866px">
 					<div class="widget-wrap">
@@ -57,12 +57,13 @@
 						<div class="single-sidebar-widget tag-cloud-widget">
 							<h4 class="tagcloud-title">Filtrar Por Departamento</h4>
                              <div class="mt-10">
-            <h5>Departamento</h5>
-                <div class="default-select" id="Departamento">
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Departamento]"></asp:SqlDataSource>
-                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Departamento" DataValueField="IdDepartamento" AutoPostBack="True"></asp:DropDownList>
-                </div>
-            </div>
+                                <h5>Departamento</h5>
+                 
+                            <div class="default-select" id="Departamento">
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Departamento]"></asp:SqlDataSource>
+                                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Departamento" DataValueField="IdDepartamento" AutoPostBack="True"></asp:DropDownList>
+                            </div>
+                        </div>
 							<div class="mt-10">
             <h5>Municipio</h5>
                 <div class="default-select" id="Municipio">

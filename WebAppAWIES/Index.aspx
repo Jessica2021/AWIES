@@ -117,7 +117,7 @@ function showDivs(n) {
 					<div class="single-cat-widget">
 						<div class="content relative">
 							<div class="overlay overlay-bg"></div>
-							<a href="https://www2.icfesinteractivo.gov.co/resultadosSaber/resultadosSaber11/res_individuales.htm" target="_blank">
+							<a href="https://www.icfes.gov.co/resultados-saber-11" target="_blank">
 								<div class="thumb">
 									<img class="content-image img-fluid d-block mx-auto" src="img/blog/cat-widget3.jpg" alt="">
 								</div>

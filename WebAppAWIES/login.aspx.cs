@@ -35,7 +35,7 @@ namespace WebAppAWIES
             adapter.Fill(login);
 
             
-            
+
             if (login.Rows.Count == 1)
             {
                 
@@ -49,6 +49,10 @@ namespace WebAppAWIES
                 {
                     Application["Id"] = login.Rows[0][0].ToString();
                     Response.Redirect("IndexInstitucion.aspx");
+                }
+                else if (usu == "Admin" && con == "Admin ")
+                {
+                    Response.Redirect("Notificaciones.aspx");
                 }
 
             }

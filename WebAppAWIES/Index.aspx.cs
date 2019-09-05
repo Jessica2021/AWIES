@@ -20,13 +20,22 @@ namespace WebAppAWIES
             dspublicar = objPublicaciones.mtdPublicar();
             Repeater1.DataSource = dspublicar;
             Repeater1.DataBind();
+           
+
+           
 
         }
+
+
+        
 
         //picturebox.Image = Image.FromFile(ruta);
 
         clPublicaciones objPublicaciones = new clPublicaciones();
 
-        
+        protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+        }
     }
 }

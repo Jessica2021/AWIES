@@ -19,9 +19,12 @@ namespace WebAppAWIES
             {
                 Response.Redirect("Index.aspx", true);
             }
+
+
+            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
-        
+
 
         protected void btnSubir_Click(object sender, EventArgs e)
 
@@ -32,6 +35,7 @@ namespace WebAppAWIES
             objMuro.foto = lblURL.Text;
             objMuro.titulo = titulo.Text;
             objMuro.texto = texto.Text;
+            objMuro.fecha = lblFecha.Text;
             objMuro.idUniversidad = int.Parse(Label1.Text.ToString());
 
                 int result = objMuro.mtdRegistrar();

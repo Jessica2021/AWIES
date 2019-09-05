@@ -93,7 +93,7 @@
     <Content Include="img\1.png" />
     <Content Include="img\2.png" />
     <Content Include="img\3.png" />
-    <Content Include="img\Publicaciones\f2cfe450d95215f419823726b79bf6a1.jpg" />
+    <Content Include="img\fondopun.jpg" />
     <Content Include="VerInfoProgramas.aspx" />
     <Content Include="InfoInstituciones.aspx" />
     <Content Include="InfoProgramas.aspx" />
@@ -504,7 +504,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="img\Publicaciones\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

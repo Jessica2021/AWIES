@@ -14,6 +14,7 @@ namespace WebAppAWIES.Datos
         public string EstadoSeccional { get; set; }
         public string Sector { get; set; }
         public string Nit { get; set; }
+        public string PaginaWeb { get; set; }
         public string Correo { get; set; }
         public string EstadoSolicitud { get; set; }
         public string Contraseña { get; set; }
@@ -40,7 +41,7 @@ namespace WebAppAWIES.Datos
         public int mtdTerminar(string id)
         {
             
-            string consu = "update Universidades set Codigo = " + Codigo + ",PrincipalSeccional = '" + PrincipalSeccional + "' ,Sector = '" + Sector + "' ,Acreditada =  '" + Acreditada + "',IdMunicipio = " + IdMunicipio + " ,IdCaracterAcademico = " + IdCaracterAcademico + " where IdUniversidades = " + id + " ";
+            string consu = "update Universidades set Codigo = '" + Codigo + "',PaginaWeb = '"+ PaginaWeb +"',PrincipalSeccional = '" + PrincipalSeccional + "' ,Sector = '" + Sector + "' ,Acreditada =  '" + Acreditada + "',IdMunicipio = " + IdMunicipio + " ,IdCaracterAcademico = " + IdCaracterAcademico + " where IdUniversidades = " + id + " ";
 
             int res = objConexion.mtdConectado(consu);
             return res;

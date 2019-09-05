@@ -34,6 +34,7 @@ namespace WebAppAWIES
         {
             clUniversidades objUniversidades = new clUniversidades();
             objUniversidades.Codigo = TextBox1.Text;
+            objUniversidades.PaginaWeb = PaginaWeb.Text;
             objUniversidades.PrincipalSeccional = DropDownList4.SelectedValue;
             objUniversidades.Sector = DropDownList5.SelectedValue;
             objUniversidades.Acreditada = DropDownList6.SelectedValue;

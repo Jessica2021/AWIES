@@ -105,9 +105,10 @@
 						<li class="menu-has-children"><a href="Top10.aspx">Top 10</a></li>
 						<li class="menu-has-children"><a href="">Test de Conocimiento</a>
 							<ul>
-								<li><a href="portfolio-details.html">Universidad Nacional</a></li>
-								<li><a href="elements.html">otra</a></li>
-							</ul>
+								<li><a href="https://www.uninscripciones.unal.edu.co/dipa/">Simulacro Universidad Nacional</a></li>
+								<li><a href="https://www.preicfesinteractivo.com">Curso Preicfes Virtual Intensivo</a></li>
+							    <li><a href="https://ingresealau.edu.co/simulacro-udea/">Simulacro online Universidad de Antioquia </a></li>
+                            </ul>
 						</li>
 						<li><a href="contact.html">Contact</a></li>
 					</ul>
@@ -134,10 +135,9 @@
 					<div class="single-footer-widget">
 						<h6>Contactanos:</h6>
 						<ul class="footer-nav">
-							<li>Telefono: 3022281557</li>
-							<li>Correo: awies@gmail.com</li>
-							<li>Correo: webAwies@gmail.com</li>
-							<li>Whatsapp: 3216549870</li>
+							<li>Telefono: 3042081216</li>
+							<li>Correo: awies.adsi@gmail.com</li>
+							<li>Whatsapp: 3022281557</li>
 						</ul>
 					</div>
 				</div>
@@ -153,8 +153,8 @@
 					<div class="single-footer-widget">
 						<h6>Valentina Ramirez</h6>
 						<ul class="footer-nav">
-							<li>Telefono: 3000000000</li>
-							<li>Correo: awies@gmail.com</li>
+							<li>Telefono: 322936667</li>
+							<li>Correo: valeramirez1557@gmail.com</li>
 						</ul>
 					</div>
 				</div>
@@ -162,16 +162,16 @@
 					<div class="single-footer-widget">
 						<h6>Alejandro Naranjo</h6>
 						<ul class="footer-nav">
-							<li>Telefono: 3000000000</li>
-							<li>Correo: awies@gmail.com</li>
+							<li>Telefono: 3042081216</li>
+							<li>Correo: jasonnaranjo123@gmail.com</li>
 						</ul>
 					</div>
                     <br />
 					<div class="single-footer-widget">
 						<h6>Sebastian Albarracin</h6>
 						<ul class="footer-nav">
-							<li>Telefono: 3000000000</li>
-							<li>Correo: awies@gmail.com</li>
+							<li>Telefono: 3142707262</li>
+							<li>Correo: juansebastiandarkblak@gmail.com</li>
 						</ul>
 					</div>
 				</div>

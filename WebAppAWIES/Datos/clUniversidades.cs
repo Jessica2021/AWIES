@@ -92,6 +92,15 @@ namespace WebAppAWIES.Datos
             dsInstituto = objConexion.mtdDesconectado(consulta);
             return dsInstituto;
         }
+
+        public DataSet mtdListaInfo(string id)
+        {
+            string consulta = " select Universidades.NombreInstitucion * from Universidades where Universidades.IdUniversidades = '" + id + "')";
+            DataSet dsInstituto = new DataSet();
+            dsInstituto = objConexion.mtdDesconectado(consulta);
+            return dsInstituto;
+        }
+
         public int mtdEditar(string id)
         {
 
@@ -109,5 +118,6 @@ namespace WebAppAWIES.Datos
             return dsInstituto;
         }
 
+       
     }
 }

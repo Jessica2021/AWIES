@@ -103,14 +103,13 @@
 							</ul>
 						</li>
 						<li class="menu-has-children"><a href="Top10.aspx">Top 10</a></li>
-						<li class="menu-has-children"><a href="">Test de Conocimiento</a>
+						<li class="menu-has-children"><a>Test de Conocimiento</a>
 							<ul>
-								<li><a href="https://www.uninscripciones.unal.edu.co/dipa/">Simulacro Universidad Nacional</a></li>
-								<li><a href="https://www.preicfesinteractivo.com">Curso Preicfes Virtual Intensivo</a></li>
-							    <li><a href="https://ingresealau.edu.co/simulacro-udea/">Simulacro online Universidad de Antioquia </a></li>
+								<li><a href="https://www.uninscripciones.unal.edu.co/dipa/"  target="_blank">Simulacro Universidad Nacional</a></li>
+								<li><a href="https://www.preicfesinteractivo.com" target="_blank">Curso Preicfes Virtual Intensivo</a></li>
+							    <li><a href="https://ingresealau.edu.co/simulacro-udea/" target="_blank">Simulacro online Universidad de Antioquia </a></li>
                             </ul>
 						</li>
-						<li><a href="contact.html">Contact</a></li>
 					</ul>
 				</nav>
 				<!--######## #nav-menu-container -->

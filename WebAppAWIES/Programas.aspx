@@ -10,13 +10,11 @@
 
         </style>
 
-
-
-	<!--######## Start post-content Area ########-->
+    <!--######## Start post-content Area ########-->
 	<section class="post-content-area">
-		<div class="container">
+
 			<div class="row">
-                <div class="col-lg-4 sidebar-widgets" style="left: 0px; top: 0px; height: 866px">
+                <div class="col-lg-4 sidebar-widgets">
 					<div class="widget-wrap">
 							<div class="single-sidebar-widget newsletter-widget">
 							<h4 class="newsletter-title">Busqueda</h4>
@@ -197,18 +195,39 @@
 
                          <asp:Label ID="mensaje" runat="server" Text="No se encontraron resultados!!!" Font-Size="Large" ForeColor="#000099" Visible="False"></asp:Label>
 
-					    <br />
-                        <br />
-						
-					</div>
-                        </div>
 					
 				</div>
+				
+			    <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
 				
 			</div>
 		</div>
 	</section>
 	<!--######## End post-content Area ########-->
+
+
+
+
+	
     
    
 </asp:Content>

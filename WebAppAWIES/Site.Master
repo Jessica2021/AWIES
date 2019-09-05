@@ -5,6 +5,9 @@
 <html>
 <head runat="server">
 
+
+   
+
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,12 +37,18 @@
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
+
+  <%--  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">--%>
+
    <style>
        hr {
         color: yellow;
         font-size: 10px;
         }
     </style>
+
+   
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -194,6 +203,7 @@
 		</div>
 	</footer>
 	<!--######## End footer Area ########-->
+  
 
 	<script src="js/vendor/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

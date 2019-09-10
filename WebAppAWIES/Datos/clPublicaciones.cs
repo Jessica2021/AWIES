@@ -28,7 +28,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdPublicar()
         {
-            string consulta = "select Foto,Titulo,Texto,Fecha,NombreInstitucion from Muro INNER JOIN Universidades ON (Universidades.IdUniversidades = Muro.IdUniversidad) ORDER BY IdMuro DESC";
+            string consulta = "select Foto,Titulo,Texto,Fecha,NombreInstitucion,PaginaWeb from Muro INNER JOIN Universidades ON (Universidades.IdUniversidades = Muro.IdUniversidad) ORDER BY IdMuro DESC";
             DataSet dsPublicar = new DataSet();
             dsPublicar = objConexion.mtdDesconectado(consulta);
             return dsPublicar;

@@ -17,16 +17,12 @@ namespace WebAppAWIES
         protected void BtmCerrar_Click(object sender, EventArgs e)
         {
             System.Web.Security.FormsAuthentication.SignOut();
-
             Session.RemoveAll();
             Session.Abandon();
             Application["Id"] = "";
             HttpContext.Current.Response.Redirect("Index.aspx", true);
             
 
-
-
-
-        }
+        } 
     }
 }

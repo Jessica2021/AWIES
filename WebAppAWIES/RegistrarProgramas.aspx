@@ -1,4 +1,4 @@
-﻿0<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistrarProgramas.aspx.cs" Inherits="WebAppAWIES.RegistrarProgramas" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistrarProgramas.aspx.cs" Inherits="WebAppAWIES.RegistrarProgramas" %>
 
 <!DOCTYPE html>
 
@@ -290,7 +290,7 @@ border-radius: 11px 11px 11px 11px;
 		        </div>
             <br />
             <asp:Button ID="Button1" runat="server" Text="Registrar" class="genric-btn success" Height="41px" OnClick="Button1_Click"  />
-            <a href="Index.aspx" class="genric-btn info">Inicio</a>
+            <a href="IndexInstitucion.aspx" class="genric-btn info">Inicio</a>
             </div>
             <div class="mt-10">
                             <asp:Label ID="lblCorrecto" runat="server" Text="El programa se a Registrado Correctamente" BackColor="#99CCFF" BorderColor="#000099" BorderStyle="Solid" BorderWidth="1px" ForeColor="#000099" Height="25px" Width="300px" Visible="False"></asp:Label>

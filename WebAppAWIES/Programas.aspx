@@ -6,6 +6,10 @@
     {
     cursor:pointer;
     }
+        .auto-style1 {
+            left: 15px;
+            top: -1985px;
+        }
         </style>
 
 	<!--######## Start post-content Area ########-->
@@ -140,7 +144,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-8 posts-list">
+				<div class="auto-style1">
 					<div class="single-post row">
 
                         <asp:Label ID="mensaje" runat="server" Text="No se encontraron resultados!!!" Font-Size="Large" ForeColor="#000099" Visible="False"></asp:Label>
@@ -151,7 +155,7 @@
                         <br />
                         <br />
                         <div class="text-sm-center">
-                        <asp:GridView ID="GridView1" runat="server" CellPadding="4" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" ForeColor="#333333">
+                        <asp:GridView ID="GridView1"  runat="server" CellPadding="4" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" ForeColor="#333333">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
                                 <asp:ButtonField ButtonType="Image" CommandName="Select" HeaderText="Mas Informacion" ImageUrl="~/img/ver.png" ShowHeader="True" Text="ver">

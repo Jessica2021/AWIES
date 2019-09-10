@@ -13,13 +13,18 @@ namespace WebAppAWIES
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            mtdLlenar();
+        }
+        clUniversidades Universidad = new clUniversidades();
+
+        public void mtdLlenar()
+        {
+
             DataSet dsInstitutos = new DataSet();
             dsInstitutos = Universidad.mtdListaInformacionLoad();
             GridView1.DataSource = dsInstitutos.Tables[0];
             GridView1.DataBind();
         }
-        clUniversidades Universidad = new clUniversidades();
-
         public void mtdMensaje()
         {
             if (GridView1.Rows.Count == 0)
@@ -97,6 +102,10 @@ namespace WebAppAWIES
           
         }
 
-       
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            mtdLlenar();
         }
+    }
 }

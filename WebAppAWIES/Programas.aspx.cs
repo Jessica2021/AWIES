@@ -21,6 +21,11 @@ namespace WebAppAWIES
 
         protected void Page_Init(object sender, EventArgs e)
         {
+            mtdLlenar();
+        }
+
+        public void mtdLlenar()
+        {
             DataSet dsProgrma = new DataSet();
             dsProgrma = po.mtdListarProgramas();
             GridView1.DataSource = dsProgrma.Tables[0];
@@ -436,6 +441,12 @@ namespace WebAppAWIES
         protected void btnBuscarP_Click(object sender, EventArgs e)
         {
             mtdPonderado();
+        }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            mtdLlenar();
         }
     }
 }

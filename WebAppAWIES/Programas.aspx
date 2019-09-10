@@ -47,7 +47,7 @@
                                     <asp:DropDownList ID="DropDownList4" runat="server">
                                         <asp:ListItem>Selecciona una opcion</asp:ListItem>
                                         <asp:ListItem>Icfes</asp:ListItem>
-                                        <asp:ListItem>Prueba de Admicion</asp:ListItem>
+                                        <asp:ListItem>Prueba</asp:ListItem>
                                     </asp:DropDownList>
 			                        </div>
                                     

@@ -35,11 +35,15 @@ namespace WebAppAWIES
             adapter.Fill(login);
 
             
-            
+
             if (login.Rows.Count == 1)
             {
-                
-                if (login.Rows[0][3].ToString() == "" && login.Rows[0][4].ToString() == "Aprobado")
+                if (login.Rows[0][1].ToString() == "awies.adsi@gmail.com" && login.Rows[0][2].ToString() == "admin")
+                {
+                    Response.Redirect("Notificaciones.aspx");
+                }
+
+                else if (login.Rows[0][3].ToString() == "" && login.Rows[0][4].ToString() == "Aprobado")
                 {
                     Application["Id"] = login.Rows[0][0].ToString();
                     Response.Redirect("Registrar.aspx");
@@ -50,8 +54,10 @@ namespace WebAppAWIES
                     Application["Id"] = login.Rows[0][0].ToString();
                     Response.Redirect("IndexInstitucion.aspx");
                 }
+               
 
             }
+            
             else
             {
                 LblError.Text = "Usuario y/o Contraseña incorrectos";

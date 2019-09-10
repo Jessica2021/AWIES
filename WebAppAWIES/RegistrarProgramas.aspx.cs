@@ -33,10 +33,11 @@ namespace WebAppAWIES
             objProgramas.IdNivelFormacion = int.Parse(ddlNivelFormacion.SelectedValue);
             objProgramas.IdMetodologia = int.Parse(ddlMetodologia.SelectedValue.ToString());
             objProgramas.IdAreaConocimiento = int.Parse(ddlArea.SelectedValue.ToString());
-            objProgramas.Precio = float.Parse(Precio.Text);
+            objProgramas.Precio = int.Parse(Precio.Text);
             objProgramas.NumeroCreditos = NumeroCreditos.Text;
             objProgramas.VigenciaAños = VigenciaAños.Text;
             objProgramas.DuracionSemestre = Duracion.Text;
+            objProgramas.TituloOtorgado = TituloOtorgado.Text;
             objProgramas.PrimerIngresado = float.Parse(Primero.Text);
             objProgramas.UltimoIngresado = float.Parse(ultimo.Text);
             objProgramas.TipoIngreso = x;
@@ -48,6 +49,16 @@ namespace WebAppAWIES
 
                 lblCorrecto.Visible = true;
                 lblError.Visible = false;
+
+                Nombre.Text = "";
+                Precio.Text = "";
+                NumeroCreditos.Text = ""; 
+                VigenciaAños.Text = "";
+                Duracion.Text = "";
+                Primero.Text = "";
+                ultimo.Text = "";
+                TituloOtorgado.Text = "";
+
             }
             else
             {

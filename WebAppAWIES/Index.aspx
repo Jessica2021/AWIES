@@ -1,28 +1,80 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="WebAppAWIES.Index" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   
+
+    <head>
+           <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+
  <!--######## start banner Area ########-->
-	<section class="banner-area relative" id="home">
-		<div class="container">
-			<div class="row d-flex align-items-center justify-content-center">
-				<div class="about-content col-lg-12">
-					<h1 class="text-white text-uppercase">
-						Blog Details
-					</h1>
-					<p class="text-white link-nav"><a href="index.html">Home </a>
-						<span class="lnr lnr-arrow-right"></span>
-						<a href="blog-home.html">
-							Blog</a>
-						<span class="lnr lnr-arrow-right"></span>
-						<a href="blog-single.html">
-							Blog Details</a>
-					</p>
-				</div>
-			    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-			</div>
-		</div>
-	</section>
+
+	<style>
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+
+#fil{
+    background-image:url(img/fondopun.jpg);
+}
+
+#imag{
+    border-color:#B6DFE7;
+    border:solid 10px;
+    border-radius:10px;
+}
+</style>
+
+<div class="row" id="fil">
+    <div class="col-lg-2"></div>
+	<div class="col-lg-8"  id="imag" style="border-color: #ADDDEB">
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="img/1.png" style="width:100%">
+  <img class="mySlides" src="img/2.png" style="width:100%">
+  <img class="mySlides" src="img/3.png" style="width:100%">
+  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+  </div>
+</div>
+           </div>
+    <div class="col-lg-2"></div>
+    </div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+
+			    <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+		
 	<!--######## End banner Area ########-->
+   
 	<!--######## Start top-category-widget Area ########-->
 	<section class="top-category-widget-area pt-90 pb-90 ">
 		<div class="container">
@@ -65,7 +117,7 @@
 					<div class="single-cat-widget">
 						<div class="content relative">
 							<div class="overlay overlay-bg"></div>
-							<a href="https://www2.icfesinteractivo.gov.co/resultadosSaber/resultadosSaber11/res_individuales.htm" target="_blank">
+							<a href="https://www.icfes.gov.co/resultados-saber-11" target="_blank">
 								<div class="thumb">
 									<img class="content-image img-fluid d-block mx-auto" src="img/blog/cat-widget3.jpg" alt="">
 								</div>
@@ -82,170 +134,47 @@
 		</div>
 	</section>
 	<!--######## End top-category-widget Area ########-->
+
+   
 	<!--######## Start post-content Area ########-->
 	<section class="post-content-area">
 		<div class="container">
+        
 			<div class="row">
-				<div class="col-lg-10 posts-list">
-					<div class="single-post row">
-						<div class="col-lg-3  col-md-3 meta-details">
-							<ul class="tags">
-								<li><a href="#">Food,</a></li>
-								<li><a href="#">Technology,</a></li>
-								<li><a href="#">Politics,</a></li>
-								<li><a href="#">Lifestyle</a></li>
-							</ul>
+                <div class="col-lg-10 posts-list">
+                    <div class="single-post row">
+               
+                        <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
+                   
+                    <ItemTemplate runat="server">
+                        <div class="col-lg-3  col-md-3 meta-details">
+						
 							<div class="user-details row">
-								<p class="user-name col-lg-12 col-md-12 col-6"><a href="#">Mark wiens</a> <span class="lnr lnr-user"></span></p>
-								<p class="date col-lg-12 col-md-12 col-6"><a href="#">12 Dec, 2017</a> <span class="lnr lnr-calendar-full"></span></p>
+								<p class="user-name col-lg-12 col-md-12 col-6"><a href="#"><%#Eval("NombreInstitucion") %></a> <span class="lnr lnr-user"></span></p>
+								<p class="date col-lg-12 col-md-12 col-6"><a href="#"><%#Eval("Fecha") %></a><span class="lnr lnr-calendar-full"></span></p>
 								<p class="view col-lg-12 col-md-12 col-6"><a href="#">1.2M Views</a> <span class="lnr lnr-eye"></span></p>
 								<p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span class="lnr lnr-bubble"></span></p>
 							</div>
 						</div>
 						<div class="col-lg-9 col-md-9 ">
 							<div class="feature-img">
-								<img class="img-fluid" src="img/blog/feature-img1.jpg" alt="">
+								<img class="img-resposive" src="img/Publicaciones/<%#Eval("Foto") %>">
 							</div>
-							<a class="posts-title" href="blog-single.html"><h3>Astronomy Binoculars A Great Alternative</h3></a>
+							<a class="posts-title" href="blog-single.html"><h3><%#Eval("Titulo") %></h3></a>
 							<p class="excert">
-								MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money
-								on boot camp when you can get the MCSE study materials yourself at a fraction.
-							</p>
-							<a href="RegistrarProgramas.aspx" class="primary-btn">View More</a>
+							    <%#Eval("Texto") %>	
+                            </p>
+							
 						</div>
+                    </ItemTemplate>
+                    
+
+                </asp:Repeater>
+				
 					</div>
-					<div class="single-post row">
-						<div class="col-lg-3  col-md-3 meta-details">
-							<ul class="tags">
-								<li><a href="#">Food,</a></li>
-								<li><a href="#">Technology,</a></li>
-								<li><a href="#">Politics,</a></li>
-								<li><a href="#">Lifestyle</a></li>
-							</ul>
-							<div class="user-details row">
-								<p class="user-name col-lg-12 col-md-12 col-6"><a href="#">Mark wiens</a> <span class="lnr lnr-user"></span></p>
-								<p class="date col-lg-12 col-md-12 col-6"><a href="#">12 Dec, 2017</a> <span class="lnr lnr-calendar-full"></span></p>
-								<p class="view col-lg-12 col-md-12 col-6"><a href="#">1.2M Views</a> <span class="lnr lnr-eye"></span></p>
-								<p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span class="lnr lnr-bubble"></span></p>
-							</div>
-						</div>
-						<div class="col-lg-9 col-md-9 ">
-							<div class="feature-img">
-								<img class="img-fluid" src="img/blog/feature-img2.jpg" alt="">
-							</div>
-							<a class="posts-title" href="blog-single.html"><h3>The Basics Of Buying A Telescope</h3></a>
-							<p class="excert">
-								MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money
-								on boot camp when you can get the MCSE study materials yourself at a fraction.
-							</p>
-							<a href="#" class="primary-btn">View More</a>
-						</div>
-					</div>
-					<div class="single-post row">
-						<div class="col-lg-3  col-md-3 meta-details">
-							<ul class="tags">
-								<li><a href="#">Food,</a></li>
-								<li><a href="#">Technology,</a></li>
-								<li><a href="#">Politics,</a></li>
-								<li><a href="#">Lifestyle</a></li>
-							</ul>
-							<div class="user-details row">
-								<p class="user-name col-lg-12 col-md-12 col-6"><a href="#">Mark wiens</a> <span class="lnr lnr-user"></span></p>
-								<p class="date col-lg-12 col-md-12 col-6"><a href="#">12 Dec, 2017</a> <span class="lnr lnr-calendar-full"></span></p>
-								<p class="view col-lg-12 col-md-12 col-6"><a href="#">1.2M Views</a> <span class="lnr lnr-eye"></span></p>
-								<p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span class="lnr lnr-bubble"></span></p>
-							</div>
-						</div>
-						<div class="col-lg-9 col-md-9">
-							<div class="feature-img">
-								<img class="img-fluid" src="img/blog/feature-img3.jpg" alt="">
-							</div>
-							<a class="posts-title" href="blog-single.html"><h3>The Glossary Of Telescopes</h3></a>
-							<p class="excert">
-								MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money
-								on boot camp when you can get the MCSE study materials yourself at a fraction.
-							</p>
-							<a href="DGVProgramas.aspx" class="primary-btn">View More</a>
-						</div>
-					</div>
-					<div class="single-post row">
-						<div class="col-lg-3  col-md-3 meta-details">
-							<ul class="tags">
-								<li><a href="#">Food,</a></li>
-								<li><a href="#">Technology,</a></li>
-								<li><a href="#">Politics,</a></li>
-								<li><a href="#">Lifestyle</a></li>
-							</ul>
-							<div class="user-details row">
-								<p class="user-name col-lg-12 col-md-12 col-6"><a href="#">Mark wiens</a> <span class="lnr lnr-user"></span></p>
-								<p class="date col-lg-12 col-md-12 col-6"><a href="#">12 Dec, 2017</a> <span class="lnr lnr-calendar-full"></span></p>
-								<p class="view col-lg-12 col-md-12 col-6"><a href="#">1.2M Views</a> <span class="lnr lnr-eye"></span></p>
-								<p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span class="lnr lnr-bubble"></span></p>
-							</div>
-						</div>
-						<div class="col-lg-9 col-md-9">
-							<div class="feature-img">
-								<img class="img-fluid" src="img/blog/feature-img4.jpg" alt="">
-							</div>
-							<a class="posts-title" href="blog-single.html"><h3>The Night Sky</h3></a>
-							<p class="excert">
-								MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money
-								on boot camp when you can get the MCSE study materials yourself at a fraction.
-							</p>
-							<a href="#" class="primary-btn">View More</a>
-						</div>
-					</div>
-					<div class="single-post row">
-						<div class="col-lg-3 col-md-3 meta-details">
-							<ul class="tags">
-								<li><a href="#">Food,</a></li>
-								<li><a href="#">Technology,</a></li>
-								<li><a href="#">Politics,</a></li>
-								<li><a href="#">Lifestyle</a></li>
-							</ul>
-							<div class="user-details row">
-								<p class="user-name col-lg-12 col-md-12 col-6"><a href="#">Mark wiens</a> <span class="lnr lnr-user"></span></p>
-								<p class="date col-lg-12 col-md-12 col-6"><a href="#">12 Dec, 2017</a> <span class="lnr lnr-calendar-full"></span></p>
-								<p class="view col-lg-12 col-md-12 col-6"><a href="#">1.2M Views</a> <span class="lnr lnr-eye"></span></p>
-								<p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span class="lnr lnr-bubble"></span></p>
-							</div>
-						</div>
-						<div class="col-lg-9 col-md-9">
-							<div class="feature-img">
-								<img class="img-fluid" src="img/blog/feature-img5.jpg" alt="">
-							</div>
-							<a class="posts-title" href="blog-single.html"><h3>Telescopes 101</h3></a>
-							<p class="excert">
-								MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money
-								on boot camp when you can get the MCSE study materials yourself at a fraction.
-							</p>
-							<a href="#" class="primary-btn">View More</a>
-						</div>
-					</div>
-					<nav class="blog-pagination justify-content-center d-flex">
-						<ul class="pagination">
-							<li class="page-item">
-								<a href="#" class="page-link" aria-label="Previous">
-									<span aria-hidden="true">
-										<span class="lnr lnr-chevron-left"></span>
-									</span>
-								</a>
-							</li>
-							<li class="page-item"><a href="#" class="page-link">01</a></li>
-							<li class="page-item active"><a href="#" class="page-link">02</a></li>
-							<li class="page-item"><a href="#" class="page-link">03</a></li>
-							<li class="page-item"><a href="#" class="page-link">04</a></li>
-							<li class="page-item"><a href="#" class="page-link">09</a></li>
-							<li class="page-item">
-								<a href="#" class="page-link" aria-label="Next">
-									<span aria-hidden="true">
-										<span class="lnr lnr-chevron-right"></span>
-									</span>
-								</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
+                </div>
+			</div>
+               
 		</div>
 	</section>
 	<!--######## End post-content Area ########-->

@@ -14,6 +14,7 @@ namespace WebAppAWIES.Datos
         public string EstadoSeccional { get; set; }
         public string Sector { get; set; }
         public string Nit { get; set; }
+        public string PaginaWeb { get; set; }
         public string Correo { get; set; }
         public string EstadoSolicitud { get; set; }
         public string Contraseña { get; set; }
@@ -40,7 +41,7 @@ namespace WebAppAWIES.Datos
         public int mtdTerminar(string id)
         {
             
-            string consu = "update Universidades set Codigo = " + Codigo + ",PrincipalSeccional = '" + PrincipalSeccional + "' ,Sector = '" + Sector + "' ,Acreditada =  '" + Acreditada + "',IdMunicipio = " + IdMunicipio + " ,IdCaracterAcademico = " + IdCaracterAcademico + " where IdUniversidades = " + id + " ";
+            string consu = "update Universidades set Codigo = '" + Codigo + "',PaginaWeb = '"+ PaginaWeb +"',PrincipalSeccional = '" + PrincipalSeccional + "' ,Sector = '" + Sector + "' ,Acreditada =  '" + Acreditada + "',IdMunicipio = " + IdMunicipio + " ,IdCaracterAcademico = " + IdCaracterAcademico + " where IdUniversidades = " + id + " ";
 
             int res = objConexion.mtdConectado(consu);
             return res;
@@ -48,7 +49,7 @@ namespace WebAppAWIES.Datos
         }
         public DataSet mtdBuscarInstitucuines(string Instituto)
         {
-            string consulta = " select Universidades.IdUniversidades, Universidades.Codigo, Universidades.PrincipalSeccional,Universidades.NombreInstitucion,  CaracterAcademico.CaracterAcademico , Departamento.Departamento, Municipio.Municipio from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento) where NombreInstitucion LIKE '%" + Instituto + "%'";
+            string consulta = " select Universidades.IdUniversidades, Universidades.Codigo,Universidades.NombreInstitucion, Universidades.Acreditada, Departamento.Departamento, Municipio.Municipio, CaracterAcademico.CaracterAcademico from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento) where NombreInstitucion LIKE '%" + Instituto + "%'";
             DataSet dsInstituto = new DataSet();
             dsInstituto = objConexion.mtdDesconectado(consulta);
             return dsInstituto;
@@ -56,7 +57,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdBusquedaUniversidades()
         {
-            string consulta = " select Universidades.IdUniversidades, Universidades.Codigo, Universidades.PrincipalSeccional,Universidades.NombreInstitucion,  CaracterAcademico.CaracterAcademico , Departamento.Departamento, Municipio.Municipio from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento) where CaracterAcademico.IdCaracterAcademico = 4";
+            string consulta = " select Universidades.IdUniversidades, Universidades.Codigo,Universidades.NombreInstitucion, Universidades.Acreditada, Departamento.Departamento, Municipio.Municipio, CaracterAcademico.CaracterAcademico from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento) where CaracterAcademico.IdCaracterAcademico = 4";
             DataSet dsInstituto = new DataSet();
             dsInstituto = objConexion.mtdDesconectado(consulta);
             return dsInstituto;
@@ -64,14 +65,14 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdBusquedaTecnica()
         {
-            string consulta = " select Universidades.IdUniversidades, Universidades.Codigo, Universidades.PrincipalSeccional,Universidades.NombreInstitucion, CaracterAcademico.CaracterAcademico , Departamento.Departamento, Municipio.Municipio from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento) where CaracterAcademico.IdCaracterAcademico = 1";
+            string consulta = " select Universidades.IdUniversidades, Universidades.Codigo,Universidades.NombreInstitucion, Universidades.Acreditada, Departamento.Departamento, Municipio.Municipio, CaracterAcademico.CaracterAcademico from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento) where CaracterAcademico.IdCaracterAcademico = 1";
             DataSet dsInstituto = new DataSet();
             dsInstituto = objConexion.mtdDesconectado(consulta);
             return dsInstituto;
         }
         public DataSet mtdBusquedaTecnologica()
         {
-            string consulta = " select Universidades.IdUniversidades, Universidades.Codigo, Universidades.PrincipalSeccional,Universidades.NombreInstitucion, CaracterAcademico.CaracterAcademico , Departamento.Departamento, Municipio.Municipio from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento) where CaracterAcademico.IdCaracterAcademico = 2";
+            string consulta = " select Universidades.IdUniversidades, Universidades.Codigo,Universidades.NombreInstitucion, Universidades.Acreditada, Departamento.Departamento, Municipio.Municipio, CaracterAcademico.CaracterAcademico from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento) where CaracterAcademico.IdCaracterAcademico = 2";
             DataSet dsInstituto = new DataSet();
             dsInstituto = objConexion.mtdDesconectado(consulta);
             return dsInstituto;
@@ -79,7 +80,7 @@ namespace WebAppAWIES.Datos
 
         public DataSet mtdBusquedaMunicipio(int a)
         {
-            string consulta = " select  Universidades.IdUniversidades, Universidades.Codigo, Universidades.PrincipalSeccional,Universidades.NombreInstitucion, CaracterAcademico.CaracterAcademico , Departamento.Departamento, Municipio.Municipio  from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento) where Municipio.IdMunicipio = '" + a+"'";
+            string consulta = " select  Universidades.IdUniversidades, Universidades.Codigo,Universidades.NombreInstitucion, Universidades.Acreditada, Departamento.Departamento, Municipio.Municipio, CaracterAcademico.CaracterAcademico  from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento) where Municipio.IdMunicipio = '" + a+"'";
             DataSet dsInstituto = new DataSet();
             dsInstituto = objConexion.mtdDesconectado(consulta);
             return dsInstituto;
@@ -92,6 +93,15 @@ namespace WebAppAWIES.Datos
             dsInstituto = objConexion.mtdDesconectado(consulta);
             return dsInstituto;
         }
+
+        public DataSet mtdListaInfo(string id)
+        {
+            string consulta = " select Universidades.NombreInstitucion * from Universidades where Universidades.IdUniversidades = '" + id + "')";
+            DataSet dsInstituto = new DataSet();
+            dsInstituto = objConexion.mtdDesconectado(consulta);
+            return dsInstituto;
+        }
+
         public int mtdEditar(string id)
         {
 
@@ -101,6 +111,14 @@ namespace WebAppAWIES.Datos
             return res;
 
         }
-        
+        public DataSet mtdListaInformacionLoad()
+        {
+            string consulta = " select Universidades.IdUniversidades, Universidades.Codigo,Universidades.NombreInstitucion, Universidades.Acreditada, Departamento.Departamento, Municipio.Municipio,   CaracterAcademico.CaracterAcademico from Universidades inner join CaracterAcademico on  (CaracterAcademico.IdCaracterAcademico = Universidades.IdCaracterAcademico) inner join Municipio on (Municipio.IdMunicipio = Universidades.IdMunicipio) inner join Departamento on (Departamento.IdDepartamento=Municipio.IdDepartamento)";
+            DataSet dsInstituto = new DataSet();
+            dsInstituto = objConexion.mtdDesconectado(consulta);
+            return dsInstituto;
+        }
+
+       
     }
 }

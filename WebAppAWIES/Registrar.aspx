@@ -90,9 +90,12 @@
                             <div class="mt-10">
                      <h5>Codigo de Institucion</h5>
                     <asp:TextBox ID="TextBox1" runat="server" type="text" name="Codigo" placeholder="Codigo" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Codigo'"  class="single-input-primary"></asp:TextBox>
+		       
+                            <h5>Pagina Web</h5>
+                    <asp:TextBox type="text" ID="PaginaWeb" runat="server"  name="PaginaWeb" placeholder="www.Ejemplo.com" onfocus="this.placeholder = ''"  onblur="this.placeholder = 'www.Ejemplo.com'"  class="single-input-primary"></asp:TextBox>
 		        </div>
             <div class="mt-10">
-            <h5>Principal/Seccional<asp:Label ID="Label1" runat="server"></asp:Label>
+            <h5>Principal/Seccional<asp:Label ID="Label1" runat="server" Visible="False"></asp:Label>
                 </h5>
                 <div class="default-select" id="default-select">
 			        
@@ -130,7 +133,7 @@
             <h5>Departamento</h5>
                 <div class="default-select" id="Departamento">
                     
-                        <asp:DropDownList AppendDataBoundItems="true" ID="DropDownList3" runat="server" DataMember="DefaultView" DataSourceID="SqlDataSource1" DataTextField="Departamento" DataValueField="IdDepartamento" AutoPostBack="True" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged"><asp:ListItem Value="0">Seleccione Un Departamento</asp:ListItem></asp:DropDownList>
+                        <asp:DropDownList AppendDataBoundItems="true" ID="DropDownList3"   runat="server" DataMember="DefaultView" DataSourceID="SqlDataSource1" DataTextField="Departamento" DataValueField="IdDepartamento" AutoPostBack="True" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged" ><asp:ListItem Value="0">&lt;Seleccione un Item&gt;</asp:ListItem></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Departamento]"></asp:SqlDataSource>
                   
                 </div>
@@ -140,7 +143,7 @@
                 <div class="default-select" id="Municipio">
                     
                         
-                    <asp:DropDownList AppendDataBoundItems="true" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Municipio" DataValueField="IdMunicipio" DataMember="DefaultView" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"><asp:ListItem Value="0"> Seleccione Un Municipio </asp:ListItem></asp:DropDownList>
+                    <asp:DropDownList AppendDataBoundItems="true" ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Municipio" DataValueField="IdMunicipio" DataMember="DefaultView" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"><asp:ListItem Value="0">&lt;Seleccione un Item&gt;</asp:ListItem></asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [IdMunicipio], [Municipio] FROM [Municipio] WHERE ([IdDepartamento] = @IdDepartamento)">
                         
                         <SelectParameters>

@@ -90,11 +90,18 @@
     <Content Include="DGVProgramas.aspx" />
     <Content Include="EditarPrograma.aspx" />
     <Content Include="EditarInstituciones.aspx" />
+    <Content Include="img\bienvenido.jpg" />
+    <Content Include="IndexInstitucion.aspx" />
+    <Content Include="img\1.png" />
+    <Content Include="img\2.png" />
+    <Content Include="img\3.png" />
+    <Content Include="img\fondopun.jpg" />
+    <Content Include="VerInfoProgramas.aspx" />
     <Content Include="InfoInstituciones.aspx" />
     <Content Include="InfoProgramas.aspx" />
     <Content Include="img\ver.png" />
     <Content Include="img\fondoinsertar.jpg" />
-    <Content Include="IndexInstitucion.aspx" />
+    <Content Include="Muro.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\b1.jpg" />
     <Content Include="img\b2.jpg" />
@@ -229,9 +236,9 @@
     <Compile Include="Datos\clDepartamento.cs" />
     <Compile Include="Datos\clMetodologia.cs" />
     <Compile Include="Datos\clMunicipio.cs" />
-    <Compile Include="Datos\clMuro.cs" />
     <Compile Include="Datos\clNivelFormacion.cs" />
     <Compile Include="Datos\clProgramas.cs" />
+    <Compile Include="Datos\clPublicaciones.cs" />
     <Compile Include="Datos\clUniversidades.cs" />
     <Compile Include="EnvioSolicitud.aspx.cs">
       <DependentUpon>EnvioSolicitud.aspx</DependentUpon>
@@ -268,6 +275,20 @@
     <Compile Include="EditarInstituciones.aspx.designer.cs">
       <DependentUpon>EditarInstituciones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IndexInstitucion.aspx.cs">
+      <DependentUpon>IndexInstitucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexInstitucion.aspx.designer.cs">
+      <DependentUpon>IndexInstitucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerInfoProgramas.aspx.cs">
+      <DependentUpon>VerInfoProgramas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerInfoProgramas.aspx.designer.cs">
+      <DependentUpon>VerInfoProgramas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="InfoInstituciones.aspx.cs">
       <DependentUpon>InfoInstituciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -282,12 +303,12 @@
     <Compile Include="InfoProgramas.aspx.designer.cs">
       <DependentUpon>InfoProgramas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="IndexInstitucion.aspx.cs">
-      <DependentUpon>IndexInstitucion.aspx</DependentUpon>
+    <Compile Include="Muro.aspx.cs">
+      <DependentUpon>Muro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="IndexInstitucion.aspx.designer.cs">
-      <DependentUpon>IndexInstitucion.aspx</DependentUpon>
+    <Compile Include="Muro.aspx.designer.cs">
+      <DependentUpon>Muro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -492,7 +513,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="img\Publicaciones\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

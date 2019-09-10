@@ -5,6 +5,9 @@
 <html>
 <head runat="server">
 
+
+   
+
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,12 +37,10 @@
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
-   <style>
-       hr {
-        color: yellow;
-        font-size: 10px;
-        }
-    </style>
+
+ <%--   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">--%>
+
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -94,13 +95,13 @@
 							</ul>
 						</li>
 						<li class="menu-has-children"><a href="Top10.aspx">Top 10</a></li>
-						<li class="menu-has-children"><a href="">Test de Conocimiento</a>
+						<li class="menu-has-children"><a>Test de Conocimiento</a>
 							<ul>
-								<li><a href="portfolio-details.html">Universidad Nacional</a></li>
-								<li><a href="elements.html">otra</a></li>
-							</ul>
+								<li><a href="https://www.uninscripciones.unal.edu.co/dipa/"  target="_blank">Simulacro Universidad Nacional</a></li>
+								<li><a href="https://www.preicfesinteractivo.com" target="_blank">Curso Preicfes Virtual Intensivo</a></li>
+							    <li><a href="https://ingresealau.edu.co/simulacro-udea/" target="_blank">Simulacro online Universidad de Antioquia </a></li>
+                            </ul>
 						</li>
-						<li><a href="contact.html">Contact</a></li>
 					</ul>
 				</nav>
 				<!--######## #nav-menu-container -->
@@ -108,7 +109,6 @@
 		</div>
 	</header>
 	<!--######## End Header Area ########-->
-        <hr />
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
@@ -126,10 +126,9 @@
 					<div class="single-footer-widget">
 						<h6>Contactanos:</h6>
 						<ul class="footer-nav">
-							<li>Telefono: 3022281557</li>
-							<li>Correo: awies@gmail.com</li>
-							<li>Correo: webAwies@gmail.com</li>
-							<li>Whatsapp: 3216549870</li>
+							<li>Telefono: 3042081216</li>
+							<li>Correo: awies.adsi@gmail.com</li>
+							<li>Whatsapp: 3022281557</li>
 						</ul>
 					</div>
 				</div>
@@ -145,8 +144,8 @@
 					<div class="single-footer-widget">
 						<h6>Valentina Ramirez</h6>
 						<ul class="footer-nav">
-							<li>Telefono: 3000000000</li>
-							<li>Correo: awies@gmail.com</li>
+							<li>Telefono: 322936667</li>
+							<li>Correo: valeramirez1557@gmail.com</li>
 						</ul>
 					</div>
 				</div>
@@ -154,16 +153,16 @@
 					<div class="single-footer-widget">
 						<h6>Alejandro Naranjo</h6>
 						<ul class="footer-nav">
-							<li>Telefono: 3000000000</li>
-							<li>Correo: awies@gmail.com</li>
+							<li>Telefono: 3042081216</li>
+							<li>Correo: jasonnaranjo123@gmail.com</li>
 						</ul>
 					</div>
                     <br />
 					<div class="single-footer-widget">
 						<h6>Sebastian Albarracin</h6>
 						<ul class="footer-nav">
-							<li>Telefono: 3000000000</li>
-							<li>Correo: awies@gmail.com</li>
+							<li>Telefono: 3142707262</li>
+							<li>Correo: juansebastiandarkblak@gmail.com</li>
 						</ul>
 					</div>
 				</div>
@@ -195,6 +194,7 @@
 		</div>
 	</footer>
 	<!--######## End footer Area ########-->
+  
 
 	<script src="js/vendor/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

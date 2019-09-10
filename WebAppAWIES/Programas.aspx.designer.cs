@@ -31,6 +31,33 @@ namespace WebAppAWIES {
         protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
+        /// Control DropDownList4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        
+        /// <summary>
+        /// Control txtPonderado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPonderado;
+        
+        /// <summary>
+        /// Control btnBuscarP.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBuscarP;
+        
+        /// <summary>
         /// Control btnBuscUniver.
         /// </summary>
         /// <remarks>
@@ -337,15 +364,6 @@ namespace WebAppAWIES {
         protected global::System.Web.UI.WebControls.Button btnAreaMate;
         
         /// <summary>
-        /// Control mensaje.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label mensaje;
-        
-        /// <summary>
         /// Control SqlDataSource1.
         /// </summary>
         /// <remarks>
@@ -362,5 +380,14 @@ namespace WebAppAWIES {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
+        
+        /// <summary>
+        /// Control mensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label mensaje;
     }
 }

@@ -6,15 +6,13 @@
     {
     cursor:pointer;
     }
-        .auto-style1 {
-            left: 15px;
-            top: -1985px;
-        }
+
+
         </style>
 
-	<!--######## Start post-content Area ########-->
+    <!--######## Start post-content Area ########-->
 	<section class="post-content-area">
-	
+
 			<div class="row">
                 <div class="col-lg-4 sidebar-widgets">
 					<div class="widget-wrap">
@@ -35,13 +33,35 @@
                                     </div>
                                 
 								</div>
-                                
-								<%--<a href="#" class="bbtns"><i class="fa fa-search"></i></a>--%>
-							</div>
+                              </div>  
+							
 							<p class="text-bottom">
 								Escribe Nombre del Programa
 							</p>
 						</div>
+                        <div class="single-sidebar-widget newsletter-widget">
+                          <h4 class="newsletter-title">Busca programas de formacion con tu resultado de...</h4>
+                                <div class="mt-10">
+                                    <div class="default-select" id="default-select">
+			        
+                                    <asp:DropDownList ID="DropDownList4" runat="server">
+                                        <asp:ListItem>Selecciona una opcion</asp:ListItem>
+                                        <asp:ListItem>Icfes</asp:ListItem>
+                                        <asp:ListItem>Prueba de Admicion</asp:ListItem>
+                                    </asp:DropDownList>
+			                        </div>
+                                    
+                                </div>
+                        
+                                <div class="mt-10">
+                                   <asp:TextBox ID="txtPonderado" runat="server" class="form-control" name="search"  placeholder="Buscar..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Buscar...'" style="width: 82%"></asp:TextBox>
+                                          	
+		                        </div>
+                                <div class="mt-10">
+                                    <asp:Button ID="btnBuscarP" runat="server"  class="genric-btn success" Text="Buscar" OnClick="btnBuscarP_Click"  />
+                                </div>
+                                    <hr />
+	                        </div>
 						<div class="single-sidebar-widget post-category-widget">
 							<h4 class="category-title">Nivel de Formacion</h4>
 							<ul class="cat-list">
@@ -113,69 +133,68 @@
 							<ul class="cat-list">
                                 
 								<li>
-                                    <asp:Button ID="btnAreaAgronomia" runat="server" Text="AGRONOMIA, VETERINARIA Y AFINES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaAgronomia_Click" />
+                                    <asp:Button ID="btnAreaAgronomia" runat="server" Text="Agronomia, Veterinaria y Afines" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 15px" OnClick="btnAreaAgronomia_Click" />
 								</li>
 								<li>
-                                  <asp:Button ID="btnAreaBellas" runat="server" Text="BELLAS ARTES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaBellas_Click" />
+                                  <asp:Button ID="btnAreaBellas" runat="server" Text="Bellas Artes" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 15px" OnClick="btnAreaBellas_Click" />
                                  </li>
 								<li>
-                                  <asp:Button ID="btnAreaCienEdu" runat="server" Text="CIENCIAS DE LA EDUCACION" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaCienEdu_Click" />
+                                  <asp:Button ID="btnAreaCienEdu" runat="server" Text="Ciencias de la Educacion" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 15px" OnClick="btnAreaCienEdu_Click" />
                                  </li>
                                 <li>
-                                  <asp:Button ID="btnAreaCienSal" runat="server" Text="CIENCIAS DE LA SALUD" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaCienSal_Click" />
+                                  <asp:Button ID="btnAreaCienSal" runat="server" Text="Ciencias de la Salud" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 15px" OnClick="btnAreaCienSal_Click" />
                                  </li>
                                 <li>
-                                  <asp:Button ID="btnAreaCienSoci" runat="server" Text="CIENCIAS SOCIALES, DERECHO, CIENCIAS POLITICAS" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaCienSoci_Click" />
+                                  <asp:Button ID="btnAreaCienSoci" runat="server" Text="Ciencias Sociales, Derecho, Ciencias Politicas" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 15px" OnClick="btnAreaCienSoci_Click" />
                                  </li>
                                 <li>
-                                  <asp:Button ID="btnAreaCienEco" runat="server" Text="ECONOMIA, ADMINISTRACION, CONTADURIA Y AFINES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaCienEco_Click" />
+                                  <asp:Button ID="btnAreaCienEco" runat="server" Text="Economia, Administracion, Contaduria y Afines" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 15px" OnClick="btnAreaCienEco_Click" />
                                  </li>
                                 <li>
-                                  <asp:Button ID="btnAreaCienHuma" runat="server" Text="HUMANIDADES Y CIENCIAS RELIGIOSAS" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaCienHuma_Click" />
+                                  <asp:Button ID="btnAreaCienHuma" runat="server" Text="Humanidades y Ciencias Religiosas" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 15px" OnClick="btnAreaCienHuma_Click" />
                                  </li>
                                 <li>
-                                  <asp:Button ID="btnAreaIngeni" runat="server" Text="INGENIERIA, ARQUITECTURA, URBANISMO Y AFINES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaIngeni_Click" />
+                                  <asp:Button ID="btnAreaIngeni" runat="server" Text="Ingeniaria, Arquitectura, Urbanismo y Afines" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 15px" OnClick="btnAreaIngeni_Click" />
                                  </li>
                                 <li>
-                                  <asp:Button ID="btnAreaMate" runat="server" Text="MATEMATICAS Y CIENCIAS NATURALES" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 22px" OnClick="btnAreaMate_Click" />
+                                  <asp:Button ID="btnAreaMate" runat="server" Text="Matematicas y Ciencias Naturales" class="d-flex justify-content-between" BackColor="#F9FBFB" BorderStyle="None" CssClass="auto-style2" ForeColor="Gray" style="height: 15px" OnClick="btnAreaMate_Click" />
                                     1</li>
 							
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="auto-style1">
+				<div class="col-lg-8 posts-list">
 					<div class="single-post row">
 
-                        <asp:Label ID="mensaje" runat="server" Text="No se encontraron resultados!!!" Font-Size="Large" ForeColor="#000099" Visible="False"></asp:Label>
-
-					    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, Programas.Precio, Programas.Ponderado, Area.Area, Metodologia.Metodologia, NivelFormacion.NivelFormacion FROM Programas INNER JOIN Area ON Programas.IdAreaConocimiento = Area.IdArea INNER JOIN Metodologia ON Programas.IdMetodologia = Metodologia.IdMetodologia INNER JOIN NivelFormacion ON Programas.IdNivelFormacion = NivelFormacion.IdNivelFormacion"></asp:SqlDataSource>
+                        
+					    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Programas.IdProgramas, Programas.NombrePrograma, Programas.EstadoPrograma, Programas.NivelAcademico, Programas.ReconocimientoMinisterio, Area.Area, Metodologia.Metodologia, NivelFormacion.NivelFormacion FROM Programas INNER JOIN Area ON Programas.IdAreaConocimiento = Area.IdArea INNER JOIN Metodologia ON Programas.IdMetodologia = Metodologia.IdMetodologia INNER JOIN NivelFormacion ON Programas.IdNivelFormacion = NivelFormacion.IdNivelFormacion"></asp:SqlDataSource>
 						
 					    <br />
                         <br />
                         <br />
                         <div class="text-sm-center">
-                        <asp:GridView ID="GridView1"  runat="server" CellPadding="4" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" ForeColor="#333333">
-                            <AlternatingRowStyle BackColor="White" />
+                         <asp:GridView ID="GridView1" runat="server" CellPadding="4" GridLines="None" CssClass="position-absolute" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" style="width: 30px; height: 20px; left: 0px; top: 24px" ForeColor="#333333" Font-Size="Larger" Height="20px" HorizontalAlign="Justify" ShowFooter="True" Width="30px" Font-Strikeout="False" PageSize="5">
+                            <AlternatingRowStyle BackColor="White" Font-Size="Smaller" Height="20px" HorizontalAlign="Left" Width="30px" />
                             <Columns>
-                                <asp:ButtonField ButtonType="Image" CommandName="Select" HeaderText="Mas Informacion" ImageUrl="~/img/ver.png" ShowHeader="True" Text="ver">
-                                <ControlStyle Height="30px" Width="50px" />
+                                 <asp:ButtonField ButtonType="Image" CommandName="Select" ImageUrl="~/img/ver.png" ShowHeader="True" Text="Ver">
+                                <ControlStyle Height="20px" Width="30px" />
                                 </asp:ButtonField>
                             </Columns>
                             <EditRowStyle BackColor="#2461BF" />
-                            <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
-                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#EFF3FB" />
-                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" Font-Size="Smaller" Height="20px" Width="30px" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" Height="20px" Width="30px" />
+                            <RowStyle BackColor="#EFF3FB" BorderStyle="None" Font-Size="Smaller" Height="20px" Width="30px" HorizontalAlign="Left" />
+                            <SelectedRowStyle BackColor="#D1DDF1" ForeColor="#333333" Font-Size="Smaller" Height="20px" HorizontalAlign="Left" VerticalAlign="Top" Width="20px"   /> 
+                            <SortedAscendingCellStyle BackColor="#F5F7FB"  />
                             <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                            <SortedDescendingCellStyle BackColor="#E9EBEF" Height="20px" Width="30px"  />
+                            <SortedDescendingHeaderStyle BackColor="#4870BE" Height="20px" Width="30px" />
                         </asp:GridView>
-                        </div>
-                        <br />
-                        </div>
+
+                         <asp:Label ID="mensaje" runat="server" Text="No se encontraron resultados!!!" Font-Size="Large" ForeColor="#000099" Visible="False"></asp:Label>
+
 					
 				</div>
 				
@@ -204,4 +223,11 @@
 		</div>
 	</section>
 	<!--######## End post-content Area ########-->
+
+
+
+
+	
+    
+   
 </asp:Content>

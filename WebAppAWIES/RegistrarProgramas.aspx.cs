@@ -24,7 +24,10 @@ namespace WebAppAWIES
             
             Global global = new Global();
 
+            try
+            {
 
+           
             string a = Application["Id"].ToString();
             objProgramas.NombrePrograma = Nombre.Text;
             objProgramas.EstadoPrograma = ddEstado.SelectedValue;
@@ -66,8 +69,13 @@ namespace WebAppAWIES
                 lblError.Visible = true;
             }
 
-           
 
+            }
+            catch (Exception)
+            {
+                lblError.Visible = true;
+                lblError.Text = "Debe completar los campos";
+            }
 
 
         }

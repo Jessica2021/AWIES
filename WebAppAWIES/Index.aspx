@@ -152,7 +152,7 @@ function showDivs(n) {
 							<div class="user-details row">
 								<p class="user-name col-lg-12 col-md-12 col-6"><a href="#"><%#Eval("NombreInstitucion") %></a> <span class="lnr lnr-user"></span></p>
 								<p class="date col-lg-12 col-md-12 col-6"><a href="#"><%#Eval("Fecha") %></a><span class="lnr lnr-calendar-full"></span></p>
-								<p class="view col-lg-12 col-md-12 col-6"><a href="#">1.2M Views</a> <span class="lnr lnr-eye"></span></p>
+								<p class="view col-lg-12 col-md-12 col-6"><a href="<%#Eval("PaginaWeb") %>"  target="_blank">Visitar Pagina Web</a> <span class="lnr lnr-eye"></span></p>
 								<p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span class="lnr lnr-bubble"></span></p>
 							</div>
 						</div>
@@ -160,11 +160,13 @@ function showDivs(n) {
 							<div class="feature-img">
 								<img class="img-resposive" src="img/Publicaciones/<%#Eval("Foto") %>">
 							</div>
-							<a class="posts-title" href="blog-single.html"><h3><%#Eval("Titulo") %></h3></a>
+							<a class="posts-title"><h3><%#Eval("Titulo") %></h3></a>
 							<p class="excert">
 							    <%#Eval("Texto") %>	
                             </p>
-							
+							<br />
+                            <br />
+                            <hr />
 						</div>
                     </ItemTemplate>
                     

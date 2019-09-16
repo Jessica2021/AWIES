@@ -12,22 +12,33 @@ namespace WebAppAWIES
 {
     public partial class Programas : System.Web.UI.Page
     {
+        public static string valor;
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+
+           
         }
         clConexion conexion = new clConexion();
         clProgramas po = new clProgramas();
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            mtdLlenar();
-        }
+            
+            mtdLlenarUniversidad();
 
+        }
         public void mtdLlenar()
         {
             DataSet dsProgrma = new DataSet();
             dsProgrma = po.mtdListarProgramas();
+            GridView1.DataSource = dsProgrma.Tables[0];
+            GridView1.DataBind();
+        }
+        public void mtdLlenarUniversidad()
+        {
+            string valor = Request.QueryString["id"].ToString();
+            DataSet dsProgrma = new DataSet();
+            dsProgrma = po.mtdListarProgramasUniversidad(valor);
             GridView1.DataSource = dsProgrma.Tables[0];
             GridView1.DataBind();
         }
@@ -58,10 +69,22 @@ namespace WebAppAWIES
             GridView1.DataBind();
 
             mtdMensaje();
-            
+
         }
 
         public void mtdBuscUniver()
+
+        {
+            DataSet dsProgrma = new DataSet();
+            dsProgrma = po.mtdBuscUniver();
+            GridView1.DataSource = dsProgrma.Tables[0];
+            GridView1.DataBind();
+
+            mtdMensaje();
+        }
+
+
+        public void mtdProgramasUniversidad()
 
         {
             DataSet dsProgrma = new DataSet();
@@ -197,7 +220,7 @@ namespace WebAppAWIES
             GridView1.DataSource = dsProgrma.Tables[0];
             GridView1.DataBind();
 
-           mtdMensaje();
+            mtdMensaje();
         }
         protected void btnBuscEspDocto_Click(object sender, EventArgs e)
         {

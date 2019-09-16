@@ -13,13 +13,16 @@ namespace WebAppAWIES
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+        }
+        
+        protected void Page_Init(object sender, EventArgs e)
+        {
             mtdLlenar();
         }
-        clUniversidades Universidad = new clUniversidades();
-
-        public void mtdLlenar()
+            public void mtdLlenar()
         {
-
+            clUniversidades Universidad = new clUniversidades();
             DataSet dsInstitutos = new DataSet();
             dsInstitutos = Universidad.mtdListaInformacionLoad();
             GridView1.DataSource = dsInstitutos.Tables[0];
@@ -38,7 +41,7 @@ namespace WebAppAWIES
         }
         public void mtdBuscar()
         {
-           
+            clUniversidades Universidad = new clUniversidades();
             string institutos = txtBuscar.Text;
             DataSet dsInstitutos = new DataSet();
             dsInstitutos = Universidad.mtdBuscarInstitucuines(institutos);
@@ -54,7 +57,7 @@ namespace WebAppAWIES
 
         protected void btnBuscUniver_Click(object sender, EventArgs e)
         {
-           
+            clUniversidades Universidad = new clUniversidades();
             DataSet dsUniversidad = new DataSet();
             dsUniversidad = Universidad.mtdBusquedaUniversidades();
             GridView1.DataSource = dsUniversidad.Tables[0];
@@ -64,7 +67,7 @@ namespace WebAppAWIES
 
         protected void btnBuscTecn_Click(object sender, EventArgs e)
         {
-           
+            clUniversidades Universidad = new clUniversidades();
             DataSet dsTecnico = new DataSet();
             dsTecnico = Universidad.mtdBusquedaTecnica();
             GridView1.DataSource = dsTecnico.Tables[0];
@@ -74,7 +77,7 @@ namespace WebAppAWIES
 
         protected void btnBuscTecnolo_Click(object sender, EventArgs e)
         {
-            
+            clUniversidades Universidad = new clUniversidades();
             DataSet dsTecnologo = new DataSet();
             dsTecnologo = Universidad.mtdBusquedaTecnologica();
             GridView1.DataSource = dsTecnologo.Tables[0];
@@ -84,21 +87,21 @@ namespace WebAppAWIES
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            clUniversidades Universidad = new clUniversidades();
             DataSet dsTecnologo = new DataSet();
             dsTecnologo = Universidad.mtdBusquedaMunicipio(int.Parse(DropDownList2.SelectedValue.ToString()));
             GridView1.DataSource = dsTecnologo.Tables[0];
             GridView1.DataBind();
             mtdMensaje();
         }
-
+        public static string valor;
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             int pos = GridView1.SelectedIndex;
-            string valor = GridView1.Rows[pos].Cells[1].Text;
+             valor = GridView1.Rows[pos].Cells[1].Text;
  
-           Response.Write("<script>window.open ('InfoInstituciones.aspx?id=" + valor + "','_blank');</script>");
+           //Response.Write("<script>window.open ('InfoInstituciones.aspx?id=" + valor + "','_blank');</script>");
           
         }
 
@@ -106,6 +109,17 @@ namespace WebAppAWIES
         {
             GridView1.PageIndex = e.NewPageIndex;
             mtdLlenar();
+        }
+
+        
+        protected void btnProgramas_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>window.open ('Programas.aspx?id=" + valor + "','_blank');</script>");
+        }
+
+        protected void btnInfo_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>window.open ('InfoInstituciones.aspx?id=" + valor + "','_blank');</script>");
         }
     }
 }

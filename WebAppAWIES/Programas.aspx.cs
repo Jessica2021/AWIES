@@ -23,12 +23,19 @@ namespace WebAppAWIES
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            
             mtdLlenarUniversidad();
+            if (valor != null){
+                mtdLlenarUniversidad();
+            }
+            else {
+               
+            }
+            
 
         }
         public void mtdLlenar()
         {
+
             DataSet dsProgrma = new DataSet();
             dsProgrma = po.mtdListarProgramas();
             GridView1.DataSource = dsProgrma.Tables[0];
@@ -36,11 +43,20 @@ namespace WebAppAWIES
         }
         public void mtdLlenarUniversidad()
         {
-            string valor = Request.QueryString["id"].ToString();
-            DataSet dsProgrma = new DataSet();
-            dsProgrma = po.mtdListarProgramasUniversidad(valor);
-            GridView1.DataSource = dsProgrma.Tables[0];
-            GridView1.DataBind();
+            try
+            {
+                valor = Request.QueryString["id"].ToString();
+                DataSet dsProgrma = new DataSet();
+                dsProgrma = po.mtdListarProgramasUniversidad(valor);
+                GridView1.DataSource = dsProgrma.Tables[0];
+                GridView1.DataBind();
+            }
+            catch (Exception)
+            {
+                mtdLlenar();
+
+            }
+           
         }
         public void mtdMensaje()
         {

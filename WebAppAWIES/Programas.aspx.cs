@@ -24,12 +24,7 @@ namespace WebAppAWIES
         protected void Page_Init(object sender, EventArgs e)
         {
             mtdLlenarUniversidad();
-            if (valor != null){
-                mtdLlenarUniversidad();
-            }
-            else {
-               
-            }
+           
             
 
         }

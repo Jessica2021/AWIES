@@ -21,9 +21,6 @@ namespace WebAppAWIES
             Repeater1.DataSource = dspublicar;
             Repeater1.DataBind();
            
-
-           
-
         }
 
 

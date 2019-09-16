@@ -48,6 +48,7 @@
                                         <asp:ListItem>Selecciona una opcion</asp:ListItem>
                                         <asp:ListItem>Icfes</asp:ListItem>
                                         <asp:ListItem>Prueba de Admicion</asp:ListItem>
+                                        <asp:ListItem>Ponderado</asp:ListItem>
                                     </asp:DropDownList>
 			                        </div>
                                     

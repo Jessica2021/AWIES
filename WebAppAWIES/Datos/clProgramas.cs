@@ -308,7 +308,7 @@ namespace WebAppAWIES.Datos
         }
         public DataSet mtdPonderado(string valor, string resultado)
         {
-            string query = "select Programas.IdProgramas, Programas.NombrePrograma, NombreInstitucion,  NivelFormacion, Metodologia, PrimerIngresado, UltimoIngresado  from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE TipoIngreso = '"+resultado+"' and  PrimerIngresado  <=  '" + valor + "' and  UltimoIngresado >=  '" + valor + "' ";
+            string query = "select Programas.IdProgramas, Programas.NombrePrograma, NombreInstitucion,  NivelFormacion, Metodologia, PrimerIngresado, UltimoIngresado  from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) WHERE TipoIngreso = '"+resultado+"' and  PrimerIngresado  >=  '" + valor + "' and  UltimoIngresado <=  '" + valor + "' ";
             DataSet tblPrograma = new DataSet();
             tblPrograma = objConexion.mtdDesconectado(query);
             return tblPrograma;

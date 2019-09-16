@@ -160,11 +160,13 @@ function showDivs(n) {
 							<div class="feature-img">
 								<img class="img-resposive" src="img/Publicaciones/<%#Eval("Foto") %>">
 							</div>
-							<a class="posts-title" href="blog-single.html"><h3><%#Eval("Titulo") %></h3></a>
+							<a class="posts-title"><h3><%#Eval("Titulo") %></h3></a>
 							<p class="excert">
 							    <%#Eval("Texto") %>	
                             </p>
-							
+							<br />
+                            <br />
+                            <hr />
 						</div>
                     </ItemTemplate>
                     

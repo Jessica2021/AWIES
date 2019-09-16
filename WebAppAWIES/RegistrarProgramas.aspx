@@ -166,7 +166,7 @@ border-radius: 11px 11px 11px 11px;
                  <div class="row">
                      <div class="col-md-2">
                          </div>
-					<div id="cont" class="auto-style1">
+					<div id="cont" class="col-md-5">
                     
 					<div class="widget-wrap">
                         <div id="imgs">
@@ -288,21 +288,11 @@ border-radius: 11px 11px 11px 11px;
                      <asp:TextBox ID="TituloOtorgado" runat="server" placeholder="Ingeniero en..." onfocus="this.placeholder = ''"  onblur="this.placeholder = 'Ingeniero en...'"
 				        required class="single-input-primary"></asp:TextBox>
 		        </div>
-            <br />
-            <asp:Button ID="Button1" runat="server" Text="Registrar" class="genric-btn success" Height="41px" OnClick="Button1_Click"  />
-            <a href="IndexInstitucion.aspx" class="genric-btn info">Inicio</a>
-            </div>
-            <div class="mt-10">
-                            <asp:Label ID="lblCorrecto" runat="server" Text="El programa se a Registrado Correctamente" BackColor="#99CCFF" BorderColor="#000099" BorderStyle="Solid" BorderWidth="1px" ForeColor="#000099" Height="25px" Width="300px" Visible="False"></asp:Label>
-				        </div>
-
-                        <div class="mt-10">
-                            <asp:Label ID="lblError" runat="server" Text="Error: No se pudo registrar" BackColor="#E18C8C" BorderColor="#CC0000" BorderStyle="Solid" BorderWidth="1px" ForeColor="Maroon" Height="25px" Width="268px" Visible="False"></asp:Label>
-				        </div>
+            
                         </div>
                         </div>
                      
-
+                           </div>
          
             <div class="col-md-4">
 
@@ -333,6 +323,17 @@ border-radius: 11px 11px 11px 11px;
 
         
         </div>
+                <br />
+            <asp:Button ID="Button1" runat="server" Text="Registrar" class="genric-btn success" Height="41px" OnClick="Button1_Click"  />
+            <a href="IndexInstitucion.aspx" class="genric-btn info">Inicio</a>
+         
+            <div class="mt-10">
+                            <asp:Label ID="lblCorrecto" runat="server" Text="El programa se a Registrado Correctamente" BackColor="#99CCFF" BorderColor="#000099" BorderStyle="Solid" BorderWidth="1px" ForeColor="#000099" Height="25px" Width="300px" Visible="False"></asp:Label>
+				        </div>
+
+                        <div class="mt-10">
+                            <asp:Label ID="lblError" runat="server" Text="Error: No se pudo registrar" BackColor="#E18C8C" BorderColor="#CC0000" BorderStyle="Solid" BorderWidth="1px" ForeColor="Maroon" Height="25px" Width="268px" Visible="False"></asp:Label>
+				        </div>
                     </div>
             </div>
             </div>

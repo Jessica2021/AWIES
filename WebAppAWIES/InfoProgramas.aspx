@@ -114,6 +114,7 @@
      
 
     <!-- Start Align Area -->
+     
     <hr style="border: medium solid #000080" />
      <h2 class="text-sm-center">Informacion General del Programa</h2>
      <hr style="border: medium solid #000080" />
@@ -281,10 +282,10 @@
     </div>
             </div>
     </div>
+
     <!-- End Align Area -->
         </form>
         </body>
-    
 
         	<script src="js/vendor/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

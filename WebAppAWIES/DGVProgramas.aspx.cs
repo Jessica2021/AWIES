@@ -71,8 +71,7 @@ namespace WebAppAWIES
             int pos = gvProgramas.SelectedIndex;
 
             x = gvProgramas.Rows[pos].Cells[1].Text;
-
-            TextBox1.Text = x;
+            
         }
     }
 }

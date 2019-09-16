@@ -322,5 +322,13 @@ namespace WebAppAWIES.Datos
             return tblPrograma;
         }
 
+        public DataSet mtdListarProgramasUniversidad(string a)
+        {
+            string query = "select Programas.IdProgramas, Programas.NombrePrograma,  NombreInstitucion,  NivelFormacion, Metodologia from Universidades INNER JOIN InstitucionPrograma ON(Universidades.IdUniversidades = InstitucionPrograma.IdUniversidades) INNER JOIN Programas ON(Programas.IdProgramas = InstitucionPrograma.IdProgramas) INNER JOIN NivelFormacion ON(NivelFormacion.IdNivelFormacion = Programas.IdNivelFormacion) INNER JOIN Metodologia ON(Metodologia.IdMetodologia = Programas.IdMetodologia) INNER JOIN Area ON(Area.IdArea = Programas.IdAreaConocimiento) where  Universidades.IdUniversidades  = '" + a+"'";
+            DataSet tblPrograma = new DataSet();
+            tblPrograma = objConexion.mtdDesconectado(query);
+            return tblPrograma;
+        }
+
     }
 }

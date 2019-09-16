@@ -102,7 +102,7 @@
 						</ul>
 						<ul>
 							<li>
-								<a href="login.aspx">Iniciar Sesión</a>
+								<input type="button" onclick="printDiv('areaImprimir')" value="Descargar o Imprimir" class="genric-btn primary" />
 							</li>
 						</ul>
 					</div>
@@ -112,13 +112,28 @@
         </header>
 		<hr> 
      
+        <script>
+            function printDiv(nombreDiv) {
+     var contenido= document.getElementById(nombreDiv).innerHTML;
+     var contenidoOriginal= document.body.innerHTML;
 
-    <!-- Start Align Area -->
-     
+     document.body.innerHTML = contenido;
+
+     window.print();
+
+     document.body.innerHTML = contenidoOriginal;
+}
+        </script>
+
+	<!-- here we call the function that makes PDF -->
+
+	<div id="areaImprimir">
+    
+
     <hr style="border: medium solid #000080" />
      <h2 class="text-sm-center">Informacion General del Programa</h2>
      <hr style="border: medium solid #000080" />
-
+ 
     <div id="cont" class="auto-style1">
         <div class="widget-wrap">
     <div class="section-top-border">
@@ -280,14 +295,28 @@
             </div>
         
     </div>
+
+            
             </div>
     </div>
+        
+</div>
 
+
+  
+       
     <!-- End Align Area -->
         </form>
         </body>
 
-        	<script src="js/vendor/jquery.min.js"></script>
+    
+	<!-- these js files are used for making PDF -->
+	<script src="js/jspdf.js"></script>
+	<script src="js/jquery-2.1.3.js"></script>
+	<script src="js/pdfFromHTML.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
+     <script src="js/vendor/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 	 crossorigin="anonymous"></script>
 	<script src="js/vendor/bootstrap.min.js"></script>

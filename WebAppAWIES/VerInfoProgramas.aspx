@@ -4,46 +4,18 @@
     <style>
         h5 {
             text-align: right;
-            padding-top: 3%;
+            padding-top: 2%;
             padding-bottom: 3%;
-
         }
 
-
-         #cont{
-            border-radius: 11px 11px 11px 11px;
-            background-color:#C1ECFA ;
-        }
-
-        .auto-style1 {
-
-            margin-left:20%;
-            margin-right:20%;
-
-            position: relative;
-            width: 60%;
-            min-height: 1px;
-            -ms-flex: 0 0 33.333333%;
-            flex: 0 0 33.333333%;
-            text-align: center;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-         .auto-style2 {
-             font-size: x-large;
-         }
-         </style>
+        
+    </style>
 
     <!-- Start Align Area -->
-    <hr style="border: medium solid #000080" />
-     <h2 class="text-sm-center">Informacion General del la Institucion</h2>
-     <hr style="border: medium solid #000080" />
 
-    <div id="cont" class="auto-style1">
-        <div class="widget-wrap">
     <div class="section-top-border">
-       
-       
+        <h3>Datos Generales</h3>
+    
         <div class="row">
 
            <div class="col-md-4">

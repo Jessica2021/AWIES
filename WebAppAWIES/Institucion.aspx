@@ -84,10 +84,13 @@
             <div class="col-lg-8 posts-list">
                 <div class="single-post row">
 
-                    <asp:GridView ID="GridView1" runat="server" CellPadding="4" AllowPaging="true" PageSize="5" GridLines="None" CssClass="position-absolute" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Style="width: 30px; height: 20px; left: 0px; top: 24px" ForeColor="#333333" Font-Size="Larger" Height="20px" HorizontalAlign="Justify" ShowFooter="True" Width="30px" OnPageIndexChanging="GridView1_PageIndexChanging">
+                    <br />
+                    <br />
+
+                    <asp:GridView ID="GridView1" runat="server" CellPadding="4" AllowPaging="True" PageSize="5" GridLines="None" CssClass="position-absolute" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Style="width: 30px; height: 20px; left: 8px; top: 24px" ForeColor="#333333" Font-Size="Larger" Height="20px" HorizontalAlign="Justify" ShowFooter="True" Width="30px" OnPageIndexChanging="GridView1_PageIndexChanging">
                         <AlternatingRowStyle BackColor="White" Font-Size="Smaller" Height="20px" HorizontalAlign="Left" Width="30px" />
                         <Columns>
-                            <asp:ButtonField ButtonType="Image" CommandName="Select" ImageUrl="~/img/ver.png" ShowHeader="True" Text="Ver">
+                            <asp:ButtonField CommandName="Select" ImageUrl="~/img/ver.png" ShowHeader="True" Text="Seleccionar" HeaderText="Seleccionar">
                                 <ControlStyle Height="20px" Width="30px" />
                             </asp:ButtonField>
                         </Columns>
@@ -102,9 +105,6 @@
                         <SortedDescendingCellStyle BackColor="#E9EBEF" Height="20px" Width="30px" />
                         <SortedDescendingHeaderStyle BackColor="#4870BE" Height="20px" Width="30px" />
                     </asp:GridView>
-
-                    <br />
-                    <br />
 
                     <br />
                     <br />

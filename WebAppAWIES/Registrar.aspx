@@ -133,7 +133,7 @@
             <h5>Departamento</h5>
                 <div class="default-select" id="Departamento">
                     
-                        <asp:DropDownList AppendDataBoundItems="true" ID="DropDownList3"   runat="server" DataMember="DefaultView" DataSourceID="SqlDataSource1" DataTextField="Departamento" DataValueField="IdDepartamento" AutoPostBack="True" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged" ><asp:ListItem Value="0">&lt;Seleccione un Item&gt;</asp:ListItem></asp:DropDownList>
+                        <asp:DropDownList ID="DropDownList3"   runat="server" DataSourceID="SqlDataSource1" DataTextField="Departamento" DataValueField="IdDepartamento" AutoPostBack="True"></asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Departamento]"></asp:SqlDataSource>
                   
                 </div>
@@ -200,3 +200,4 @@
 </body>
 
 </html>
+
